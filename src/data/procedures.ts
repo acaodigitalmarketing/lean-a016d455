@@ -1,87 +1,68 @@
 
 export const procedures = [
   {
-    title: "Corporais",
-    subtext: "Procedimentos corporais personalizados para esculpir e harmonizar sua silhueta. Utilizamos técnicas avançadas que respeitam a anatomia individual, proporcionando resultados elegantes e duradouros com máxima segurança.",
-    procedures: ["Mamas", "Abdômen", "Braços", "Costas", "Coxas", "Glúteo", "Íntima"],
-    image: "/lovable-uploads/cirurgia-corporal-lipoaspiracao-abdominoplastia.png"
+    title: 'Carga Geral',
+    subtext: 'Transporte de mercadorias diversas, embaladas ou paletizadas, com manuseio cuidadoso e entrega segura.',
+    procedures: ['Paletizada', 'Granel', 'Embalada', 'Conteineirizada'],
   },
   {
-    title: "Cirurgias combinadas",
-    subtext: "Otimize seu tempo e recuperação com procedimentos combinados em uma única cirurgia. Planejamento estratégico que une múltiplas técnicas para resultados completos e harmoniosos, reduzindo o período total de recuperação.",
-    procedures: ["Lipoabdominoplastia", "Mama + Abdômen", "Mommy Makeover"],
-    image: "/lovable-uploads/cirurgias-combinadas-mommy-makeover.png"
+    title: 'Carga Refrigerada',
+    subtext: 'Controle de temperatura de -18 a +12 graus para produtos que exigem cadeia fria ininterrupta.',
+    procedures: ['Alimentos', 'Farmaceuticos', 'Quimicos', 'Flores'],
   },
   {
-    title: "Masculinas",
-    subtext: "Cirurgias desenvolvidas especialmente para a anatomia masculina. Abordagem discreta e resultados que valorizam a masculinidade, com técnicas que respeitam as particularidades do corpo do homem.",
-    procedures: ["Abdômen", "Ginecomastia", "Otoplastia", "Faciais"],
-    image: "/lovable-uploads/cirurgia-plastica-masculina-ginecomastia.png"
+    title: 'Carga Fracionada',
+    subtext: 'Solucao economica para volumes menores. Sua carga compartilha o espaco com seguranca e rapidez.',
+    procedures: ['Pequenos volumes', 'Encomendas', 'Pecas'],
   },
   {
-    title: "Plásticas reparadoras",
-    subtext: "Reconstrução e correção de imperfeições causadas por acidentes, doenças ou procedimentos anteriores. Devolvemos não apenas a forma, mas também a autoestima e qualidade de vida aos nossos pacientes.",
-    procedures: ["Cicatrizes", "Mamas", "Queimaduras", "Outros"],
-    image: "/lovable-uploads/cirurgia-plastica-reparadora-reconstrutiva.png"
+    title: 'Carga Perigosa',
+    subtext: 'Transporte especializado de produtos quimicos, inflamaveis e materiais perigosos conforme normas MOPP.',
+    procedures: ['Quimicos', 'Inflamaveis', 'Corrosivos', 'MOPP'],
   },
   {
-    title: "Bariátricas",
-    subtext: "Cirurgias para tratamento da obesidade com acompanhamento multidisciplinar completo. Mudança de vida através de procedimentos seguros que promovem perda de peso saudável e melhoria significativa da qualidade de vida.",
-    procedures: ["Sleeve", "Bypass", "Balão gástrico"],
-    image: "/lovable-uploads/cirurgia-bariatrica-sleeve-bypass.png"
+    title: 'Mudancas e Transferencias',
+    subtext: 'Servico completo de mudanca residencial e corporativa com embalagem, transporte e entrega.',
+    procedures: ['Residencial', 'Corporativo', 'Internacional'],
   },
   {
-    title: "Faciais",
-    subtext: "Rejuvenescimento e harmonização facial com técnicas minimamente invasivas e cirúrgicas. Resultados sofisticados que respeitam suas características únicas, realçando sua beleza com elegância.",
-    procedures: ["Lifting facial", "Blefaroplastia", "Rinoplastia", "Otoplastia", "Lipo de papada"],
-    image: "/lovable-uploads/cirurgia-facial-lifting-rinoplastia.png"
-  }
+    title: 'Logistica Dedicada',
+    subtext: 'Frota exclusiva e motorista dedicado para operacoes continuas com SLA garantido.',
+    procedures: ['Frota exclusiva', 'Contrato', 'SLA'],
+  },
 ];
 
 export const procedureGroups = [
   {
-    label: "Cirurgias Combinadas",
+    label: 'Cargas Gerais',
     options: [
-      "Mommy Makeover",
+      'Carga Geral Paletizada',
+      'Carga Geral a Granel',
+      'Carga Fracionada',
     ],
   },
   {
-    label: "Cirurgias Mamárias",
+    label: 'Cargas Especiais',
     options: [
-      "Mamoplastia de Aumento",
-      "Mamoplastia Redutora",
-      "Mastopexia com Prótese",
-      "Mastopexia sem Prótese",
-      "Explante",
-      "Ginecomastia",
-      "Reconstrução de Mama",
+      'Carga Refrigerada (frio)',
+      'Carga Refrigerada (congelada)',
+      'Carga Perigosa (MOPP)',
+      'Carga Superdimednsionada',
+      'Carga de Alto Valor',
     ],
   },
   {
-    label: "Contorno Corporal",
+    label: 'Servicos Especificos',
     options: [
-      "Lipoaspiração Convencional",
-      "Lipoaspiração de Alta Definição (Lipo HD)",
-      "Abdominoplastia",
-      "Miniabdominoplastia",
-      "Pós-bariátrica",
+      'Mudanca Residencial',
+      'Mudanca Corporativa',
+      'Logistica Dedicada (contrato)',
+      'Distribuicao Urbana',
+      'Cross-docking',
     ],
   },
   {
-    label: "Cirurgias Faciais e Reparadoras",
-    options: [
-      "Blefaroplastia",
-      "Otoplastia",
-      "Lobuloplastia",
-      "Tratamento de Queimaduras",
-      "Feridas Complexas",
-      "Refinamento de Cicatrizes",
-      "Queloides e Cicatriz Hipertrófica",
-      "Tratamento de Câncer de Pele",
-    ],
-  },
-  {
-    label: "Outros",
-    options: ["Outro"],
+    label: 'Outros',
+    options: ['Outro (especificar nas observacoes)'],
   },
 ];

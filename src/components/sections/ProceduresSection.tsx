@@ -1,351 +1,101 @@
-
 import React from 'react';
-import { Card, CardContent } from '@/components/ui/card';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { AnimatedSection } from '@/hooks/useScrollAnimation';
+import { Package, Thermometer, Layers, AlertTriangle, Home, Zap } from 'lucide-react';
 
-import imgMamoplastia from '@/assets/procedimento-mamoplastia.jpg';
-import imgMastopexiaSemProtese from '@/assets/procedimento-mastopexia-sem-protese.jpg';
-import imgMamoplastiaRedutora from '@/assets/procedimento-mamoplastia-redutora.jpg';
-import imgMastopexia from '@/assets/procedimento-mastopexia.jpg';
-import imgExplante from '@/assets/procedimento-explante.jpg';
-import imgGinecomastia from '@/assets/procedimento-ginecomastia.jpg';
-import imgReconstrucaoMamaria from '@/assets/procedimento-reconstrucao-mamaria-2.jpg';
-import imgLipoaspiracaoHD from '@/assets/procedimento-lipoaspiracao-hd.jpg';
-import imgAbdominoplastia from '@/assets/procedimento-abdominoplastia.jpg';
-import imgLipoConvencional from '@/assets/procedimento-lipoaspiracao-convencional.jpg';
-import imgMiniabdominoplastia from '@/assets/procedimento-miniabdominoplastia.jpg';
-import imgPosBariatrica from '@/assets/procedimento-pos-bariatrica.jpg';
-import imgBlefaroplastia from '@/assets/procedimento-blefaroplastia.jpg';
-import imgOtoplastia from '@/assets/procedimento-otoplastia.jpg';
-import imgLobuloplastia from '@/assets/procedimento-lobuloplastia.jpg';
-import imgQueimaduras from '@/assets/procedimento-queimaduras.jpg';
-import imgFeridasComplexas from '@/assets/procedimento-feridas-complexas.jpg';
-import imgRefinamentoCicatrizes from '@/assets/procedimento-refinamento-cicatrizes.jpg';
-import imgQueloides from '@/assets/procedimento-queloides.jpg';
-import imgCancerPele from '@/assets/procedimento-cancer-pele.jpg';
-
-type Procedure = {
-  title: string;
-  description: string;
-  image?: string;
-};
-
-const mamarias: Procedure[] = [
+const services = [
   {
-    title: "Mamoplastia de Aumento",
-    description: "Cirurgia indicada para remodelar as mamas, ajustando volume, forma e proporção ao biotipo da paciente. Utilizo a técnica de cicatriz reduzida (Short Scar), com planejamento individualizado para um resultado elegante e sofisticado.",
-    image: imgMamoplastia,
+    icon: Package,
+    title: 'Carga Geral',
+    description: 'Transporte de mercadorias diversas, embaladas ou paletizadas, com manuseio cuidadoso e entrega segura em todo o Brasil.',
+    tags: ['Paletizada', 'Granel', 'Embalada'],
   },
   {
-    title: "Mamoplastia Redutora",
-    description: "Indicada para pacientes com excesso de volume mamário e desconfortos físicos ou funcionais. Trabalho com a técnica de cicatriz reduzida (Short Scar), buscando aliviar sintomas com mais conforto, equilíbrio corporal e qualidade de vida.",
-    image: imgMamoplastiaRedutora,
+    icon: Thermometer,
+    title: 'Carga Refrigerada',
+    description: 'Controle de temperatura de -18°C a +12°C para alimentos, medicamentos e produtos farmacêuticos que exigem cadeia fria.',
+    tags: ['Alimentos', 'Farmacêutico', 'ANVISA'],
   },
   {
-    title: "Mastopexia com Prótese",
-    description: "Procedimento que combina a elevação das mamas com a inclusão de implantes de silicone, utilizando a técnica de cicatriz reduzida (Short Scar). Indicada para pacientes com flacidez que também desejam mais volume, com resultados harmoniosos e cicatrizes discretas.",
-    image: imgMastopexia,
+    icon: Layers,
+    title: 'Carga Fracionada',
+    description: 'Ideal para volumes menores que não ocupam um veículo completo. Sua carga compartilha o espaço com segurança e economia.',
+    tags: ['Pequenos Volumes', 'Econômico', 'Rápido'],
   },
   {
-    title: "Mastopexia sem Prótese",
-    description: "Cirurgia voltada exclusivamente para a elevação e remodelação das mamas, sem uso de implantes, com a técnica de cicatriz reduzida (Short Scar). Indicada para pacientes que desejam corrigir a flacidez com sofisticação e cicatrizes bem posicionadas.",
-    image: imgMastopexiaSemProtese,
+    icon: AlertTriangle,
+    title: 'Carga Perigosa',
+    description: 'Transporte especializado de produtos químicos, inflamáveis e materiais perigosos conforme normas MOPP e legislação vigente.',
+    tags: ['MOPP', 'Químicos', 'Inflamáveis'],
   },
   {
-    title: "Explante",
-    description: "Remoção de implantes mamários de silicone com técnica cuidadosa, indicada para pacientes que desejam retirar suas próteses por questões pessoais, estéticas ou médicas.",
-    image: imgExplante,
+    icon: Home,
+    title: 'Mudanças e Transferências',
+    description: 'Serviço completo de mudança residencial e corporativa com embalagem, transporte e entrega com todo o cuidado.',
+    tags: ['Residencial', 'Corporativo', 'Manuseio Cuidadoso'],
   },
   {
-    title: "Ginecomastia",
-    description: "Correção cirúrgica do excesso de tecido mamário masculino, devolvendo contorno torácico definido e confiança ao paciente com abordagem discreta e personalizada.",
-    image: imgGinecomastia,
-  },
-  {
-    title: "Reconstrução de Mama",
-    description: "Atuação especializada em reconstrução mamária, com planejamento cuidadoso e abordagem humanizada. Acompanho cada paciente de forma próxima, respeitando o momento físico e emocional de cada fase do tratamento.",
-    image: imgReconstrucaoMamaria,
+    icon: Zap,
+    title: 'Logística Dedicada',
+    description: 'Frota exclusiva e motorista dedicado para operações contínuas. Solução personalizada para empresas com demanda regular.',
+    tags: ['Exclusivo', 'Contrato', 'SLA Garantido'],
   },
 ];
 
-const contornoCorporal: Procedure[] = [
-  {
-    title: "Lipoaspiração Convencional",
-    description: "Técnica consagrada para remoção de gordura localizada, com planejamento individualizado para promover contorno corporal harmonioso e resultados proporcionais ao biotipo de cada paciente.",
-    image: imgLipoConvencional,
-  },
-  {
-    title: "Lipoaspiração de Alta Definição (Lipo HD)",
-    description: "Técnica avançada de contorno corporal que permite maior definição e realce da musculatura, sempre respeitando os limites do corpo e priorizando resultados harmônicos e elegantes.",
-    image: imgLipoaspiracaoHD,
-  },
-  {
-    title: "Abdominoplastia",
-    description: "Cirurgia indicada para remover excesso de pele e flacidez abdominal, além de reforçar a musculatura quando necessário. O planejamento é feito com foco em segurança, funcionalidade e proporção corporal.",
-    image: imgAbdominoplastia,
-  },
-  {
-    title: "Miniabdominoplastia",
-    description: "Versão menos invasiva da abdominoplastia, indicada para casos de flacidez leve na região abdominal inferior. Incisão menor, recuperação mais rápida e resultados refinados.",
-    image: imgMiniabdominoplastia,
-  },
-  {
-    title: "Pós-bariátrica",
-    description: "Conjunto de procedimentos para remoção do excesso de pele após grande perda de peso. Planejamento estratégico e individualizado para devolver contorno corporal e qualidade de vida ao paciente.",
-    image: imgPosBariatrica,
-  },
-];
-
-const faciaisReparadoras: Procedure[] = [
-  {
-    title: "Blefaroplastia",
-    description: "Cirurgia das pálpebras para corrigir o excesso de pele e bolsas de gordura ao redor dos olhos, proporcionando um olhar mais descansado, jovem e expressivo.",
-    image: imgBlefaroplastia,
-  },
-  {
-    title: "Otoplastia",
-    description: "Correção estética das orelhas proeminentes, devolvendo proporção e simetria ao rosto. Indicada para crianças e adultos que desejam harmonizar o contorno auricular.",
-    image: imgOtoplastia,
-  },
-  {
-    title: "Lobuloplastia",
-    description: "Reparo cirúrgico do lóbulo da orelha rasgado ou alargado pelo uso de brincos pesados ou alargadores, restaurando a forma e a estética da orelha.",
-    image: imgLobuloplastia,
-  },
-  {
-    title: "Tratamento de Queimaduras",
-    description: "Reconstrução e tratamento especializado de sequelas de queimaduras, com abordagem humanizada e técnicas que visam restaurar a funcionalidade e a aparência da pele.",
-    image: imgQueimaduras,
-  },
-  {
-    title: "Feridas Complexas",
-    description: "Tratamento especializado de feridas de difícil cicatrização, utilizando técnicas avançadas para promover a recuperação tecidual e funcional de forma segura.",
-    image: imgFeridasComplexas,
-  },
-  {
-    title: "Refinamento de Cicatrizes",
-    description: "Técnicas cirúrgicas e complementares para melhorar a aparência de cicatrizes inestéticas, promovendo resultados mais discretos e integrados à pele.",
-    image: imgRefinamentoCicatrizes,
-  },
-  {
-    title: "Queloides e Cicatriz Hipertrófica",
-    description: "Tratamento multidisciplinar para queloides e cicatrizes hipertróficas, combinando técnicas cirúrgicas e terapias complementares para controle e melhora estética.",
-    image: imgQueloides,
-  },
-  {
-    title: "Tratamento de Câncer de Pele",
-    description: "Ressecção cirúrgica de lesões cutâneas malignas com reconstrução imediata, priorizando a remoção oncológica segura e o melhor resultado estético possível.",
-    image: imgCancerPele,
-  },
-];
-
-const sections = [
-  {
-    id: "cirurgias-mamarias",
-    title: "Cirurgias Mamárias",
-    subtitle: "Técnicas avançadas com cicatriz reduzida para remodelar, reconstruir e harmonizar as mamas com sofisticação e segurança.",
-    procedures: mamarias,
-    variant: "default" as const,
-  },
-  {
-    id: "contorno-corporal",
-    title: "Contorno Corporal",
-    subtitle: "Procedimentos personalizados para esculpir e redefinir a silhueta, respeitando a anatomia individual de cada paciente.",
-    procedures: contornoCorporal,
-    variant: "overlay" as const,
-  },
-  {
-    id: "faciais-reparadoras",
-    title: "Cirurgias Faciais e Reparadoras",
-    subtitle: "Rejuvenescimento facial e reconstrução reparadora com técnicas que aliam precisão cirúrgica a resultados sofisticados.",
-    procedures: faciaisReparadoras,
-    variant: "default" as const,
-  },
-];
-
-const ProcedureCard: React.FC<{ procedure: Procedure }> = ({ procedure }) => (
-  <Card className="glass-card group h-full border-white/5 hover:border-white/15 transition-all duration-300">
-    <CardContent className="flex flex-col h-full p-5">
-      <div className="aspect-square mb-5 overflow-hidden rounded-xl border border-white/5">
-        {procedure.image ? (
-          <img src={procedure.image} alt={procedure.title} className="w-full h-full object-cover bg-dark-surface" loading="lazy" decoding="async" width="300" height="300" />
-        ) : (
-          <div className="w-full h-full bg-dark-subtle flex items-center justify-center">
-            <span className="text-light-muted text-xs uppercase tracking-widest">Em breve</span>
-          </div>
-        )}
+const ServiceCard: React.FC<typeof services[0]> = ({ icon: Icon, title, description, tags }) => (
+  <div className="lean-card lean-card-accent p-6 flex flex-col gap-4 group hover:shadow-lean transition-all duration-300">
+    <div className="flex items-start gap-4">
+      <div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 transition-all group-hover:scale-110"
+        style={{ background: '#eaf5ed' }}>
+        <Icon className="w-6 h-6" style={{ color: '#3a6b4a' }} />
       </div>
-      <div className="flex-1 space-y-3">
-        <h4 className="text-lg text-light-primary leading-tight uppercase tracking-wide">
-          {procedure.title}
-        </h4>
-        <p className="text-light-muted leading-relaxed text-sm">
-          {procedure.description}
-        </p>
+      <div>
+        <h3 className="font-bold text-lg mb-1" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#1a1a1a', letterSpacing: '0.02em' }}>
+          {title}
+        </h3>
       </div>
-    </CardContent>
-  </Card>
-);
-
-const OverlayCard: React.FC<{ procedure: Procedure }> = ({ procedure }) => (
-  <div className="group h-full rounded-2xl overflow-hidden relative cursor-default" style={{ aspectRatio: '3/4' }}>
-    {procedure.image ? (
-      <img
-        src={procedure.image}
-        alt={procedure.title}
-        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 bg-dark-surface"
-        loading="lazy"
-        decoding="async"
-        width="400"
-        height="533"
-      />
-    ) : (
-      <div className="w-full h-full bg-[hsl(0,0%,18%)] flex items-center justify-center">
-        <span className="text-light-muted text-xs uppercase tracking-widest">Em breve</span>
-      </div>
-    )}
-    {/* Gradient overlay for text readability */}
-    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-    <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
-      <h4 className="text-lg md:text-xl text-white font-medium leading-tight mb-2">
-        {procedure.title}
-      </h4>
-      <p className="text-white/90 text-sm leading-relaxed line-clamp-3 group-hover:line-clamp-none transition-all duration-300">
-        {procedure.description}
-      </p>
+    </div>
+    <p className="text-sm leading-relaxed" style={{ color: '#555555' }}>{description}</p>
+    <div className="flex flex-wrap gap-2 mt-auto">
+      {tags.map(tag => (
+        <span key={tag} className="text-xs font-bold px-2.5 py-1 rounded-full"
+          style={{ background: '#eaf5ed', color: '#3a6b4a', fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+          {tag}
+        </span>
+      ))}
     </div>
   </div>
 );
 
 const ProceduresSection: React.FC = () => {
   return (
-    <section id="procedimentos" className="overflow-hidden relative">
-      <div className="bg-dark-base relative">
-        <div className="absolute inset-0 gradient-glow-bottom" />
-        <div className="absolute top-1/2 left-0 w-[400px] h-[400px] decorative-blur decorative-blur-accent opacity-15" />
-
-        <div className="container mx-auto px-6 lg:px-12 relative z-10">
-
-          {/* Mamárias - dark default */}
-          <div id={sections[0].id} className="section-spacing">
-            <AnimatedSection>
-              <div className="text-center section-header-spacing">
-                <h3 className="text-3xl md:text-4xl lg:text-5xl text-light-primary mb-6 leading-tight tracking-tight">
-                  {sections[0].title}
-                </h3>
-                <p className="text-lg md:text-xl text-light-muted max-w-3xl mx-auto leading-relaxed">
-                  {sections[0].subtitle}
-                </p>
-              </div>
-            </AnimatedSection>
-            <AnimatedSection delay={150}>
-              <div className="max-w-7xl mx-auto relative">
-                <Carousel opts={{ align: "start", loop: true }} className="w-full">
-                  <CarouselContent className="-ml-3 md:-ml-4">
-                    {sections[0].procedures.map((procedure, index) => (
-                      <CarouselItem key={index} className="pl-3 md:pl-4 basis-[85%] sm:basis-1/2 lg:basis-1/4">
-                        <ProcedureCard procedure={procedure} />
-                      </CarouselItem>
-                    ))}
-                  </CarouselContent>
-                  <CarouselPrevious className="hidden md:flex -left-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-dark-surface hover:bg-dark-subtle border border-white/10 hover:border-white/20 text-light-primary z-10 transition-all" />
-                  <CarouselNext className="hidden md:flex -right-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-dark-surface hover:bg-dark-subtle border border-white/10 hover:border-white/20 text-light-primary z-10 transition-all" />
-                </Carousel>
-              </div>
-            </AnimatedSection>
-            <div className="text-center mt-10">
-              <button 
-                onClick={() => document.getElementById('agendamento-form')?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
-                className="btn-pill btn-gold font-semibold"
-              >
-                Agendar Consulta
-              </button>
-            </div>
+    <section id="servicos" className="section-spacing relative overflow-hidden" style={{ background: '#f7f6f3' }}>
+      <div className="absolute inset-0 gradient-glow-bottom pointer-events-none" />
+      <div className="container mx-auto px-6 lg:px-12 relative z-10">
+        <AnimatedSection>
+          <div className="text-center section-header-spacing">
+            <span className="lean-label block mb-3">Modalidades</span>
+            <h2 className="lean-section-title mb-4">Nossos Serviços</h2>
+            <p className="text-base max-w-2xl mx-auto leading-relaxed mt-4" style={{ color: '#555555' }}>
+              Soluções completas para cada tipo de carga, com segurança, tecnologia e atendimento personalizado em todo o Brasil.
+            </p>
           </div>
-        </div>
-      </div>
+        </AnimatedSection>
 
-      {/* Contorno Corporal - warm light background with overlay cards */}
-      <div className="bg-dark-elevated relative">
-        <div className="container mx-auto px-6 lg:px-12 relative z-10">
-          <div id={sections[1].id} className="section-spacing">
-            <AnimatedSection>
-              <div className="text-center section-header-spacing">
-                <h3 className="text-3xl md:text-4xl lg:text-5xl text-light-primary mb-6 leading-tight tracking-tight">
-                  {sections[1].title}
-                </h3>
-                <p className="text-lg md:text-xl text-light-muted max-w-3xl mx-auto leading-relaxed">
-                  {sections[1].subtitle}
-                </p>
-              </div>
-            </AnimatedSection>
-            <AnimatedSection delay={150}>
-              <div className="max-w-7xl mx-auto relative">
-                <Carousel opts={{ align: "start", loop: true }} className="w-full">
-                  <CarouselContent className="-ml-3 md:-ml-4">
-                    {sections[1].procedures.map((procedure, index) => (
-                      <CarouselItem key={index} className="pl-3 md:pl-4 basis-[85%] sm:basis-1/2 lg:basis-1/4">
-                        <OverlayCard procedure={procedure} />
-                      </CarouselItem>
-                    ))}
-                  </CarouselContent>
-                  <CarouselPrevious className="hidden md:flex -left-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/10 hover:bg-white/20 border border-white/10 hover:border-white/20 text-light-primary z-10 transition-all" />
-                  <CarouselNext className="hidden md:flex -right-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/10 hover:bg-white/20 border border-white/10 hover:border-white/20 text-light-primary z-10 transition-all" />
-                </Carousel>
-              </div>
-            </AnimatedSection>
-            <div className="text-center mt-10">
-              <button 
-                onClick={() => document.getElementById('agendamento-form')?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
-                className="btn-pill btn-gold font-semibold"
-              >
-                Agendar Consulta
-              </button>
-            </div>
+        <AnimatedSection delay={150}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((service) => (
+              <ServiceCard key={service.title} {...service} />
+            ))}
           </div>
-        </div>
-      </div>
+        </AnimatedSection>
 
-      {/* Faciais e Reparadoras - dark default */}
-      <div className="bg-dark-base relative">
-        <div className="absolute inset-0 gradient-glow-bottom" />
-        <div className="container mx-auto px-6 lg:px-12 relative z-10">
-          <div id={sections[2].id} className="section-spacing">
-            <AnimatedSection>
-              <div className="text-center section-header-spacing">
-                <h3 className="text-3xl md:text-4xl lg:text-5xl text-light-primary mb-6 leading-tight tracking-tight">
-                  {sections[2].title}
-                </h3>
-                <p className="text-lg md:text-xl text-light-muted max-w-3xl mx-auto leading-relaxed">
-                  {sections[2].subtitle}
-                </p>
-              </div>
-            </AnimatedSection>
-            <AnimatedSection delay={150}>
-              <div className="max-w-7xl mx-auto relative">
-                <Carousel opts={{ align: "start", loop: true }} className="w-full">
-                  <CarouselContent className="-ml-3 md:-ml-4">
-                    {sections[2].procedures.map((procedure, index) => (
-                      <CarouselItem key={index} className="pl-3 md:pl-4 basis-[85%] sm:basis-1/2 lg:basis-1/4">
-                        <ProcedureCard procedure={procedure} />
-                      </CarouselItem>
-                    ))}
-                  </CarouselContent>
-                  <CarouselPrevious className="hidden md:flex -left-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-dark-surface hover:bg-dark-subtle border border-white/10 hover:border-white/20 text-light-primary z-10 transition-all" />
-                  <CarouselNext className="hidden md:flex -right-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-dark-surface hover:bg-dark-subtle border border-white/10 hover:border-white/20 text-light-primary z-10 transition-all" />
-                </Carousel>
-              </div>
-            </AnimatedSection>
-            <div className="text-center mt-10">
-              <button 
-                onClick={() => document.getElementById('agendamento-form')?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
-                className="btn-pill btn-gold font-semibold"
-              >
-                Agendar Consulta
-              </button>
-            </div>
-          </div>
+        <div className="text-center mt-12">
+          <button
+            onClick={() => document.getElementById('cotacao')?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
+            className="btn-pill btn-primary font-bold text-sm px-8 py-3"
+          >
+            Solicitar Cotação
+          </button>
         </div>
       </div>
     </section>

@@ -153,10 +153,10 @@ const WhatsAppPopup: React.FC<WhatsAppPopupProps> = ({
 
             <div>
               <label className="block text-xs font-medium text-gray-700 mb-1">
-                Procedimento de Interesse *
+                Tipo de Carga *
               </label>
-              <Select 
-                value={whatsAppFormData.procedure} 
+              <Select
+                value={whatsAppFormData.procedure}
                 onValueChange={(value) => {
                   setWhatsAppFormData({...whatsAppFormData, procedure: value, customProcedure: value === 'Outro' ? whatsAppFormData.customProcedure : ''});
                   if (!hasStartedWhatsAppForm) {
@@ -164,8 +164,8 @@ const WhatsAppPopup: React.FC<WhatsAppPopupProps> = ({
                   }
                 }}
               >
-              <SelectTrigger className="h-11 text-base rounded-lg border-gray-300 bg-gray-50 text-gray-900" aria-label="Selecionar procedimento de interesse">
-                  <SelectValue placeholder="Selecione um procedimento" />
+              <SelectTrigger className="h-11 text-base rounded-lg border-gray-300 bg-gray-50 text-gray-900" aria-label="Selecionar tipo de carga">
+                  <SelectValue placeholder="Selecione o tipo de carga" />
                 </SelectTrigger>
                 <SelectContent className="bg-white border-gray-200 max-h-72 z-[60]">
                   {procedureGroups.map((group) => (
@@ -186,7 +186,7 @@ const WhatsAppPopup: React.FC<WhatsAppPopupProps> = ({
             {whatsAppFormData.procedure === 'Outro' && (
               <div>
                 <label className="block text-xs font-medium text-gray-700 mb-1">
-                  Especifique o Procedimento *
+                  Especifique o Tipo de Carga *
                 </label>
                 <Input
                   type="text"
@@ -194,7 +194,7 @@ const WhatsAppPopup: React.FC<WhatsAppPopupProps> = ({
                   value={whatsAppFormData.customProcedure}
                   onChange={(e) => handleWhatsAppFormFieldChange('customProcedure', e.target.value)}
                   className="h-11 text-base rounded-lg border-gray-300 bg-gray-50 text-gray-900 placeholder:text-gray-500 focus:border-gray-500 focus:ring-gray-500"
-                  placeholder="Digite o nome do procedimento desejado"
+                  placeholder="Descreva o tipo de carga"
                 />
               </div>
             )}

@@ -1,8 +1,6 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
-import vivaPlasticaLogo from '@/assets/logo-viva-plastica-clinica.svg';
 
 interface HeaderProps {
   isMenuOpen: boolean;
@@ -10,46 +8,57 @@ interface HeaderProps {
   scrollToSection: (sectionId: string) => void;
 }
 
+const navLinks = [
+  { label: 'A Empresa', id: 'sobre' },
+  { label: 'Serviços', id: 'servicos' },
+  { label: 'Frota', id: 'frota' },
+  { label: 'Como Funciona', id: 'como-funciona' },
+  { label: 'Depoimentos', id: 'depoimentos' },
+];
+
 const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen, scrollToSection }) => {
   return (
-    <header className="fixed top-0 left-0 right-0 bg-dark-base/80 backdrop-blur-xl border-b border-white/5 z-50">
+    <header className="fixed top-0 left-0 right-0 z-50 header-lean">
       <div className="container mx-auto px-4 sm:px-6 lg:px-12">
-        <div className="flex items-center justify-between h-16 sm:h-20 lg:h-24">
-          <div className="flex items-center">
-            <img 
-              src={vivaPlasticaLogo} 
-              alt="Dra. Fabiana Lage - Cirurgia Plástica" 
-              className="h-8 sm:h-10 lg:h-12 w-auto brightness-0 invert"
-              width="200"
-              height="48"
-            />
-          </div>
-          
+        <div className="flex items-center justify-between h-16 sm:h-20">
+
+          {/* Logo */}
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="flex items-baseline gap-0 focus:outline-none"
+            aria-label="LEAN Transportes - Início"
+          >
+            <span style={{ fontFamily: "'Playfair Display', serif", fontSize: '30px', fontWeight: 900, color: '#3a6b4a', lineHeight: '1', letterSpacing: '-2px' }}>
+              LEAN
+            </span>
+            <span style={{ fontFamily: "'Playfair Display', serif", fontSize: '30px', fontWeight: 900, color: '#ffffff', background: '#3a6b4a', padding: '0 5px', lineHeight: '1.2', letterSpacing: '-2px' }}>
+              T
+            </span>
+          </button>
+
           {/* Desktop Menu */}
-          <nav className="hidden lg:flex items-center space-x-10">
-            <button onClick={() => scrollToSection('sobre')} className="text-light-secondary hover:text-light-primary transition-colors font-medium text-sm tracking-wide link-hover">
-              Sobre
-            </button>
-            <button onClick={() => scrollToSection('procedimentos')} className="text-light-secondary hover:text-light-primary transition-colors font-medium text-sm tracking-wide link-hover">
-              Procedimentos
-            </button>
-            <button onClick={() => scrollToSection('jornada')} className="text-light-secondary hover:text-light-primary transition-colors font-medium text-sm tracking-wide link-hover">
-              Jornada do Paciente
-            </button>
-            <button onClick={() => scrollToSection('depoimentos')} className="text-light-secondary hover:text-light-primary transition-colors font-medium text-sm tracking-wide link-hover">
-              Depoimentos
-            </button>
-            <Button 
-              onClick={() => scrollToSection('agendamento-form')} 
-              className="btn-pill btn-gold text-sm font-semibold"
+          <nav className="hidden lg:flex items-center space-x-8">
+            {navLinks.map(({ label, id }) => (
+              <button
+                key={id}
+                onClick={() => scrollToSection(id)}
+                className="text-[#2d2d2d] hover:text-[#3a6b4a] transition-colors text-sm link-hover"
+                style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' }}
+              >
+                {label}
+              </button>
+            ))}
+            <Button
+              onClick={() => scrollToSection('cotacao')}
+              className="btn-pill btn-primary text-sm px-5 py-2.5"
             >
-              Agendar Consulta
+              Solicitar Cotação
             </Button>
           </nav>
 
-          {/* Mobile/Tablet Menu Button - 48px touch target */}
-          <button 
-            className="lg:hidden text-light-primary min-w-[48px] min-h-[48px] flex items-center justify-center -mr-2"
+          {/* Mobile Menu Button */}
+          <button
+            className="lg:hidden text-[#3a6b4a] min-w-[48px] min-h-[48px] flex items-center justify-center -mr-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'}
           >
@@ -57,28 +66,26 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen, scrollToSect
           </button>
         </div>
 
-        {/* Mobile/Tablet Menu */}
+        {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-dark-base/95 backdrop-blur-xl border-b border-white/5">
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-[#f7f6f3] border-b border-[#cce8d4] shadow-md">
             <nav className="flex flex-col p-6 space-y-1">
-              <button onClick={() => scrollToSection('sobre')} className="text-left text-light-secondary hover:text-light-primary transition-colors font-medium text-sm tracking-wide min-h-[48px] flex items-center">
-                Sobre
-              </button>
-              <button onClick={() => scrollToSection('procedimentos')} className="text-left text-light-secondary hover:text-light-primary transition-colors font-medium text-sm tracking-wide min-h-[48px] flex items-center">
-                Procedimentos
-              </button>
-              <button onClick={() => scrollToSection('jornada')} className="text-left text-light-secondary hover:text-light-primary transition-colors font-medium text-sm tracking-wide min-h-[48px] flex items-center">
-                Jornada do Paciente
-              </button>
-              <button onClick={() => scrollToSection('depoimentos')} className="text-left text-light-secondary hover:text-light-primary transition-colors font-medium text-sm tracking-wide min-h-[48px] flex items-center">
-                Depoimentos
-              </button>
-              <div className="pt-2">
-                <Button 
-                  onClick={() => scrollToSection('agendamento-form')} 
-                  className="btn-pill btn-gold text-sm font-semibold w-full min-h-[48px]"
+              {navLinks.map(({ label, id }) => (
+                <button
+                  key={id}
+                  onClick={() => scrollToSection(id)}
+                  className="text-left text-[#2d2d2d] hover:text-[#3a6b4a] transition-colors text-sm min-h-[48px] flex items-center"
+                  style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' }}
                 >
-                  Agendar Consulta
+                  {label}
+                </button>
+              ))}
+              <div className="pt-2">
+                <Button
+                  onClick={() => scrollToSection('cotacao')}
+                  className="btn-pill btn-primary text-sm w-full min-h-[48px]"
+                >
+                  Solicitar Cotação
                 </Button>
               </div>
             </nav>

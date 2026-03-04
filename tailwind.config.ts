@@ -81,6 +81,28 @@ export default {
 					'secondary': 'hsl(var(--glow-secondary))',
 					'accent': 'hsl(var(--glow-accent))'
 				},
+				// LEAN Transportes brand palette
+				lean: {
+					'green-900': '#1e3d28',
+					'green-800': '#2a5235',
+					'green-700': '#3a6b4a',
+					'green-600': '#4a8460',
+					'green-500': '#5c9e74',
+					'green-400': '#7dba93',
+					'green-300': '#a5d1b4',
+					'green-200': '#cce8d4',
+					'green-100': '#eaf5ed',
+					'charcoal-900': '#0d0d0d',
+					'charcoal-800': '#1a1a1a',
+					'charcoal-700': '#2d2d2d',
+					'charcoal-600': '#3f3f3f',
+					'charcoal-500': '#555555',
+					'charcoal-400': '#777777',
+					'charcoal-300': '#999999',
+					'charcoal-200': '#cccccc',
+					'charcoal-100': '#f0f0f0',
+					'off-white': '#f7f6f3',
+				},
 				// Legacy aliases for compatibility
 				luxury: {
 					'deep-black': 'hsl(var(--dark-base))',
@@ -142,14 +164,15 @@ export default {
 				'float': 'float 6s ease-in-out infinite'
 			},
 			fontFamily: {
-				'sans': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
-				'display': ['Inter', 'sans-serif'],
-				'heading': ['Inter', 'sans-serif'],
-				'body': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+				'sans': ['Barlow', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+				'display': ['Playfair Display', 'serif'],
+				'heading': ['Barlow Condensed', 'Barlow', 'sans-serif'],
+				'body': ['Barlow', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+				'condensed': ['Barlow Condensed', 'sans-serif'],
 				// Legacy aliases
-				'myriad': ['Inter', 'sans-serif'],
-				'serif': ['Inter', 'sans-serif'],
-				'subtitle': ['Inter', 'sans-serif']
+				'myriad': ['Barlow', 'sans-serif'],
+				'serif': ['Playfair Display', 'serif'],
+				'subtitle': ['Barlow Condensed', 'sans-serif']
 			},
 			boxShadow: {
 				'glow-sm': '0 0 20px -5px hsla(var(--glow-primary), 0.2)',
