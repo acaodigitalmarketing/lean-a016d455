@@ -1,85 +1,73 @@
 import React, { useState } from 'react';
 import { AnimatedSection } from '@/hooks/useScrollAnimation';
-import { Truck, Construction, Shovel, Layers, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const trucks = [
   {
-    icon: Truck,
     title: 'Caçamba MB Axor 3131',
     models: 'Mercedes Benz Axor 3131',
     description: 'Caminhão caçamba de alta robustez para operações pesadas de mineração e terraplanagem. Motor potente e estrutura reforçada para máxima produtividade em terrenos exigentes.',
     tags: ['Mineração', 'Terraplanagem', '6x4'],
-    photoBg: 'linear-gradient(135deg, #1e3d28 0%, #2a5235 100%)',
+    photo: '/lovable-uploads/MERCEDES BENZ AXOR 3131.webp',
     photoLabel: 'MB Axor 3131',
   },
   {
-    icon: Truck,
     title: 'Caçamba VW 3260',
     models: 'Volkswagen 3260',
     description: 'Caminhão caçamba com excelente relação custo-benefício para transporte de materiais em obras, mineração e movimentação de terra. Confiabilidade e eficiência operacional.',
     tags: ['Mineração', 'Terraplanagem', '6x4'],
-    photoBg: 'linear-gradient(135deg, #2a5235 0%, #3a6b4a 100%)',
+    photo: '/lovable-uploads/VW 3260.webp',
     photoLabel: 'VW 3260',
   },
   {
-    icon: Layers,
     title: 'Munck Ford Cargo 2629',
     models: 'Ford Cargo 2629 6x4',
     description: 'Caminhão munck com capacidade de içamento de até 10.000 kg. Ideal para movimentação de máquinas industriais, geradores, transformadores e operações com cesto aéreo.',
     tags: ['10.000 kg', 'Içamento', 'Cesto Aéreo'],
-    photoBg: 'linear-gradient(135deg, #2a5235 0%, #4a8460 100%)',
+    photo: '/lovable-uploads/•_FORD _ CARGO 2629 6 X 4 – MUNCK.webp',
     photoLabel: 'Ford Cargo 2629',
   },
   {
-    icon: Layers,
     title: 'Munck MB Atego 3133',
     models: 'Mercedes Benz Atego 3133/48 6x4',
     description: 'Caminhão munck de alto desempenho para cargas especiais e içamento de equipamentos pesados. Estrutura robusta e alcance extendido para operações de grande porte.',
     tags: ['10.000 kg', 'Içamento', 'Cargas Especiais'],
-    photoBg: 'linear-gradient(135deg, #1e3d28 0%, #3a6b4a 100%)',
+    photo: '/lovable-uploads/ATEGO 3133_48 6X4 – MUNCK.webp',
     photoLabel: 'MB Atego 3133',
   },
 ];
 
 const machines = [
   {
-    icon: Construction,
     title: 'Escavadeira XCMG',
     models: 'Peso Operacional: 22.500 kg · Caçamba: 1,2 m³',
     description: 'Alta performance e eficiência para terraplanagem, construção civil, mineração, obras rurais e demolição moderada. Versatilidade e excelente custo-benefício para projetos de qualquer porte.',
     tags: ['22.500 kg', '1,2 m³', 'Terraplanagem', 'Construção Civil'],
-    photoBg: 'linear-gradient(135deg, #3a6b4a 0%, #5c9e74 100%)',
+    photo: '/lovable-uploads/ESCAVADEIRA.webp',
     photoLabel: 'Escavadeira XCMG',
   },
   {
-    icon: Shovel,
     title: 'Retroescavadeira JCB',
     models: 'Peso Operacional: 8.185 kg · Escavação: 4,54 m',
     description: 'Solução ideal para o mercado agrícola e obras urbanas. Perfeita para escavação de valas, terraplanagem, nivelamento, carregamento de materiais e diversos serviços agrícolas.',
     tags: ['8.185 kg', '4,54 m profundidade', 'Agrícola', 'Obras Urbanas'],
-    photoBg: 'linear-gradient(135deg, #4a8460 0%, #7dba93 100%)',
+    photo: '/lovable-uploads/RETROESCAVADEIRA.webp',
     photoLabel: 'Retroescavadeira JCB',
   },
 ];
 
 type CardItem = typeof trucks[0];
 
-const EquipmentCard: React.FC<CardItem> = ({ icon: Icon, title, models, description, tags, photoBg, photoLabel }) => (
-  <div className="flex flex-col transition-all duration-300 overflow-hidden rounded-xl flex-shrink-0" style={{ flex: '1 0 0', minWidth: '220px', border: '1px solid #e8e8e8' }}>
-    {/* Photo mock */}
-    <div className="relative h-48 flex items-center justify-center" style={{ background: photoBg }}>
-      <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 30% 50%, #ffffff 0%, transparent 60%)' }} />
-      <div className="relative z-10 text-center">
-        <div className="w-16 h-16 rounded-full mx-auto mb-3 flex items-center justify-center" style={{ background: 'rgba(255,255,255,0.15)' }}>
-          <Icon className="w-8 h-8 text-white" />
-        </div>
-        <span className="text-white text-xs font-bold tracking-[0.2em] uppercase opacity-70" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
-          {photoLabel}
-        </span>
-      </div>
-      <div className="absolute bottom-3 right-3 text-xs px-2 py-0.5 rounded" style={{ background: 'rgba(0,0,0,0.3)', color: 'rgba(255,255,255,0.6)', fontFamily: "'Barlow Condensed', sans-serif" }}>
-        Foto em breve
-      </div>
+const EquipmentCard: React.FC<CardItem & { photoHeight?: string }> = ({ title, models, description, tags, photo, photoLabel, photoHeight = 'h-48' }) => (
+  <div className="group flex flex-col transition-all duration-300 overflow-hidden rounded-xl flex-shrink-0 hover:-translate-y-1 hover:shadow-xl" style={{ flex: '1 0 0', minWidth: '220px', border: '1px solid #e8e8e8' }}>
+    {/* Photo */}
+    <div className={`relative ${photoHeight} overflow-hidden bg-[#1e3d28]`}>
+      <img
+        src={photo}
+        alt={photoLabel}
+        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        loading="lazy"
+      />
     </div>
 
     {/* Content */}
@@ -103,7 +91,7 @@ const EquipmentCard: React.FC<CardItem> = ({ icon: Icon, title, models, descript
   </div>
 );
 
-const CardGroup: React.FC<{ items: CardItem[] }> = ({ items }) => {
+const CardGroup: React.FC<{ items: CardItem[]; photoHeight?: string }> = ({ items, photoHeight }) => {
   const [current, setCurrent] = useState(0);
 
   const prev = () => setCurrent(c => Math.max(0, c - 1));
@@ -114,7 +102,7 @@ const CardGroup: React.FC<{ items: CardItem[] }> = ({ items }) => {
       {/* Desktop: todos em linha com gap */}
       <div className="hidden md:flex gap-4">
         {items.map((item) => (
-          <EquipmentCard key={item.title} {...item} />
+          <EquipmentCard key={item.title} {...item} photoHeight={photoHeight} />
         ))}
       </div>
 
@@ -212,7 +200,7 @@ const ProceduresSection: React.FC = () => {
               </h3>
               <div className="h-px flex-1" style={{ background: '#cce8d4' }} />
             </div>
-            <CardGroup items={machines} />
+            <CardGroup items={machines} photoHeight="h-72" />
           </div>
         </AnimatedSection>
 

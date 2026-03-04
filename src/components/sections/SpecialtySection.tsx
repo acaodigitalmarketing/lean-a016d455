@@ -31,18 +31,7 @@ const SpecialtySection: React.FC = () => {
         scrollTrigger: { trigger: visualColRef.current, start: 'top 80%', once: true },
       });
 
-      // 4 feature badges — stagger
-      if (badgesRef.current) {
-        gsap.from(Array.from(badgesRef.current.children), {
-          opacity: 0,
-          y: 14,
-          stagger: 0.1,
-          duration: 0.4,
-          ease: 'power2.out',
-          delay: 0.4,
-          scrollTrigger: { trigger: badgesRef.current, start: 'top 85%', once: true },
-        });
-      }
+      // feature badges — sem animação GSAP, hover via CSS
     }, sectionRef);
 
     return () => ctx.revert();
@@ -64,10 +53,16 @@ const SpecialtySection: React.FC = () => {
         <div className="lean-card overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2">
             {/* Visual side */}
-            <div ref={visualColRef} className="relative min-h-[280px] lg:min-h-auto flex items-center justify-center"
-              style={{ background: 'linear-gradient(135deg, #1e3d28, #3a6b4a)', willChange: 'transform' }}>
-              <div className="absolute top-[-20px] right-[-20px] w-40 h-40 rounded-full opacity-10"
-                style={{ background: '#7dba93' }} />
+            <div ref={visualColRef} className="group relative min-h-[280px] lg:min-h-auto flex items-center justify-center overflow-hidden"
+              style={{ willChange: 'transform' }}>
+              {/* Background photo */}
+              <img
+                src="/lovable-uploads/manutenção.webp"
+                alt="Manutenção de equipamentos LEAN"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+              />
+              {/* Gradient overlay for readability */}
+              <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(30,61,40,0.82), rgba(58,107,74,0.72))' }} />
               <div className="relative z-10 text-center p-8">
                 <div className="w-24 h-24 rounded-full mx-auto mb-6 flex items-center justify-center"
                   style={{ background: 'rgba(255,255,255,0.15)' }}>
@@ -115,7 +110,7 @@ const SpecialtySection: React.FC = () => {
                   { icon: Clock, text: 'Resposta rápida a ocorrências' },
                   { icon: Zap, text: 'Máxima eficiência operacional' },
                 ].map(({ icon: Icon, text }) => (
-                  <div key={text} className="flex items-center gap-2 text-xs p-3 rounded-lg" style={{ background: '#eaf5ed' }}>
+                  <div key={text} className="flex items-center gap-2 text-xs p-3 rounded-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sm cursor-default" style={{ background: '#eaf5ed' }}>
                     <Icon className="w-4 h-4 flex-shrink-0" style={{ color: '#3a6b4a' }} />
                     <span style={{ color: '#2d2d2d' }}>{text}</span>
                   </div>

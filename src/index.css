@@ -342,11 +342,22 @@
 
 /* ── SECTION SPACING ── */
 .section-spacing {
-  @apply py-20 md:py-28 lg:py-36;
+  @apply py-12 md:py-16 lg:py-20;
 }
 
 .section-header-spacing {
-  @apply mb-12 md:mb-20 lg:mb-24;
+  @apply mb-8 md:mb-10 lg:mb-12;
+}
+
+/* ── INFINITE SCROLL CAROUSEL ── */
+@keyframes testimonials-scroll {
+  to { transform: translateX(calc(-50% - 12px)); }
+}
+.testimonials-track {
+  animation: testimonials-scroll 40s linear infinite;
+}
+.testimonials-track:hover {
+  animation-play-state: paused;
 }
 
 /* ── DECORATIVE ELEMENTS ── */
@@ -363,6 +374,28 @@
 
 .decorative-blur-accent {
   background: rgba(92, 158, 116, 0.10);
+}
+
+/* ── NAV ICON REVEAL ── */
+.nav-icon-reveal {
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-icon-reveal .nav-icon {
+  width: 0;
+  opacity: 0;
+  transform: scale(0.3);
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: width 0.4s ease, opacity 0.4s ease, transform 0.4s ease, margin 0.4s ease;
+}
+
+.nav-icon-reveal:hover .nav-icon {
+  width: 16px;
+  opacity: 1;
+  transform: scale(1);
+  margin-right: 6px;
 }
 
 /* ── LINK HOVER ── */
@@ -455,4 +488,20 @@
 
 .shadow-lean-lg {
   box-shadow: 0 16px 48px rgba(58, 107, 74, 0.25);
+}
+
+/* ── SCROLLBAR ── */
+body::-webkit-scrollbar {
+  width: 8px;
+}
+body::-webkit-scrollbar-track {
+  background: #0e1f12;
+}
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #3a6b4a, #7dba93);
+  border-radius: 20px;
+  border: 2px solid #0e1f12;
+}
+body::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #4a8460, #a5d1b4);
 }

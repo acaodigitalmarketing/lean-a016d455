@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
+import React, { useRef } from 'react';
+import { Star, Quote } from 'lucide-react';
 import { AnimatedSection } from '@/hooks/useScrollAnimation';
 
 const testimonials = [
@@ -43,17 +43,14 @@ const StarRating = ({ count }: { count: number }) => (
   </div>
 );
 
-const VISIBLE = 3; // cards visíveis no desktop
+// duplica para loop infinito
+const allTestimonials = [...testimonials, ...testimonials];
 
 const TestimonialsSection: React.FC = () => {
-  const [current, setCurrent] = useState(0);
-  const maxDesktop = testimonials.length - VISIBLE;
-
-  const prev = () => setCurrent(c => Math.max(0, c - 1));
-  const next = () => setCurrent(c => Math.min(maxDesktop, c + 1));
-
+  const photoContainerRef = useRef<HTMLDivElement>(null);
+  const photoImgRef = useRef<HTMLImageElement>(null);
   return (
-    <section id="depoimentos" className="section-spacing relative overflow-hidden" style={{ background: '#f7f6f3' }}>
+    <section id="depoimentos" className="pt-8 md:pt-10 lg:pt-12 relative overflow-hidden" style={{ background: '#f7f6f3' }}>
       <div className="absolute top-0 left-1/4 w-[400px] h-[400px] decorative-blur decorative-blur-primary opacity-15" />
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
@@ -66,145 +63,78 @@ const TestimonialsSection: React.FC = () => {
             </p>
           </div>
         </AnimatedSection>
+      </div>
 
-        <AnimatedSection delay={150}>
-          {/* Desktop: carrossel deslizando 3 visíveis */}
-          <div className="hidden md:block relative">
-            <div className="overflow-hidden">
-              <div
-                className="flex gap-6 transition-transform duration-400 ease-in-out"
-                style={{ transform: `translateX(calc(-${current} * (100% / ${VISIBLE} + 8px)))` }}
-              >
-                {testimonials.map((t, i) => (
-                  <div
-                    key={i}
-                    className="lean-card lean-card-accent p-6 flex flex-col gap-4 flex-shrink-0"
-                    style={{ width: `calc((100% - ${(VISIBLE - 1) * 24}px) / ${VISIBLE})` }}
-                  >
-                    <Quote className="w-8 h-8 flex-shrink-0" style={{ color: '#cce8d4' }} />
-                    <p className="text-sm leading-relaxed flex-1" style={{ color: '#555555' }}>{t.text}</p>
-                    <div>
-                      <StarRating count={t.stars} />
-                      <div className="mt-3">
-                        <div className="font-bold text-sm" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#1a1a1a' }}>{t.name}</div>
-                        <div className="text-xs mt-0.5" style={{ color: '#777777' }}>{t.role}</div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
+      {/* Carrossel infinito — full width com fade nas bordas */}
+      <div
+        className="relative overflow-hidden"
+        style={{ maskImage: 'linear-gradient(to right, transparent, white 10%, white 90%, transparent)', WebkitMaskImage: 'linear-gradient(to right, transparent, white 10%, white 90%, transparent)' }}
+      >
+        <div className="testimonials-track flex gap-6 w-max py-4 px-3">
+          {allTestimonials.map((t, i) => (
+            <div
+              key={i}
+              className="lean-card lean-card-accent p-6 flex flex-col gap-4 flex-shrink-0 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+              style={{ width: '340px' }}
+            >
+              <Quote className="w-8 h-8 flex-shrink-0" style={{ color: '#cce8d4' }} />
+              <p className="text-sm leading-relaxed flex-1" style={{ color: '#555555' }}>{t.text}</p>
+              <div>
+                <StarRating count={t.stars} />
+                <div className="mt-3">
+                  <div className="font-bold text-sm" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#1a1a1a' }}>{t.name}</div>
+                  <div className="text-xs mt-0.5" style={{ color: '#777777' }}>{t.role}</div>
+                </div>
               </div>
             </div>
+          ))}
+        </div>
+      </div>
 
-            {/* Controles desktop */}
-            <div className="flex items-center justify-center gap-4 mt-8">
-              <button
-                onClick={prev}
-                disabled={current === 0}
-                className="w-10 h-10 rounded-full flex items-center justify-center transition-all disabled:opacity-30"
-                style={{ background: '#3a6b4a', color: '#ffffff' }}
-                aria-label="Anterior"
-              >
-                <ChevronLeft className="w-5 h-5" />
-              </button>
+      {/* Stats full-width com foto */}
+      <div className="mt-16 md:mt-24">
+        {/* Foto full-width */}
+        <div ref={photoContainerRef} className="relative w-full overflow-hidden" style={{ height: '480px' }}>
+          <img
+            ref={photoImgRef}
+            src="/lovable-uploads/stats-bg.webp"
+            alt="LEAN Transportes em operação"
+            className="absolute inset-0 w-full h-full object-cover object-center"
+            loading="lazy"
+          />
+          {/* overlay leve para legibilidade */}
+          <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.15)' }} />
+        </div>
 
-              <div className="flex gap-2">
-                {testimonials.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setCurrent(Math.min(i, maxDesktop))}
-                    className="w-2 h-2 rounded-full transition-all"
-                    style={{ background: i >= current && i < current + VISIBLE ? '#3a6b4a' : '#cce8d4' }}
-                    aria-label={`Slide ${i + 1}`}
-                  />
-                ))}
-              </div>
-
-              <button
-                onClick={next}
-                disabled={current >= maxDesktop}
-                className="w-10 h-10 rounded-full flex items-center justify-center transition-all disabled:opacity-30"
-                style={{ background: '#3a6b4a', color: '#ffffff' }}
-                aria-label="Próximo"
-              >
-                <ChevronRight className="w-5 h-5" />
-              </button>
-            </div>
-          </div>
-
-          {/* Mobile: 1 card por vez */}
-          <div className="md:hidden relative">
-            <div className="overflow-hidden rounded-xl">
-              <div
-                className="flex transition-transform duration-300 ease-in-out"
-                style={{ transform: `translateX(-${current * 100}%)` }}
-              >
-                {testimonials.map((t, i) => (
-                  <div key={i} className="w-full flex-shrink-0">
-                    <div className="lean-card lean-card-accent p-6 flex flex-col gap-4">
-                      <Quote className="w-8 h-8 flex-shrink-0" style={{ color: '#cce8d4' }} />
-                      <p className="text-sm leading-relaxed" style={{ color: '#555555' }}>{t.text}</p>
-                      <div>
-                        <StarRating count={t.stars} />
-                        <div className="mt-3">
-                          <div className="font-bold text-sm" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#1a1a1a' }}>{t.name}</div>
-                          <div className="text-xs mt-0.5" style={{ color: '#777777' }}>{t.role}</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="flex items-center justify-between mt-5">
-              <button
-                onClick={prev}
-                disabled={current === 0}
-                className="w-10 h-10 rounded-full flex items-center justify-center transition-all disabled:opacity-30"
-                style={{ background: '#3a6b4a', color: '#ffffff' }}
-                aria-label="Anterior"
-              >
-                <ChevronLeft className="w-5 h-5" />
-              </button>
-              <div className="flex gap-2">
-                {testimonials.map((_, i) => (
-                  <button key={i} onClick={() => setCurrent(i)} className="w-2 h-2 rounded-full transition-all"
-                    style={{ background: i === current ? '#3a6b4a' : '#cce8d4' }} aria-label={`Slide ${i + 1}`} />
-                ))}
-              </div>
-              <button
-                onClick={next}
-                disabled={current === testimonials.length - 1}
-                className="w-10 h-10 rounded-full flex items-center justify-center transition-all disabled:opacity-30"
-                style={{ background: '#3a6b4a', color: '#ffffff' }}
-                aria-label="Próximo"
-              >
-                <ChevronRight className="w-5 h-5" />
-              </button>
-            </div>
-          </div>
-        </AnimatedSection>
-
-        {/* Trust badges */}
-        <AnimatedSection delay={200}>
-          <div className="flex flex-wrap items-center justify-center gap-8 mt-16 pt-12 border-t" style={{ borderColor: '#cce8d4' }}>
+        {/* Barra de stats */}
+        <div className="w-full py-10 px-6" style={{ background: '#1e3d28' }}>
+          <div className="max-w-5xl mx-auto flex flex-wrap items-center justify-center gap-12 md:gap-20">
             {[
-              { value: '+500', label: 'Empresas atendidas' },
-              { value: '+50.000', label: 'Cargas entregues' },
-              { value: '4.9/5', label: 'Avaliacao media' },
-              { value: '15+', label: 'Anos de mercado' },
+              { value: '+500', label: 'Empresas\natendidas' },
+              { value: '+50.000', label: 'Cargas\nentregues' },
+              { value: '4.9/5', label: 'Avaliação\nmédia' },
+              { value: '15+', label: 'Anos de\nmercado' },
             ].map(({ value, label }) => (
               <div key={label} className="text-center">
-                <div className="font-bold text-3xl" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#3a6b4a' }}>
+                <div className="font-bold text-white" style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 'clamp(32px, 5vw, 48px)', letterSpacing: '-0.5px', lineHeight: 1 }}>
                   {value}
                 </div>
-                <div className="text-xs mt-1 tracking-wide uppercase" style={{ color: '#777777', fontFamily: "'Barlow Condensed', sans-serif" }}>
+                <div className="text-xs mt-2 tracking-widest uppercase whitespace-pre-line" style={{ color: '#7dba93', fontFamily: "'Barlow Condensed', sans-serif" }}>
                   {label}
                 </div>
               </div>
             ))}
           </div>
-        </AnimatedSection>
+          <div className="flex justify-center mt-8">
+            <button
+              onClick={() => document.getElementById('equipamentos')?.scrollIntoView({ behavior: 'smooth' })}
+              className="btn-pill font-bold text-sm px-8 py-3 transition-all duration-300 hover:bg-white/10 hover:border-white/70 hover:-translate-y-0.5"
+              style={{ border: '1.5px solid rgba(255,255,255,0.4)', color: '#ffffff', background: 'transparent', fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: '0.08em', textTransform: 'uppercase' }}
+            >
+              Saiba mais sobre a LEAN
+            </button>
+          </div>
+        </div>
       </div>
     </section>
   );

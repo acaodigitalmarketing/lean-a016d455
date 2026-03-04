@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Building2, Wrench, Truck, Route } from 'lucide-react';
 
 interface HeaderProps {
   isMenuOpen: boolean;
@@ -9,10 +9,10 @@ interface HeaderProps {
 }
 
 const navLinks = [
-  { label: 'A Lean', id: 'sobre' },
-  { label: 'Serviços', id: 'servicos' },
-  { label: 'Equipamentos', id: 'equipamentos' },
-  { label: 'Como Funciona', id: 'como-funciona' },
+  { label: 'A Lean', id: 'sobre', Icon: Building2 },
+  { label: 'Diferenciais', id: 'servicos', Icon: Wrench },
+  { label: 'Equipamentos', id: 'equipamentos', Icon: Truck },
+  { label: 'Como Funciona', id: 'como-funciona', Icon: Route },
 ];
 
 const openForm = () => window.dispatchEvent(new CustomEvent('open-whatsapp-form'));
@@ -26,26 +26,26 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen, scrollToSect
           {/* Logo */}
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="flex items-baseline gap-0 focus:outline-none"
+            className="focus:outline-none"
             aria-label="LEAN Transportes e Empreendimentos - Início"
           >
-            <span style={{ fontFamily: "'Playfair Display', serif", fontSize: '30px', fontWeight: 900, color: '#3a6b4a', lineHeight: '1', letterSpacing: '-2px' }}>
-              LEAN
-            </span>
-            <span style={{ fontFamily: "'Playfair Display', serif", fontSize: '30px', fontWeight: 900, color: '#ffffff', background: '#3a6b4a', padding: '0 5px', lineHeight: '1.2', letterSpacing: '-2px' }}>
-              T
-            </span>
+            <img
+              src="/lovable-uploads/Ativo 1.svg"
+              alt="LEAN Transportes"
+              style={{ height: '40px', width: 'auto' }}
+            />
           </button>
 
           {/* Desktop Menu */}
           <nav className="hidden lg:flex items-center space-x-8">
-            {navLinks.map(({ label, id }) => (
+            {navLinks.map(({ label, id, Icon }) => (
               <button
                 key={id}
                 onClick={() => scrollToSection(id)}
-                className="text-[#2d2d2d] hover:text-[#3a6b4a] transition-colors text-sm link-hover"
+                className="nav-icon-reveal text-[#2d2d2d] hover:text-[#3a6b4a] transition-colors text-sm link-hover"
                 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' }}
               >
+                <Icon className="nav-icon" style={{ width: '16px', height: '16px', color: '#3a6b4a' }} strokeWidth={2} />
                 {label}
               </button>
             ))}

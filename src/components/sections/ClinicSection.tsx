@@ -57,19 +57,21 @@ const ClinicSection: React.FC = () => {
 
   return (
     <section ref={sectionRef} id="frota" className="section-spacing relative overflow-hidden">
-      {/* Background verde escuro */}
-      <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, #1e3d28 0%, #2a5235 60%, #3a6b4a 100%)' }} />
-      <div className="absolute top-[-80px] right-[-80px] w-[400px] h-[400px] rounded-full opacity-10"
-        style={{ background: '#5c9e74' }} />
-      <div className="absolute bottom-[-100px] left-[-60px] w-[300px] h-[300px] rounded-full opacity-15"
-        style={{ background: '#1e3d28' }} />
+      {/* Background photo */}
+      <img
+        src="/lovable-uploads/stats-bg (1).webp"
+        alt="Nossa frota LEAN"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+      {/* Overlay para legibilidade */}
+      <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(20,42,27,0.95) 0%, rgba(30,61,40,0.92) 60%, rgba(42,82,53,0.88) 100%)' }} />
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Stats grid — lado esquerdo */}
           <div ref={statGridRef} className="grid grid-cols-2 gap-4">
             {fleetStats.map(({ icon: Icon, value, label }) => (
-              <div key={label} className="rounded-xl p-6 text-center"
+              <div key={label} className="rounded-xl p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:scale-[1.03]"
                 style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)' }}>
                 <Icon className="w-8 h-8 mx-auto mb-3" style={{ color: '#7dba93' }} />
                 <div className="text-white font-black text-3xl mb-1"

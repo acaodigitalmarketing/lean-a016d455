@@ -11,6 +11,7 @@ interface HeroSectionProps {
 
 const HeroSection: React.FC<HeroSectionProps> = memo(({ scrollToSection }) => {
   const sectionRef = useRef<HTMLElement>(null);
+  const heroImgRef = useRef<HTMLImageElement>(null);
   const circle1Ref = useRef<HTMLDivElement>(null);
   const circle2Ref = useRef<HTMLDivElement>(null);
   const circle3Ref = useRef<HTMLDivElement>(null);
@@ -22,6 +23,23 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ scrollToSection }) => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      // Parallax na imagem de fundo do hero
+      if (heroImgRef.current) {
+        gsap.fromTo(heroImgRef.current,
+          { y: '-10%' },
+          {
+            y: '10%',
+            ease: 'none',
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: 'top top',
+              end: 'bottom top',
+              scrub: true,
+            },
+          }
+        );
+      }
+
       // Timeline de entrada (acima do fold — sem ScrollTrigger)
       const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
@@ -76,13 +94,24 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ scrollToSection }) => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="pt-16 lg:pt-20 min-h-screen relative overflow-hidden flex items-center"
-      style={{ background: 'linear-gradient(135deg, #1e3d28 0%, #2a5235 40%, #3a6b4a 100%)' }}
-    >
+    <section ref={sectionRef} className="pt-16 lg:pt-20 min-h-screen relative overflow-hidden flex items-center">
+      {/* Background photo — maior que o container para o parallax não mostrar bordas */}
+      <img
+        ref={heroImgRef}
+        src="/lovable-uploads/hero (1).webp"
+        alt="LEAN Transportes"
+        className="absolute w-full object-cover"
+        style={{ height: '140%', top: '-20%', willChange: 'transform', objectPosition: 'center' }}
+      />
+      {/* Gradient overlay — escuro à esquerda para legibilidade, abre à direita */}
+      <div className="absolute inset-0" style={{
+        background: 'linear-gradient(105deg, rgba(10,28,16,0.92) 0%, rgba(20,50,30,0.85) 45%, rgba(10,28,16,0.55) 75%, rgba(10,28,16,0.3) 100%)'
+      }} />
+
       {/* Decorative circles */}
-      <div ref={circle1Ref} className="absolute top-[-80px] right-[-80px] w-[400px] h-[400px] rounded-full opacity-20"
+      <div ref={circle1Ref} className="absolute top-[-80px] right-[-80px] w-[400px] h-[400px] rounded-full opacity-10"
         style={{ background: '#4a8460', willChange: 'transform' }} />
-      <div ref={circle2Ref} className="absolute bottom-[-120px] left-[-60px] w-[300px] h-[300px] rounded-full opacity-30"
+      <div ref={circle2Ref} className="absolute bottom-[-120px] left-[-60px] w-[300px] h-[300px] rounded-full opacity-15"
         style={{ background: '#1e3d28', willChange: 'transform' }} />
       <div ref={circle3Ref} className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-5"
         style={{ background: '#7dba93', willChange: 'transform' }} />
@@ -116,7 +145,7 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ scrollToSection }) => {
           {/* Subtitle */}
           <p ref={subtitleRef} className="text-[#a5d1b4] text-lg md:text-xl leading-relaxed mb-10 max-w-xl"
             style={{ fontFamily: "'Barlow', sans-serif", fontWeight: 400 }}>
-            Locação de equipamentos e serviços de terraplanagem com frota moderna e equipe especializada para operações contínuas e de alta complexidade.
+            Locação de equipamentos para mineração e terraplanagem com frota moderna e equipe especializada para operações contínuas e de alta complexidade.
           </p>
 
           {/* CTAs */}
@@ -131,14 +160,14 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ scrollToSection }) => {
               Solicitar Orçamento
             </Button>
             <Button
-              onClick={() => scrollToSection('servicos')}
+              onClick={() => scrollToSection('equipamentos')}
               size="lg"
               variant="outline"
               className="btn-pill text-base font-bold min-h-[52px]"
               style={{ borderColor: 'rgba(255,255,255,0.4)', color: '#ffffff', background: 'transparent', fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: '0.08em', textTransform: 'uppercase' }}
-              aria-label="Conheça os Serviços"
+              aria-label="Conheça os Equipamentos"
             >
-              Conheça os Serviços
+              Conheça os Equipamentos
             </Button>
           </div>
 

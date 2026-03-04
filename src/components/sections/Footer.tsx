@@ -1,37 +1,40 @@
 
 import React from 'react';
 import { Instagram, Facebook, Phone, MapPin, Mail } from 'lucide-react';
-import acaoDigitalLogo from '@/assets/logo-acao-digital-marketing.png';
 
-const services = [
-  'Caminhoes Cacamba',
-  'Caminhao Munck',
+const equipamentos = [
+  'Caminhões Caçamba',
+  'Caminhão Munck',
   'Escavadeira XCMG',
   'Retroescavadeira JCB',
+];
+
+const servicos = [
   'Terraplanagem',
-  'Mineracao',
+  'Mineração',
+  'Movimentação de Terra',
+  'Locação de Equipamentos',
 ];
 
 const Footer: React.FC = () => {
   return (
     <>
-      <footer className="border-t py-12 md:py-16" style={{ background: '#1e3d28', borderColor: '#2a5235' }}>
+      <footer className="border-t py-12 md:py-16" style={{ background: '#152a1b', borderColor: '#1e3d28' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12">
 
             {/* Column 1: Logo + Info */}
             <div>
-              <div className="mb-5 flex items-baseline gap-0">
-                <span style={{ fontFamily: "'Playfair Display', serif", fontSize: '36px', fontWeight: 900, color: '#7dba93', lineHeight: 1, letterSpacing: '-2px' }}>
-                  LEAN
-                </span>
-                <span style={{ fontFamily: "'Playfair Display', serif", fontSize: '36px', fontWeight: 900, color: '#1e3d28', background: '#7dba93', padding: '0 5px', lineHeight: '1.2', letterSpacing: '-2px' }}>
-                  T
-                </span>
+              <div className="mb-5">
+                <img
+                  src="/lovable-uploads/Ativo 2.svg"
+                  alt="LEAN Transportes"
+                  style={{ height: '48px', width: 'auto' }}
+                />
               </div>
 
               <p className="text-sm leading-relaxed mb-5" style={{ color: '#a5d1b4' }}>
-                Locacao de equipamentos e servicos de terraplanagem com frota moderna. Experiencia, seguranca e comprometimento desde 2008.
+                Locação de equipamentos para mineração e terraplanagem com frota moderna. Experiência, segurança e comprometimento desde 2008.
               </p>
 
               <p className="text-xs mb-5" style={{ color: '#7dba93', fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: '0.1em', textTransform: 'uppercase' }}>
@@ -87,17 +90,33 @@ const Footer: React.FC = () => {
               </p>
             </div>
 
-            {/* Column 3: Servicos */}
+            {/* Column 3: Equipamentos */}
             <div>
               <h2 className="text-base font-bold mb-5" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#ffffff', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
-                Nossos Equipamentos
+                Equipamentos
               </h2>
 
               <ul className="space-y-2">
-                {services.map((service) => (
-                  <li key={service} className="text-sm flex items-center gap-2" style={{ color: '#a5d1b4' }}>
+                {equipamentos.map((item) => (
+                  <li key={item} className="text-sm flex items-center gap-2" style={{ color: '#a5d1b4' }}>
                     <span style={{ color: '#5c9e74' }}>›</span>
-                    {service}
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Column 4: Serviços */}
+            <div>
+              <h2 className="text-base font-bold mb-5" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#ffffff', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+                Serviços
+              </h2>
+
+              <ul className="space-y-2">
+                {servicos.map((item) => (
+                  <li key={item} className="text-sm flex items-center gap-2" style={{ color: '#a5d1b4' }}>
+                    <span style={{ color: '#5c9e74' }}>›</span>
+                    {item}
                   </li>
                 ))}
               </ul>
@@ -105,7 +124,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Legal */}
-          <div className="border-t mt-10 pt-8" style={{ borderColor: '#2a5235' }}>
+          <div className="border-t mt-10 pt-8" style={{ borderColor: '#1e3d28' }}>
             <p className="text-xs text-center leading-relaxed" style={{ color: '#5c9e74' }}>
               © {new Date().getFullYear()} LEAN Transportes e Empreendimentos. Todos os direitos reservados.
             </p>
@@ -114,24 +133,21 @@ const Footer: React.FC = () => {
       </footer>
 
       {/* Dev credits */}
-      <div className="w-full py-4 border-t" style={{ background: '#1a1a1a', borderColor: '#2d2d2d' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 text-xs sm:text-sm" style={{ color: '#555555' }}>
-            <span className="whitespace-nowrap">Desenvolvido pela</span>
+      <div className="w-full py-3" style={{ background: '#0e1f12' }}>
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+            <span className="text-xs" style={{ color: '#3a5c42' }}>Site desenvolvido por</span>
             <a
               href="https://www.instagram.com/acaodigitalmarketing/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:opacity-80 transition-opacity flex-shrink-0"
+              className="hover:opacity-80 transition-opacity"
+              style={{ display: 'flex', alignItems: 'center' }}
             >
               <img
-                src={acaoDigitalLogo}
-                alt="Acao Digital Marketing"
-                className="h-4 sm:h-5 w-auto brightness-0 invert opacity-50"
-                loading="lazy"
-                decoding="async"
-                width="120"
-                height="24"
+                src="/lovable-uploads/acao-branca.png.png"
+                alt="Ação Digital"
+                style={{ height: '18px', width: 'auto' }}
               />
             </a>
           </div>

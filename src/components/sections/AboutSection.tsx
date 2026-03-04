@@ -54,18 +54,7 @@ const AboutSection: React.FC = () => {
         });
       }
 
-      // 6 credential cards — stagger
-      if (credentialsRef.current) {
-        gsap.from(Array.from(credentialsRef.current.children), {
-          opacity: 0,
-          y: 24,
-          scale: 0.96,
-          stagger: 0.08,
-          duration: 0.5,
-          ease: 'power2.out',
-          scrollTrigger: { trigger: credentialsRef.current, start: 'top 82%', once: true },
-        });
-      }
+      // credential cards — sem animação GSAP, hover via CSS
     }, sectionRef);
 
     return () => ctx.revert();
@@ -77,7 +66,7 @@ const AboutSection: React.FC = () => {
       <div className="absolute bottom-0 left-0 w-[300px] h-[300px] decorative-blur decorative-blur-accent opacity-20" />
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
-        <div ref={headerRef} className="text-center mb-12 md:mb-16">
+        <div ref={headerRef} className="text-center mb-8 md:mb-12">
           <span className="lean-label block mb-3">A Empresa</span>
           <h2 className="lean-section-title">
             Quem somos
@@ -98,7 +87,7 @@ const AboutSection: React.FC = () => {
 
             <div className="space-y-4 leading-relaxed text-sm md:text-base" style={{ color: '#555555' }}>
               <p>
-                A <strong style={{ color: '#1a1a1a' }}>LEAN TRANSPORTES E EMPREENDIMENTOS LTDA.</strong> atua desde 2008 com excelência na prestação de serviços de transportes e locação de equipamentos. Somos referência em locações de caminhões para mineração e terraplanagem.
+                A <strong style={{ color: '#1a1a1a' }}>LEAN TRANSPORTES E EMPREENDIMENTOS LTDA.</strong> atua desde 2008 com excelência na locação de equipamentos e execução de terraplanagem. Somos referência em locações de caminhões para mineração e movimentação de terra em Minas Gerais.
               </p>
               <p>
                 Oferecemos soluções de qualidade, buscando sempre as melhores alternativas para nossos clientes. Valorizamos nossos colaboradores, contribuímos com a comunidade e o meio ambiente, operando com <strong style={{ color: '#1a1a1a' }}>responsabilidade, ética, comprometimento e segurança</strong>.
@@ -123,6 +112,14 @@ const AboutSection: React.FC = () => {
             <div ref={cardRef} className="relative w-full max-w-md" style={{ willChange: 'transform' }}>
               <div className="rounded-2xl p-10 text-center relative overflow-hidden"
                 style={{ background: '#3a6b4a' }}>
+                {/* Background photo */}
+                <img
+                  src="/lovable-uploads/2008.webp"
+                  alt="LEAN desde 2008"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                {/* Dark overlay for readability */}
+                <div className="absolute inset-0 rounded-2xl" style={{ background: 'linear-gradient(135deg, rgba(10,28,16,0.88) 0%, rgba(30,61,40,0.82) 60%, rgba(10,28,16,0.88) 100%)' }} />
                 <div className="absolute top-[-20px] right-[-20px] w-32 h-32 rounded-full opacity-20"
                   style={{ background: '#5c9e74' }} />
                 <div className="absolute bottom-[-30px] left-[-20px] w-24 h-24 rounded-full opacity-15"
@@ -159,11 +156,11 @@ const AboutSection: React.FC = () => {
         </div>
 
         {/* Credential cards */}
-        <div ref={credentialsRef} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-16 md:mt-20">
+        <div ref={credentialsRef} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-10 md:mt-12">
           {credentials.map((item, index) => (
             <div
               key={index}
-              className="lean-card lean-card-accent flex items-start gap-4 p-5 group"
+              className="lean-card lean-card-accent flex items-start gap-4 p-5 group transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
             >
               <div className="w-10 h-10 rounded-lg border flex items-center justify-center flex-shrink-0 transition-all"
                 style={{ background: '#eaf5ed', borderColor: '#cce8d4' }}>

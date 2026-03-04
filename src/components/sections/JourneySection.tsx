@@ -64,7 +64,8 @@ const JourneySection: React.FC = () => {
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto relative">
+        <div className="max-w-5xl mx-auto">
+          <div className="relative">
           <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 transform -translate-x-1/2 z-0"
             style={{ background: 'linear-gradient(to bottom, transparent, #cce8d4, transparent)' }} />
           <div className="md:hidden absolute left-6 top-0 bottom-0 w-px"
@@ -125,6 +126,7 @@ const JourneySection: React.FC = () => {
                 </div>
               );
             })}
+          </div>
           </div>
 
           <div className="mt-16 text-center">
