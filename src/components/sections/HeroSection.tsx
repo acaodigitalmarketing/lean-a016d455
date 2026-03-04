@@ -1,29 +1,97 @@
-import React, { memo } from 'react';
+import React, { memo, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Truck, Package, MapPin, Clock } from 'lucide-react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
 interface HeroSectionProps {
   scrollToSection: (sectionId: string) => void;
 }
 
 const HeroSection: React.FC<HeroSectionProps> = memo(({ scrollToSection }) => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const circle1Ref = useRef<HTMLDivElement>(null);
+  const circle2Ref = useRef<HTMLDivElement>(null);
+  const circle3Ref = useRef<HTMLDivElement>(null);
+  const labelRef = useRef<HTMLDivElement>(null);
+  const h1Ref = useRef<HTMLHeadingElement>(null);
+  const subtitleRef = useRef<HTMLParagraphElement>(null);
+  const ctasRef = useRef<HTMLDivElement>(null);
+  const statsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Timeline de entrada (acima do fold — sem ScrollTrigger)
+      const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+      tl.from(labelRef.current, { opacity: 0, y: 16, duration: 0.5 })
+        .from(h1Ref.current, { opacity: 0, y: 24, duration: 0.7 }, '-=0.2')
+        .from(subtitleRef.current, { opacity: 0, y: 20, duration: 0.6 }, '-=0.3')
+        .from(ctasRef.current, { opacity: 0, y: 16, duration: 0.5 }, '-=0.2')
+        .from(Array.from(statsRef.current?.children ?? []), {
+          opacity: 0,
+          y: 12,
+          stagger: 0.1,
+          duration: 0.4,
+        }, '-=0.1');
+
+      // Parallax nas esferas decorativas
+      gsap.to(circle1Ref.current, {
+        y: -60,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top top',
+          end: 'bottom top',
+          scrub: 1.5,
+        },
+      });
+
+      gsap.to(circle2Ref.current, {
+        y: 40,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top top',
+          end: 'bottom top',
+          scrub: 2,
+        },
+      });
+
+      gsap.to(circle3Ref.current, {
+        y: -30,
+        scale: 1.05,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top top',
+          end: 'bottom top',
+          scrub: 3,
+        },
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="pt-16 lg:pt-20 min-h-screen relative overflow-hidden flex items-center"
+    <section ref={sectionRef} className="pt-16 lg:pt-20 min-h-screen relative overflow-hidden flex items-center"
       style={{ background: 'linear-gradient(135deg, #1e3d28 0%, #2a5235 40%, #3a6b4a 100%)' }}
     >
       {/* Decorative circles */}
-      <div className="absolute top-[-80px] right-[-80px] w-[400px] h-[400px] rounded-full opacity-20"
-        style={{ background: '#4a8460' }} />
-      <div className="absolute bottom-[-120px] left-[-60px] w-[300px] h-[300px] rounded-full opacity-30"
-        style={{ background: '#1e3d28' }} />
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-5"
-        style={{ background: '#7dba93' }} />
+      <div ref={circle1Ref} className="absolute top-[-80px] right-[-80px] w-[400px] h-[400px] rounded-full opacity-20"
+        style={{ background: '#4a8460', willChange: 'transform' }} />
+      <div ref={circle2Ref} className="absolute bottom-[-120px] left-[-60px] w-[300px] h-[300px] rounded-full opacity-30"
+        style={{ background: '#1e3d28', willChange: 'transform' }} />
+      <div ref={circle3Ref} className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-5"
+        style={{ background: '#7dba93', willChange: 'transform' }} />
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10 py-20">
         <div className="max-w-3xl">
 
           {/* Label */}
-          <div className="mb-6">
+          <div ref={labelRef} className="mb-6">
             <span className="inline-block text-[#7dba93] text-xs font-bold tracking-[0.3em] uppercase"
               style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
               Locação de Equipamentos · Terraplanagem · Mineração
@@ -32,6 +100,7 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ scrollToSection }) => {
 
           {/* Headline */}
           <h1
+            ref={h1Ref}
             className="text-white mb-6 leading-[0.95]"
             style={{
               fontFamily: "'Barlow Condensed', sans-serif",
@@ -45,13 +114,13 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ scrollToSection }) => {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-[#a5d1b4] text-lg md:text-xl leading-relaxed mb-10 max-w-xl"
+          <p ref={subtitleRef} className="text-[#a5d1b4] text-lg md:text-xl leading-relaxed mb-10 max-w-xl"
             style={{ fontFamily: "'Barlow', sans-serif", fontWeight: 400 }}>
             Locação de equipamentos e serviços de terraplanagem com frota moderna e equipe especializada para operações contínuas e de alta complexidade.
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-16">
+          <div ref={ctasRef} className="flex flex-col sm:flex-row gap-4 mb-16">
             <Button
               onClick={() => window.dispatchEvent(new CustomEvent('open-whatsapp-form'))}
               size="lg"
@@ -74,7 +143,7 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ scrollToSection }) => {
           </div>
 
           {/* Stats strip */}
-          <div className="flex flex-wrap gap-8">
+          <div ref={statsRef} className="flex flex-wrap gap-8">
             {[
               { icon: Truck, value: '+15 Anos', label: 'no mercado' },
               { icon: Package, value: 'Desde 2008', label: 'de experiência' },
