@@ -9,12 +9,13 @@ interface HeaderProps {
 }
 
 const navLinks = [
-  { label: 'A Empresa', id: 'sobre' },
+  { label: 'A Lean', id: 'sobre' },
   { label: 'Serviços', id: 'servicos' },
-  { label: 'Frota', id: 'frota' },
+  { label: 'Equipamentos', id: 'equipamentos' },
   { label: 'Como Funciona', id: 'como-funciona' },
-  { label: 'Depoimentos', id: 'depoimentos' },
 ];
+
+const openForm = () => window.dispatchEvent(new CustomEvent('open-whatsapp-form'));
 
 const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen, scrollToSection }) => {
   return (
@@ -26,7 +27,7 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen, scrollToSect
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="flex items-baseline gap-0 focus:outline-none"
-            aria-label="LEAN Transportes - Início"
+            aria-label="LEAN Transportes e Empreendimentos - Início"
           >
             <span style={{ fontFamily: "'Playfair Display', serif", fontSize: '30px', fontWeight: 900, color: '#3a6b4a', lineHeight: '1', letterSpacing: '-2px' }}>
               LEAN
@@ -49,10 +50,10 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen, scrollToSect
               </button>
             ))}
             <Button
-              onClick={() => scrollToSection('cotacao')}
+              onClick={openForm}
               className="btn-pill btn-primary text-sm px-5 py-2.5"
             >
-              Solicitar Cotação
+              Solicitar Orçamento
             </Button>
           </nav>
 
@@ -82,10 +83,10 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen, scrollToSect
               ))}
               <div className="pt-2">
                 <Button
-                  onClick={() => scrollToSection('cotacao')}
+                  onClick={openForm}
                   className="btn-pill btn-primary text-sm w-full min-h-[48px]"
                 >
-                  Solicitar Cotação
+                  Solicitar Orçamento
                 </Button>
               </div>
             </nav>

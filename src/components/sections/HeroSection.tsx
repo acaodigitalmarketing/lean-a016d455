@@ -26,7 +26,7 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ scrollToSection }) => {
           <div className="mb-6">
             <span className="inline-block text-[#7dba93] text-xs font-bold tracking-[0.3em] uppercase"
               style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
-              Transporte · Logística · Rastreamento
+              Locação de Equipamentos · Terraplanagem · Mineração
             </span>
           </div>
 
@@ -35,51 +35,51 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ scrollToSection }) => {
             className="text-white mb-6 leading-[0.95]"
             style={{
               fontFamily: "'Barlow Condensed', sans-serif",
-              fontSize: 'clamp(52px, 8vw, 96px)',
+              fontSize: 'clamp(44px, 7vw, 88px)',
               fontWeight: 800,
               letterSpacing: '-1px',
             }}
           >
-            Sua carga,<br />
-            <span style={{ color: '#7dba93' }}>nossa responsabilidade.</span>
+            Soluções robustas<br />
+            <span style={{ color: '#7dba93' }}>para grandes projetos.</span>
           </h1>
 
           {/* Subtitle */}
           <p className="text-[#a5d1b4] text-lg md:text-xl leading-relaxed mb-10 max-w-xl"
             style={{ fontFamily: "'Barlow', sans-serif", fontWeight: 400 }}>
-            Soluções completas em transporte de cargas para todo o Brasil, com rastreamento em tempo real, frota moderna e pontualidade garantida.
+            Locação de equipamentos e serviços de terraplanagem com frota moderna e equipe especializada para operações contínuas e de alta complexidade.
           </p>
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 mb-16">
             <Button
-              onClick={() => scrollToSection('cotacao')}
+              onClick={() => window.dispatchEvent(new CustomEvent('open-whatsapp-form'))}
               size="lg"
               className="btn-pill text-base font-bold min-h-[52px]"
               style={{ background: '#ffffff', color: '#1e3d28', fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: '0.08em', textTransform: 'uppercase' }}
-              aria-label="Solicitar Cotação"
+              aria-label="Solicitar Orçamento"
             >
-              Solicitar Cotação
+              Solicitar Orçamento
             </Button>
             <Button
-              onClick={() => scrollToSection('como-funciona')}
+              onClick={() => scrollToSection('servicos')}
               size="lg"
               variant="outline"
               className="btn-pill text-base font-bold min-h-[52px]"
               style={{ borderColor: 'rgba(255,255,255,0.4)', color: '#ffffff', background: 'transparent', fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: '0.08em', textTransform: 'uppercase' }}
-              aria-label="Como Funciona"
+              aria-label="Conheça os Serviços"
             >
-              Como Funciona
+              Conheça os Serviços
             </Button>
           </div>
 
           {/* Stats strip */}
           <div className="flex flex-wrap gap-8">
             {[
-              { icon: Truck, value: '+15 Anos', label: 'de experiência' },
-              { icon: Package, value: '+50.000', label: 'cargas entregues' },
-              { icon: Clock, value: '99%', label: 'no prazo' },
-              { icon: MapPin, value: 'Brasil', label: 'cobertura nacional' },
+              { icon: Truck, value: '+15 Anos', label: 'no mercado' },
+              { icon: Package, value: 'Desde 2008', label: 'de experiência' },
+              { icon: Clock, value: 'Frota', label: 'moderna e atualizada' },
+              { icon: MapPin, value: 'MG e região', label: 'área de atuação' },
             ].map(({ icon: Icon, value, label }) => (
               <div key={label} className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"

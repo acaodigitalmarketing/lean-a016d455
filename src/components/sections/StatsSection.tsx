@@ -3,8 +3,8 @@ import { AnimatedSection } from '@/hooks/useScrollAnimation';
 
 const stats = [
   { value: '+15', label: 'Anos de Experiência' },
-  { value: '+50.000', label: 'Cargas Entregues' },
-  { value: 'Segurança · Pontualidade · Tecnologia', isText: true },
+  { value: 'Desde 2008', label: 'No Mercado' },
+  { value: 'Segurança · Qualidade · Comprometimento', isText: true },
 ];
 
 const StatsSection: React.FC = () => {

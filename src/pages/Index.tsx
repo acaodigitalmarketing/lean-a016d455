@@ -16,7 +16,6 @@ const ClinicSection = lazy(() => import('@/components/sections/ClinicSection'));
 const ProceduresSection = lazy(() => import('@/components/sections/ProceduresSection'));
 const JourneySection = lazy(() => import('@/components/sections/JourneySection'));
 const TestimonialsSection = lazy(() => import('@/components/sections/TestimonialsSection'));
-const ContactSection = lazy(() => import('@/components/sections/ContactSection'));
 const Footer = lazy(() => import('@/components/sections/Footer'));
 const WhatsAppPopup = lazy(() => import('@/components/sections/WhatsAppPopup'));
 const SuccessPopup = lazy(() => import('@/components/ui/success-popup'));
@@ -79,6 +78,13 @@ const Index = () => {
   const preloadFormUtils = useCallback(() => {
     getFormUtils();
   }, []);
+
+  // Abre o popup pelo custom event (usado pelos botões das seções)
+  useEffect(() => {
+    const handler = () => handleWhatsAppOpen();
+    window.addEventListener('open-whatsapp-form', handler);
+    return () => window.removeEventListener('open-whatsapp-form', handler);
+  }, [handleWhatsAppOpen]);
 
   // Countdown effect for success popup
   useEffect(() => {
@@ -224,32 +230,32 @@ const Index = () => {
       return;
     }
 
-    if (!whatsAppFormData.email?.trim()) {
-      dataLayer.trackFormError('whatsapp', "Por favor, preencha seu email.");
-      toast({ title: "Email obrigatório", description: "Por favor, preencha seu email.", variant: "destructive" });
-      return;
-    }
-
     if (!whatsAppFormData.phone?.trim()) {
       dataLayer.trackFormError('whatsapp', "Por favor, preencha seu telefone.");
       toast({ title: "Telefone obrigatório", description: "Por favor, preencha seu telefone.", variant: "destructive" });
       return;
     }
 
-    if (!whatsAppFormData.country?.trim()) {
-      dataLayer.trackFormError('whatsapp', "Por favor, selecione seu país.");
-      toast({ title: "País obrigatório", description: "Por favor, selecione seu país.", variant: "destructive" });
+    if (!whatsAppFormData.procedure?.trim()) {
+      dataLayer.trackFormError('whatsapp', "Por favor, selecione o equipamento ou serviço.");
+      toast({ title: "Seleção obrigatória", description: "Por favor, selecione o equipamento ou serviço desejado.", variant: "destructive" });
       return;
     }
 
-    if (whatsAppFormData.procedure === 'Outro' && !whatsAppFormData.customProcedure?.trim()) {
-      dataLayer.trackFormError('whatsapp', "Por favor, especifique o procedimento.");
-      toast({ title: "Procedimento obrigatório", description: "Por favor, especifique o procedimento desejado.", variant: "destructive" });
+    if (whatsAppFormData.procedure?.startsWith('Outro') && !whatsAppFormData.customProcedure?.trim()) {
+      dataLayer.trackFormError('whatsapp', "Por favor, especifique o equipamento ou serviço.");
+      toast({ title: "Especificação obrigatória", description: "Por favor, descreva o equipamento ou serviço desejado.", variant: "destructive" });
+      return;
+    }
+
+    if (!whatsAppFormData.city?.trim()) {
+      dataLayer.trackFormError('whatsapp', "Por favor, informe o local da obra.");
+      toast({ title: "Local obrigatório", description: "Por favor, informe o local da obra.", variant: "destructive" });
       return;
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(whatsAppFormData.email)) {
+    if (whatsAppFormData.email?.trim() && !emailRegex.test(whatsAppFormData.email)) {
       dataLayer.trackFormError('whatsapp', "Por favor, insira um email válido.");
       toast({ title: "Email inválido", description: "Por favor, insira um email válido.", variant: "destructive" });
       return;
@@ -382,17 +388,6 @@ const Index = () => {
         <TestimonialsSection />
       </Suspense>
       
-      <Suspense fallback={<SectionLoader />}>
-        <ContactSection 
-          formData={formData}
-          setFormData={setFormData}
-          handleFormSubmit={handleFormSubmit}
-          handlePhoneChange={handlePhoneChange}
-          handleMainFormFieldChange={handleMainFormFieldChange}
-          handleCountryChange={handleCountryChange}
-          hasStartedMainForm={hasStartedMainForm}
-        />
-      </Suspense>
       </main>
       
       <Suspense fallback={null}>

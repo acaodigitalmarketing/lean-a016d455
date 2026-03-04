@@ -1,5 +1,5 @@
-import React from 'react';
-import { Star, Quote } from 'lucide-react';
+import React, { useState } from 'react';
+import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 import { AnimatedSection } from '@/hooks/useScrollAnimation';
 
 const testimonials = [
@@ -43,7 +43,15 @@ const StarRating = ({ count }: { count: number }) => (
   </div>
 );
 
+const VISIBLE = 3; // cards visíveis no desktop
+
 const TestimonialsSection: React.FC = () => {
+  const [current, setCurrent] = useState(0);
+  const maxDesktop = testimonials.length - VISIBLE;
+
+  const prev = () => setCurrent(c => Math.max(0, c - 1));
+  const next = () => setCurrent(c => Math.min(maxDesktop, c + 1));
+
   return (
     <section id="depoimentos" className="section-spacing relative overflow-hidden" style={{ background: '#f7f6f3' }}>
       <div className="absolute top-0 left-1/4 w-[400px] h-[400px] decorative-blur decorative-blur-primary opacity-15" />
@@ -60,24 +68,120 @@ const TestimonialsSection: React.FC = () => {
         </AnimatedSection>
 
         <AnimatedSection delay={150}>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {testimonials.map((t, i) => (
-              <div key={i} className="lean-card lean-card-accent p-6 flex flex-col gap-4">
-                <Quote className="w-8 h-8 flex-shrink-0" style={{ color: '#cce8d4' }} />
-                <p className="text-sm leading-relaxed flex-1" style={{ color: '#555555' }}>
-                  {t.text}
-                </p>
-                <div>
-                  <StarRating count={t.stars} />
-                  <div className="mt-3">
-                    <div className="font-bold text-sm" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#1a1a1a' }}>
-                      {t.name}
+          {/* Desktop: carrossel deslizando 3 visíveis */}
+          <div className="hidden md:block relative">
+            <div className="overflow-hidden">
+              <div
+                className="flex gap-6 transition-transform duration-400 ease-in-out"
+                style={{ transform: `translateX(calc(-${current} * (100% / ${VISIBLE} + 8px)))` }}
+              >
+                {testimonials.map((t, i) => (
+                  <div
+                    key={i}
+                    className="lean-card lean-card-accent p-6 flex flex-col gap-4 flex-shrink-0"
+                    style={{ width: `calc((100% - ${(VISIBLE - 1) * 24}px) / ${VISIBLE})` }}
+                  >
+                    <Quote className="w-8 h-8 flex-shrink-0" style={{ color: '#cce8d4' }} />
+                    <p className="text-sm leading-relaxed flex-1" style={{ color: '#555555' }}>{t.text}</p>
+                    <div>
+                      <StarRating count={t.stars} />
+                      <div className="mt-3">
+                        <div className="font-bold text-sm" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#1a1a1a' }}>{t.name}</div>
+                        <div className="text-xs mt-0.5" style={{ color: '#777777' }}>{t.role}</div>
+                      </div>
                     </div>
-                    <div className="text-xs mt-0.5" style={{ color: '#777777' }}>{t.role}</div>
                   </div>
-                </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* Controles desktop */}
+            <div className="flex items-center justify-center gap-4 mt-8">
+              <button
+                onClick={prev}
+                disabled={current === 0}
+                className="w-10 h-10 rounded-full flex items-center justify-center transition-all disabled:opacity-30"
+                style={{ background: '#3a6b4a', color: '#ffffff' }}
+                aria-label="Anterior"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+
+              <div className="flex gap-2">
+                {testimonials.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setCurrent(Math.min(i, maxDesktop))}
+                    className="w-2 h-2 rounded-full transition-all"
+                    style={{ background: i >= current && i < current + VISIBLE ? '#3a6b4a' : '#cce8d4' }}
+                    aria-label={`Slide ${i + 1}`}
+                  />
+                ))}
+              </div>
+
+              <button
+                onClick={next}
+                disabled={current >= maxDesktop}
+                className="w-10 h-10 rounded-full flex items-center justify-center transition-all disabled:opacity-30"
+                style={{ background: '#3a6b4a', color: '#ffffff' }}
+                aria-label="Próximo"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
+          </div>
+
+          {/* Mobile: 1 card por vez */}
+          <div className="md:hidden relative">
+            <div className="overflow-hidden rounded-xl">
+              <div
+                className="flex transition-transform duration-300 ease-in-out"
+                style={{ transform: `translateX(-${current * 100}%)` }}
+              >
+                {testimonials.map((t, i) => (
+                  <div key={i} className="w-full flex-shrink-0">
+                    <div className="lean-card lean-card-accent p-6 flex flex-col gap-4">
+                      <Quote className="w-8 h-8 flex-shrink-0" style={{ color: '#cce8d4' }} />
+                      <p className="text-sm leading-relaxed" style={{ color: '#555555' }}>{t.text}</p>
+                      <div>
+                        <StarRating count={t.stars} />
+                        <div className="mt-3">
+                          <div className="font-bold text-sm" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#1a1a1a' }}>{t.name}</div>
+                          <div className="text-xs mt-0.5" style={{ color: '#777777' }}>{t.role}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex items-center justify-between mt-5">
+              <button
+                onClick={prev}
+                disabled={current === 0}
+                className="w-10 h-10 rounded-full flex items-center justify-center transition-all disabled:opacity-30"
+                style={{ background: '#3a6b4a', color: '#ffffff' }}
+                aria-label="Anterior"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <div className="flex gap-2">
+                {testimonials.map((_, i) => (
+                  <button key={i} onClick={() => setCurrent(i)} className="w-2 h-2 rounded-full transition-all"
+                    style={{ background: i === current ? '#3a6b4a' : '#cce8d4' }} aria-label={`Slide ${i + 1}`} />
+                ))}
+              </div>
+              <button
+                onClick={next}
+                disabled={current === testimonials.length - 1}
+                className="w-10 h-10 rounded-full flex items-center justify-center transition-all disabled:opacity-30"
+                style={{ background: '#3a6b4a', color: '#ffffff' }}
+                aria-label="Próximo"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
           </div>
         </AnimatedSection>
 

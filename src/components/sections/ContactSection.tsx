@@ -63,9 +63,9 @@ const ContactSection: React.FC<ContactSectionProps> = ({
         <AnimatedSection>
           <div className="text-center section-header-spacing max-w-5xl mx-auto">
             <span className="lean-label block mb-3">Fale Conosco</span>
-            <h2 className="lean-section-title mb-4">Solicite sua cotacao</h2>
+            <h2 className="lean-section-title mb-4">Solicite seu orcamento</h2>
             <p className="text-base max-w-2xl mx-auto leading-relaxed mt-4" style={{ color: '#555555' }}>
-              Preencha o formulario e nossa equipe entra em contato em ate 2 horas uteis com a melhor proposta para sua carga.
+              Preencha o formulario e nossa equipe entra em contato rapidamente com a melhor proposta para sua operacao.
             </p>
           </div>
         </AnimatedSection>
@@ -76,9 +76,9 @@ const ContactSection: React.FC<ContactSectionProps> = ({
 
               {/* Info bar */}
               <div className="flex items-start gap-3 mb-8 p-4 rounded-xl" style={{ background: '#eaf5ed', border: '1px solid #cce8d4' }}>
-                <span className="text-xl flex-shrink-0">📦</span>
+                <span className="text-xl flex-shrink-0">🏗️</span>
                 <p className="text-sm" style={{ color: '#2a5235' }}>
-                  <strong>Atendimento rapido:</strong> Respondemos em ate 2 horas uteis com cotacao personalizada. Para urgencias, fale pelo WhatsApp.
+                  <strong>Atendimento rapido:</strong> Entre em contato e nossa equipe elabora uma proposta personalizada com o melhor custo-beneficio para sua operacao. Para urgencias, fale diretamente pelo WhatsApp.
                 </p>
               </div>
 
@@ -129,33 +129,32 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                     />
                   </div>
                   <div>
-                    <label style={labelStyle}>Cidade de Origem *</label>
+                    <label style={labelStyle}>Empresa / Projeto</label>
                     <Input
                       type="text"
-                      required
                       value={formData.country || ''}
                       onChange={(e) => handleMainFormFieldChange('country', e.target.value)}
                       className="input-dark h-12 text-base"
-                      placeholder="Ex: Sao Paulo, SP"
+                      placeholder="Ex: Construtora Silva, Mineradora X"
                     />
                   </div>
                 </div>
 
-                {/* Row 3: Cidade Destino + Tipo de Carga */}
+                {/* Row 3: Localizacao + Tipo de Equipamento */}
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label style={labelStyle}>Cidade de Destino *</label>
+                    <label style={labelStyle}>Cidade / Regiao *</label>
                     <Input
                       type="text"
                       required
                       value={formData.city || ''}
                       onChange={(e) => handleMainFormFieldChange('city', e.target.value)}
                       className="input-dark h-12 text-base"
-                      placeholder="Ex: Belo Horizonte, MG"
+                      placeholder="Ex: Divinopolis, MG"
                     />
                   </div>
                   <div>
-                    <label style={labelStyle}>Tipo de Carga *</label>
+                    <label style={labelStyle}>Equipamento Desejado *</label>
                     <Select
                       required
                       value={formData.procedure}
@@ -163,8 +162,8 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                         setFormData({ ...formData, procedure: value, customProcedure: value === 'Outro' ? formData.customProcedure : '' });
                       }}
                     >
-                      <SelectTrigger className="input-dark h-12 text-base" aria-label="Tipo de carga">
-                        <SelectValue placeholder="Selecione o tipo de carga..." />
+                      <SelectTrigger className="input-dark h-12 text-base" aria-label="Equipamento desejado">
+                        <SelectValue placeholder="Selecione o equipamento..." />
                       </SelectTrigger>
                       <SelectContent className="z-50 max-h-60" style={{ background: '#ffffff', border: '1px solid #ccc' }}>
                         {procedureGroups.map((group) => (
@@ -186,13 +185,13 @@ const ContactSection: React.FC<ContactSectionProps> = ({
 
                 {/* Observacoes */}
                 <div>
-                  <label style={labelStyle}>Observacoes (peso, volume, urgencia)</label>
+                  <label style={labelStyle}>Descricao do Servico / Observacoes</label>
                   <textarea
                     value={formData.message || ''}
                     onChange={(e) => handleMainFormFieldChange('message', e.target.value)}
                     rows={3}
                     className="input-dark text-base resize-none w-full"
-                    placeholder="Ex: Carga de 500 kg, paletizada, preciso entregar em 3 dias..."
+                    placeholder="Ex: Necessito de escavadeira por 30 dias para terraplanagem de area de 5 hectares..."
                     style={{ ...inputStyle, resize: 'none' }}
                   />
                 </div>
@@ -204,11 +203,11 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                   className="w-full btn-pill btn-primary h-auto min-h-[3.5rem] py-3 text-base font-bold"
                 >
                   <Send className="mr-2 h-5 w-5 shrink-0" />
-                  Solicitar Cotacao Agora
+                  Solicitar Orcamento Agora
                 </Button>
 
                 <p className="text-xs text-center leading-relaxed" style={{ color: '#777777' }}>
-                  Ao enviar, nossa equipe entrara em contato em ate 2 horas uteis com a melhor proposta para sua operacao. Todas as informacoes sao tratadas com sigilo.
+                  Ao enviar, nossa equipe entrara em contato com a melhor proposta para sua operacao. Todas as informacoes sao tratadas com sigilo.
                 </p>
               </form>
             </div>

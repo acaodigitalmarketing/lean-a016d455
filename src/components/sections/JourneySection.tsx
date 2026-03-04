@@ -136,7 +136,7 @@ const JourneySection: React.FC = () => {
                 Acompanhe sua carga em tempo real e receba notificacoes automaticas. Nossa central esta disponivel 24h para qualquer necessidade.
               </p>
               <button
-                onClick={() => document.getElementById('cotacao')?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
+                onClick={() => window.dispatchEvent(new CustomEvent('open-whatsapp-form'))}
                 className="btn-pill btn-primary font-bold text-sm px-6 py-3 mt-4"
               >
                 Solicitar Cotacao

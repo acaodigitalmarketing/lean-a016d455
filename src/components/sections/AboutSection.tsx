@@ -3,12 +3,12 @@ import { Shield, Clock, MapPin, Truck, Award, Users } from 'lucide-react';
 import { AnimatedSection } from '@/hooks/useScrollAnimation';
 
 const credentials = [
-  { icon: Award, title: 'ANTT Regularizada — Transporte Rodoviário de Cargas' },
-  { icon: Shield, title: 'Seguro de carga incluso em todas as operações' },
-  { icon: Truck, title: 'Frota própria monitorada 24h com rastreamento satelital' },
-  { icon: Clock, title: 'Pontualidade de 99% nas entregas realizadas' },
-  { icon: MapPin, title: 'Cobertura nacional — capitais e interior' },
-  { icon: Users, title: 'Time especializado em logística e atendimento ao cliente' },
+  { icon: Award, title: 'Referência em locação de caminhões para mineração e terraplanagem' },
+  { icon: Shield, title: 'Operação com responsabilidade, ética e comprometimento desde 2008' },
+  { icon: Truck, title: 'Frota própria moderna com manutenção preventiva rigorosa' },
+  { icon: Clock, title: 'Disponibilidade garantida para operações contínuas e de alta complexidade' },
+  { icon: MapPin, title: 'Atuação em Minas Gerais e regiões adjacentes' },
+  { icon: Users, title: 'Valorizamos colaboradores, comunidade e meio ambiente' },
 ];
 
 const AboutSection: React.FC = () => {
@@ -33,31 +33,31 @@ const AboutSection: React.FC = () => {
             <div className="space-y-6">
               <div className="space-y-3">
                 <h3 className="text-3xl md:text-4xl font-bold" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#1a1a1a' }}>
-                  LEAN Transportes
+                  LEAN Transportes e Empreendimentos
                 </h3>
-                <p className="text-lg font-semibold" style={{ color: '#3a6b4a', fontFamily: "'Barlow Condensed', sans-serif', letterSpacing: '0.02em" }}>
-                  Logística inteligente, entrega garantida.
+                <p className="text-lg font-semibold" style={{ color: '#3a6b4a', fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: '0.02em' }}>
+                  Força, Segurança e Resultado desde 2008.
                 </p>
               </div>
 
               <div className="space-y-4 leading-relaxed text-sm md:text-base" style={{ color: '#555555' }}>
                 <p>
-                  Fundada com a missão de transformar a logística de cargas no Brasil, a <strong style={{ color: '#1a1a1a' }}>LEAN Transportes</strong> combina mais de 15 anos de experiência com tecnologia de ponta para oferecer soluções completas e seguras.
+                  A <strong style={{ color: '#1a1a1a' }}>LEAN TRANSPORTES E EMPREENDIMENTOS LTDA.</strong> atua desde 2008 com excelência na prestação de serviços de transportes e locação de equipamentos. Somos referência em locações de caminhões para mineração e terraplanagem.
                 </p>
                 <p>
-                  Nossa frota moderna e equipe qualificada garantem que cada carga chegue ao destino com <strong style={{ color: '#1a1a1a' }}>segurança, pontualidade e rastreamento em tempo real</strong>. Atendemos desde pequenas encomendas até grandes operações logísticas.
+                  Oferecemos soluções de qualidade, buscando sempre as melhores alternativas para nossos clientes. Valorizamos nossos colaboradores, contribuímos com a comunidade e o meio ambiente, operando com <strong style={{ color: '#1a1a1a' }}>responsabilidade, ética, comprometimento e segurança</strong>.
                 </p>
                 <p>
-                  Com cobertura em todo o território nacional, somos parceiros de empresas que precisam de um transporte confiável, transparente e com suporte dedicado em todas as etapas.
+                  Com uma frota moderna e equipamentos atualizados, garantimos a máxima eficiência para seus projetos, assegurando que suas atividades prossigam sem interrupções.
                 </p>
               </div>
 
               <div className="pt-2">
                 <button
-                  onClick={() => document.getElementById('cotacao')?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
+                  onClick={() => window.dispatchEvent(new CustomEvent('open-whatsapp-form'))}
                   className="btn-pill btn-primary font-bold text-sm px-6 py-3"
                 >
-                  Solicitar Cotação
+                  Solicitar Orçamento
                 </button>
               </div>
             </div>
@@ -75,24 +75,24 @@ const AboutSection: React.FC = () => {
                   <div className="relative z-10">
                     <div className="text-[#7dba93] text-xs font-bold tracking-[0.2em] uppercase mb-2"
                       style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
-                      Há mais de
+                      No mercado desde
                     </div>
                     <div className="text-white font-black leading-none mb-2"
                       style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: '80px', letterSpacing: '-3px' }}>
-                      15
+                      2008
                     </div>
                     <div className="text-[#a5d1b4] text-lg font-bold"
                       style={{ fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: '0.05em' }}>
-                      ANOS NO MERCADO
+                      +15 ANOS DE EXPERIÊNCIA
                     </div>
                     <div className="mt-6 pt-6 border-t border-white/20 grid grid-cols-2 gap-4 text-left">
                       <div>
-                        <div className="text-white font-bold text-2xl" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>+50k</div>
-                        <div className="text-[#a5d1b4] text-xs mt-0.5">Entregas realizadas</div>
+                        <div className="text-white font-bold text-2xl" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>Frota</div>
+                        <div className="text-[#a5d1b4] text-xs mt-0.5">Moderna e atualizada</div>
                       </div>
                       <div>
-                        <div className="text-white font-bold text-2xl" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>99%</div>
-                        <div className="text-[#a5d1b4] text-xs mt-0.5">Pontualidade</div>
+                        <div className="text-white font-bold text-2xl" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>100%</div>
+                        <div className="text-[#a5d1b4] text-xs mt-0.5">Comprometimento</div>
                       </div>
                     </div>
                   </div>

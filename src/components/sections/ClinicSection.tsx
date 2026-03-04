@@ -1,12 +1,12 @@
 import React from 'react';
 import { AnimatedSection } from '@/hooks/useScrollAnimation';
-import { Truck, Satellite, Shield, Wrench } from 'lucide-react';
+import { Truck, Wrench, Shield, Users } from 'lucide-react';
 
 const fleetStats = [
-  { icon: Truck, value: '+200', label: 'Veículos na frota' },
-  { icon: Satellite, value: '100%', label: 'Rastreados por GPS' },
-  { icon: Shield, value: '0', label: 'Tolerância a atrasos' },
-  { icon: Wrench, value: 'Regular', label: 'Manutenção preventiva' },
+  { icon: Truck, value: '+15', label: 'Anos no mercado' },
+  { icon: Wrench, value: '100%', label: 'Manutenção preventiva' },
+  { icon: Shield, value: 'Zero', label: 'Tolerância a falhas' },
+  { icon: Users, value: 'Time', label: 'Especializado' },
 ];
 
 const ClinicSection: React.FC = () => {
@@ -46,25 +46,25 @@ const ClinicSection: React.FC = () => {
                 </span>
                 <h2 className="text-white font-bold leading-tight mb-4"
                   style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 'clamp(28px, 4vw, 44px)' }}>
-                  Tecnologia e segurança em cada quilômetro
+                  Equipamentos modernos para grandes desafios
                 </h2>
               </div>
 
               <div className="space-y-4 text-sm md:text-base leading-relaxed" style={{ color: '#a5d1b4' }}>
                 <p>
-                  Nossa frota é composta por veículos modernos, todos equipados com rastreamento satelital em tempo real, sistemas de telemetria e manutenção preventiva rigorosa.
+                  Nossa frota é composta por equipamentos modernos e atualizados, com manutenção preventiva rigorosa para garantir disponibilidade máxima nas suas operações.
                 </p>
                 <p>
-                  Do cavalo mecânico ao veículo de pequeno porte, temos a solução certa para cada tipo de carga — com <strong style={{ color: '#ffffff' }}>motoristas qualificados, documentação em dia e seguro incluso</strong> em todas as operações.
+                  De caminhões caçamba a equipamentos de terraplanagem, temos a solução certa para cada desafio — com <strong style={{ color: '#ffffff' }}>operadores qualificados, documentação em dia e comprometimento total</strong> em cada projeto.
                 </p>
               </div>
 
               <div className="space-y-3">
                 {[
-                  'Baú seco, refrigerado e graneleiro',
-                  'Carrocerias abertas e fechadas',
-                  'Bi-trem, rodotrem e bitruck',
-                  'Veículos leves para centros urbanos',
+                  'Caminhões caçamba MB Axor 3131 e VW 3260',
+                  'Caminhões Munck Ford Cargo e MB Atego — 10.000 kg',
+                  'Escavadeira XCMG — 22.500 kg / 1,2 m³',
+                  'Retroescavadeira JCB — 8.185 kg / 4,54 m',
                 ].map((item) => (
                   <div key={item} className="flex items-center gap-3">
                     <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"

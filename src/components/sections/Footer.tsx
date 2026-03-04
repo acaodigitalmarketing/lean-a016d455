@@ -4,12 +4,12 @@ import { Instagram, Facebook, Phone, MapPin, Mail } from 'lucide-react';
 import acaoDigitalLogo from '@/assets/logo-acao-digital-marketing.png';
 
 const services = [
-  'Carga Geral',
-  'Carga Refrigerada',
-  'Carga Fracionada',
-  'Carga Perigosa',
-  'Mudancas e Transferencias',
-  'Logistica Dedicada',
+  'Caminhoes Cacamba',
+  'Caminhao Munck',
+  'Escavadeira XCMG',
+  'Retroescavadeira JCB',
+  'Terraplanagem',
+  'Mineracao',
 ];
 
 const Footer: React.FC = () => {
@@ -31,11 +31,11 @@ const Footer: React.FC = () => {
               </div>
 
               <p className="text-sm leading-relaxed mb-5" style={{ color: '#a5d1b4' }}>
-                Solucoes completas em transporte de cargas para todo o Brasil. Seguranca, pontualidade e tecnologia em cada entrega.
+                Locacao de equipamentos e servicos de terraplanagem com frota moderna. Experiencia, seguranca e comprometimento desde 2008.
               </p>
 
               <p className="text-xs mb-5" style={{ color: '#7dba93', fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: '0.1em', textTransform: 'uppercase' }}>
-                ANTT Regularizada · Seguro Incluso
+                Desde 2008 · Qualidade e Resultado
               </p>
 
               <div className="flex space-x-3">
@@ -61,36 +61,36 @@ const Footer: React.FC = () => {
               </h2>
 
               <div className="space-y-4">
-                <a href="tel:+551199999999"
+                <a href="tel:+5537999993865"
                   className="flex items-start gap-3 hover:opacity-80 transition-opacity group">
                   <Phone className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: '#7dba93' }} />
-                  <span className="text-sm" style={{ color: '#a5d1b4' }}>(11) 99999-9999</span>
+                  <span className="text-sm" style={{ color: '#a5d1b4' }}>(37) 99999-3865 — Joao Augusto</span>
                 </a>
 
-                <a href="mailto:contato@leantransportes.com.br"
-                  className="flex items-start gap-3 hover:opacity-80 transition-opacity">
-                  <Mail className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: '#7dba93' }} />
-                  <span className="text-sm" style={{ color: '#a5d1b4' }}>contato@leantransportes.com.br</span>
+                <a href="tel:+5537999931841"
+                  className="flex items-start gap-3 hover:opacity-80 transition-opacity group">
+                  <Phone className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: '#7dba93' }} />
+                  <span className="text-sm" style={{ color: '#a5d1b4' }}>(37) 99993-1841 — Cristina</span>
                 </a>
 
                 <div className="flex items-start gap-3">
                   <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: '#7dba93' }} />
                   <div className="text-sm" style={{ color: '#a5d1b4' }}>
-                    <p>Sao Paulo — SP</p>
-                    <p className="text-xs mt-0.5" style={{ color: '#5c9e74' }}>Cobertura nacional</p>
+                    <p>Minas Gerais — MG</p>
+                    <p className="text-xs mt-0.5" style={{ color: '#5c9e74' }}>MG e regioes adjacentes</p>
                   </div>
                 </div>
               </div>
 
               <p className="text-xs mt-6 italic" style={{ color: '#5c9e74' }}>
-                Atendimento 24h para emergencias logisticas.
+                Atendimento rapido para suas demandas operacionais.
               </p>
             </div>
 
             {/* Column 3: Servicos */}
             <div>
               <h2 className="text-base font-bold mb-5" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#ffffff', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
-                Nossos Servicos
+                Nossos Equipamentos
               </h2>
 
               <ul className="space-y-2">
@@ -107,7 +107,7 @@ const Footer: React.FC = () => {
           {/* Legal */}
           <div className="border-t mt-10 pt-8" style={{ borderColor: '#2a5235' }}>
             <p className="text-xs text-center leading-relaxed" style={{ color: '#5c9e74' }}>
-              © {new Date().getFullYear()} LEAN Transportes. Todos os direitos reservados. CNPJ: XX.XXX.XXX/XXXX-XX · ANTT Regularizada.
+              © {new Date().getFullYear()} LEAN Transportes e Empreendimentos. Todos os direitos reservados.
             </p>
           </div>
         </div>
