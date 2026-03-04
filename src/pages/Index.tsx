@@ -79,13 +79,6 @@ const Index = () => {
     getFormUtils();
   }, []);
 
-  // Abre o popup pelo custom event (usado pelos botões das seções)
-  useEffect(() => {
-    const handler = () => handleWhatsAppOpen();
-    window.addEventListener('open-whatsapp-form', handler);
-    return () => window.removeEventListener('open-whatsapp-form', handler);
-  }, [handleWhatsAppOpen]);
-
   // Countdown effect for success popup
   useEffect(() => {
     let timer: NodeJS.Timeout;
@@ -317,6 +310,13 @@ const Index = () => {
     dataLayer.trackWhatsAppOpen();
     preloadFormUtils();
   }, [dataLayer, preloadFormUtils]);
+
+  // Abre o popup pelo custom event (usado pelos botões das seções)
+  useEffect(() => {
+    const handler = () => handleWhatsAppOpen();
+    window.addEventListener('open-whatsapp-form', handler);
+    return () => window.removeEventListener('open-whatsapp-form', handler);
+  }, [handleWhatsAppOpen]);
 
   const handleMainFormFieldChange = useCallback((field: string, value: string) => {
     setFormData(prev => ({...prev, [field]: value}));
