@@ -113,7 +113,7 @@ const TestimonialsSection: React.FC = () => {
               { value: '+500', label: 'Projetos\nconcluídos' },
               { value: '100%', label: 'Documentação\nem dia' },
               { value: 'MG', label: 'e região\natendidos' },
-              { value: '2008', label: 'Experiência\ndesde' },
+              { value: 'Frota', label: 'Própria\ne atualizada' },
             ].map(({ value, label }) => (
               <div key={label} className="text-center">
                 <div className="font-bold text-white" style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 'clamp(32px, 5vw, 48px)', letterSpacing: '-0.5px', lineHeight: 1 }}>

@@ -64,16 +64,22 @@ const Footer: React.FC = () => {
               </h2>
 
               <div className="space-y-4">
-                <a href="tel:+5537999993865"
+                <a href="tel:+5537998632059"
                   className="flex items-start gap-3 hover:opacity-80 transition-opacity group">
                   <Phone className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: '#7dba93' }} />
-                  <span className="text-sm" style={{ color: '#a5d1b4' }}>(37) 99999-3865 — Joao Augusto</span>
+                  <span className="text-sm" style={{ color: '#a5d1b4' }}>(37) 99863-2059 — Munk</span>
+                </a>
+
+                <a href="tel:+5537999811841"
+                  className="flex items-start gap-3 hover:opacity-80 transition-opacity group">
+                  <Phone className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: '#7dba93' }} />
+                  <span className="text-sm" style={{ color: '#a5d1b4' }}>(37) 99981-1841 — Diretor</span>
                 </a>
 
                 <a href="tel:+5537999931841"
                   className="flex items-start gap-3 hover:opacity-80 transition-opacity group">
                   <Phone className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: '#7dba93' }} />
-                  <span className="text-sm" style={{ color: '#a5d1b4' }}>(37) 99993-1841 — Cristina</span>
+                  <span className="text-sm" style={{ color: '#a5d1b4' }}>(37) 99993-1841 — Escritório</span>
                 </a>
 
                 <div className="flex items-start gap-3">
