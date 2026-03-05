@@ -128,13 +128,14 @@ const TestimonialsSection: React.FC = () => {
               </div>
             ))}
           </div>
-          <div className="flex justify-center mt-8">
+          <div className="flex flex-col items-center gap-2 mt-8">
+            <p className="text-sm" style={{ color: '#a5c9b2' }}>Ficou com alguma dúvida? Fale com a gente.</p>
             <button
               onClick={() => window.dispatchEvent(new CustomEvent('open-whatsapp-form'))}
               className="btn-pill font-bold text-sm px-8 py-3 transition-all duration-300 hover:bg-white/10 hover:border-white/70 hover:-translate-y-0.5"
               style={{ border: '1.5px solid rgba(255,255,255,0.4)', color: '#ffffff', background: 'transparent', fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: '0.08em', textTransform: 'uppercase' }}
             >
-              Saiba mais sobre a LEAN
+              Entrar em Contato
             </button>
           </div>
         </div>

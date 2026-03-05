@@ -14,6 +14,7 @@ const StatsSection = lazy(() => import('@/components/sections/StatsSection'));
 const SpecialtySection = lazy(() => import('@/components/sections/SpecialtySection'));
 const ClinicSection = lazy(() => import('@/components/sections/ClinicSection'));
 const ProceduresSection = lazy(() => import('@/components/sections/ProceduresSection'));
+const ServicesSection = lazy(() => import('@/components/sections/ServicesSection'));
 const JourneySection = lazy(() => import('@/components/sections/JourneySection'));
 const TestimonialsSection = lazy(() => import('@/components/sections/TestimonialsSection'));
 const Footer = lazy(() => import('@/components/sections/Footer'));
@@ -372,6 +373,10 @@ const Index = () => {
 
       <Suspense fallback={<SectionLoader />}>
         <ProceduresSection />
+      </Suspense>
+
+      <Suspense fallback={<SectionLoader />}>
+        <ServicesSection />
       </Suspense>
 
       <Suspense fallback={<SectionLoader />}>
