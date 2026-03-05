@@ -98,7 +98,7 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ scrollToSection }) => {
       {/* Background photo — oculta no mobile, visível no desktop */}
       <img
         ref={heroImgRef}
-        src="/lovable-uploads/hero (1).webp"
+        src="/lovable-uploads/hero-1.webp"
         alt="LEAN Transportes"
         className="hidden lg:block absolute w-full object-cover"
         style={{ height: '140%', top: '-20%', willChange: 'transform', objectPosition: 'center' }}
@@ -123,7 +123,7 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ scrollToSection }) => {
         <div className="lg:hidden pt-6 pb-4">
           <div className="w-full aspect-square rounded-2xl overflow-hidden mb-8">
             <img
-              src="/lovable-uploads/hero (1).webp"
+              src="/lovable-uploads/hero-1.webp"
               alt="LEAN Transportes"
               className="w-full h-full object-cover object-center"
             />

@@ -27,7 +27,7 @@ const Footer: React.FC = () => {
             <div>
               <div className="mb-5">
                 <img
-                  src="/lovable-uploads/Ativo 2.svg"
+                  src="/lovable-uploads/ativo-2.svg"
                   alt="LEAN Transportes"
                   style={{ height: '48px', width: 'auto' }}
                 />

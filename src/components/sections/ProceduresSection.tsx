@@ -8,7 +8,7 @@ const trucks = [
     models: 'Mercedes Benz Axor 3131',
     description: 'Projetado para operações pesadas de alta demanda, na configuração basculante é referência em terraplanagem, construção civil, mineração e obras rurais. Alta robustez, tração e produtividade em qualquer terreno.',
     tags: ['Mineração', 'Terraplanagem', 'Construção Civil', '6x4'],
-    photo: '/lovable-uploads/MERCEDES BENZ AXOR 3131.webp',
+    photo: '/lovable-uploads/mercedes-axor-3131.webp',
     photoLabel: 'MB Axor 3131',
   },
   {
@@ -16,7 +16,7 @@ const trucks = [
     models: 'Volkswagen 3260',
     description: 'Caminhão caçamba com excelente relação custo-benefício para transporte de materiais em obras, mineração e movimentação de terra. Confiabilidade e eficiência operacional.',
     tags: ['Mineração', 'Terraplanagem', '6x4'],
-    photo: '/lovable-uploads/VW 3260.webp',
+    photo: '/lovable-uploads/vw-3260.webp',
     photoLabel: 'VW 3260',
   },
   {
@@ -32,7 +32,7 @@ const trucks = [
     models: 'Ford Cargo 2629 6x4',
     description: 'Caminhão munck com capacidade de içamento de até 10.000 kg. Ideal para movimentação de máquinas industriais, geradores, transformadores e operações com cesto aéreo.',
     tags: ['10.000 kg', 'Içamento', 'Cesto Aéreo'],
-    photo: '/lovable-uploads/•_FORD _ CARGO 2629 6 X 4 – MUNCK.webp',
+    photo: '/lovable-uploads/ford-cargo-2629-munck.webp',
     photoLabel: 'Ford Cargo 2629',
   },
   {
@@ -40,7 +40,7 @@ const trucks = [
     models: 'Mercedes Benz Atego 3133/48 6x4',
     description: 'Caminhão munck de alto desempenho para cargas especiais e içamento de equipamentos pesados. Estrutura robusta e alcance extendido para operações de grande porte.',
     tags: ['10.000 kg', 'Içamento', 'Cargas Especiais'],
-    photo: '/lovable-uploads/ATEGO 3133_48 6X4 – MUNCK.webp',
+    photo: '/lovable-uploads/atego-3133-munck.webp',
     photoLabel: 'MB Atego 3133',
   },
 ];
@@ -51,7 +51,7 @@ const machines = [
     models: 'Peso Operacional: 22.500 kg · Caçamba: 1,2 m³',
     description: 'Alta performance e eficiência para terraplanagem, construção civil, mineração, obras rurais e demolição moderada. Versatilidade e excelente custo-benefício para projetos de qualquer porte.',
     tags: ['22.500 kg', '1,2 m³', 'Terraplanagem', 'Construção Civil'],
-    photo: '/lovable-uploads/ESCAVADEIRA.webp',
+    photo: '/lovable-uploads/escavadeira.webp',
     photoLabel: 'Escavadeira XCMG',
   },
   {
@@ -59,7 +59,7 @@ const machines = [
     models: 'Peso Operacional: 8.185 kg · Escavação: 4,54 m',
     description: 'Solução ideal para o mercado agrícola e obras urbanas. Perfeita para escavação de valas, terraplanagem, nivelamento, carregamento de materiais e diversos serviços agrícolas.',
     tags: ['8.185 kg', '4,54 m profundidade', 'Agrícola', 'Obras Urbanas'],
-    photo: '/lovable-uploads/RETROESCAVADEIRA.webp',
+    photo: '/lovable-uploads/retroescavadeira.webp',
     photoLabel: 'Retroescavadeira JCB',
   },
 ];

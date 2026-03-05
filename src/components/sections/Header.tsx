@@ -30,7 +30,7 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen, scrollToSect
             aria-label="LEAN Transportes e Empreendimentos - Início"
           >
             <img
-              src="/lovable-uploads/Ativo 1.svg"
+              src="/lovable-uploads/ativo-1.svg"
               alt="LEAN Transportes"
               style={{ height: '40px', width: 'auto' }}
             />

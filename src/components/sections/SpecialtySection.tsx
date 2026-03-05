@@ -57,7 +57,7 @@ const SpecialtySection: React.FC = () => {
               style={{ willChange: 'transform' }}>
               {/* Background photo */}
               <img
-                src="/lovable-uploads/manutenção.webp"
+                src="/lovable-uploads/manutencao.webp"
                 alt="Manutenção de equipamentos LEAN"
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
               />
