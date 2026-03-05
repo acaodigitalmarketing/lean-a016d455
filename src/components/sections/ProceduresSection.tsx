@@ -232,9 +232,11 @@ const CardGroup: React.FC<{ items: CardItem[]; photoHeight?: string }> = ({ item
   const [current, setCurrent] = useState(0);
   return (
     <>
-      <div className="hidden md:flex gap-4">
+      <div className="hidden md:flex gap-4 justify-center">
         {items.map((item) => (
-          <EquipmentCard key={item.title} {...item} photoHeight={photoHeight} />
+          <div key={item.title} className="flex flex-col" style={{ width: 'calc(25% - 6px)' }}>
+            <EquipmentCard {...item} photoHeight={photoHeight} />
+          </div>
         ))}
       </div>
       <div className="md:hidden relative">
