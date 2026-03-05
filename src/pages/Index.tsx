@@ -313,7 +313,13 @@ const Index = () => {
 
   // Abre o popup pelo custom event (usado pelos botões das seções)
   useEffect(() => {
-    const handler = () => handleWhatsAppOpen();
+    const handler = (e: Event) => {
+      const procedure = (e as CustomEvent).detail?.procedure;
+      if (procedure) {
+        setWhatsAppFormData(prev => ({ ...prev, procedure }));
+      }
+      handleWhatsAppOpen();
+    };
     window.addEventListener('open-whatsapp-form', handler);
     return () => window.removeEventListener('open-whatsapp-form', handler);
   }, [handleWhatsAppOpen]);
@@ -365,11 +371,11 @@ const Index = () => {
       </Suspense>
 
       <Suspense fallback={<SectionLoader />}>
-        <SpecialtySection />
+        <ProceduresSection />
       </Suspense>
 
       <Suspense fallback={<SectionLoader />}>
-        <ProceduresSection />
+        <SpecialtySection />
       </Suspense>
       
       <Suspense fallback={<SectionLoader />}>

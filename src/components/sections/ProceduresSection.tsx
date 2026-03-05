@@ -10,6 +10,7 @@ const trucks = [
     tags: ['Mineração', 'Terraplanagem', 'Construção Civil', '6x4'],
     photo: '/lovable-uploads/mercedes-axor-3131.webp',
     photoLabel: 'MB Axor 3131',
+    procedureValue: 'Caçamba — MB Axor 3131',
   },
   {
     title: 'Caçamba VW 3260',
@@ -18,6 +19,7 @@ const trucks = [
     tags: ['Mineração', 'Terraplanagem', '6x4'],
     photo: '/lovable-uploads/vw-3260.webp',
     photoLabel: 'VW 3260',
+    procedureValue: 'Caçamba — VW 3260',
   },
   {
     title: 'Pipa MB Axor 3131',
@@ -26,6 +28,7 @@ const trucks = [
     tags: ['Umectação de Solo', 'Terraplanagem', 'Limpeza', 'Irrigação'],
     photo: '/lovable-uploads/pipa.webp',
     photoLabel: 'Caminhão Pipa MB Axor 3131',
+    procedureValue: 'Pipa — MB Axor 3131',
   },
   {
     title: 'Munck Ford Cargo 2629',
@@ -34,6 +37,7 @@ const trucks = [
     tags: ['10.000 kg', 'Içamento', 'Cesto Aéreo'],
     photo: '/lovable-uploads/ford-cargo-2629-munck.webp',
     photoLabel: 'Ford Cargo 2629',
+    procedureValue: 'Munck — Ford Cargo 2629 6x4',
   },
   {
     title: 'Munck MB Atego 3133',
@@ -42,6 +46,7 @@ const trucks = [
     tags: ['10.000 kg', 'Içamento', 'Cargas Especiais'],
     photo: '/lovable-uploads/atego-3133-munck.webp',
     photoLabel: 'MB Atego 3133',
+    procedureValue: 'Munck — MB Atego 3133/48 6x4',
   },
 ];
 
@@ -53,6 +58,7 @@ const machines = [
     tags: ['22.500 kg', '1,2 m³', 'Terraplanagem', 'Construção Civil'],
     photo: '/lovable-uploads/escavadeira.webp',
     photoLabel: 'Escavadeira XCMG',
+    procedureValue: 'Escavadeira XCMG (22.500 kg)',
   },
   {
     title: 'Retroescavadeira JCB',
@@ -61,12 +67,13 @@ const machines = [
     tags: ['8.185 kg', '4,54 m profundidade', 'Agrícola', 'Obras Urbanas'],
     photo: '/lovable-uploads/retroescavadeira.webp',
     photoLabel: 'Retroescavadeira JCB',
+    procedureValue: 'Retroescavadeira JCB (8.185 kg)',
   },
 ];
 
 type CardItem = typeof trucks[0];
 
-const EquipmentCard: React.FC<CardItem & { photoHeight?: string }> = ({ title, models, description, tags, photo, photoLabel, photoHeight = 'h-48' }) => (
+const EquipmentCard: React.FC<CardItem & { photoHeight?: string }> = ({ title, models, description, tags, photo, photoLabel, procedureValue, photoHeight = 'h-48' }) => (
   <div className="group flex flex-col h-full transition-all duration-300 overflow-hidden rounded-xl hover:-translate-y-1 hover:shadow-xl" style={{ border: '1px solid #e8e8e8' }}>
     {/* Photo */}
     <div className={`relative ${photoHeight} overflow-hidden bg-[#1e3d28]`}>
@@ -96,6 +103,12 @@ const EquipmentCard: React.FC<CardItem & { photoHeight?: string }> = ({ title, m
           </span>
         ))}
       </div>
+      <button
+        onClick={() => window.dispatchEvent(new CustomEvent('open-whatsapp-form', { detail: { procedure: procedureValue } }))}
+        className="btn-pill btn-primary font-bold text-xs w-full py-2.5 mt-1"
+      >
+        Solicitar Cotação
+      </button>
     </div>
   </div>
 );
@@ -142,7 +155,7 @@ const TruckCarousel: React.FC<{ items: CardItem[]; photoHeight?: string }> = ({ 
     <>
       {/* Desktop: carrossel infinito 4 cards */}
       <div className="hidden md:block relative px-6">
-        <div className="overflow-hidden">
+        <div style={{ overflowX: 'clip' }} className="py-4 -my-4">
           <div
             className="flex items-stretch"
             style={{
@@ -330,15 +343,6 @@ const ProceduresSection: React.FC = () => {
             <CardGroup items={machines} photoHeight="h-72" />
           </div>
         </AnimatedSection>
-
-        <div className="text-center mt-4">
-          <button
-            onClick={() => window.dispatchEvent(new CustomEvent('open-whatsapp-form'))}
-            className="btn-pill btn-primary font-bold text-sm px-8 py-3"
-          >
-            Solicitar Orçamento
-          </button>
-        </div>
       </div>
     </section>
   );

@@ -1,6 +1,5 @@
 import React, { memo, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
-import { Truck, Users, MapPin, Clock } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
@@ -19,7 +18,6 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ scrollToSection }) => {
   const h1Ref = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const ctasRef = useRef<HTMLDivElement>(null);
-  const statsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -46,13 +44,7 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ scrollToSection }) => {
       tl.from(labelRef.current, { opacity: 0, y: 16, duration: 0.5 })
         .from(h1Ref.current, { opacity: 0, y: 24, duration: 0.7 }, '-=0.2')
         .from(subtitleRef.current, { opacity: 0, y: 20, duration: 0.6 }, '-=0.3')
-        .from(ctasRef.current, { opacity: 0, y: 16, duration: 0.5 }, '-=0.2')
-        .from(Array.from(statsRef.current?.children ?? []), {
-          opacity: 0,
-          y: 12,
-          stagger: 0.1,
-          duration: 0.4,
-        }, '-=0.1');
+        .from(ctasRef.current, { opacity: 0, y: 16, duration: 0.5 }, '-=0.2');
 
       // Parallax nas esferas decorativas
       gsap.to(circle1Ref.current, {
@@ -193,28 +185,34 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ scrollToSection }) => {
             </Button>
           </div>
 
-          {/* Stats strip */}
-          <div ref={statsRef} className="flex flex-wrap gap-8">
-            {[
-              { icon: Truck, value: '+15 Anos', label: 'no mercado' },
-              { icon: Users, value: 'Operadores', label: 'qualificados' },
-              { icon: Clock, value: 'Frota', label: 'moderna e atualizada' },
-              { icon: MapPin, value: 'MG e região', label: 'área de atuação' },
-            ].map(({ icon: Icon, value, label }) => (
-              <div key={label} className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
-                  style={{ background: 'rgba(255,255,255,0.1)' }}>
-                  <Icon className="w-5 h-5 text-[#7dba93]" />
-                </div>
-                <div>
-                  <div className="text-white font-bold text-lg leading-none"
-                    style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
-                    {value}
-                  </div>
-                  <div className="text-[#a5d1b4] text-xs mt-0.5">{label}</div>
-                </div>
-              </div>
-            ))}
+          {/* Selos de autoridade */}
+          <div className="grid grid-cols-3 gap-4 border-t pt-8"
+            style={{ borderColor: 'rgba(255,255,255,0.15)' }}>
+            <div className="flex flex-col items-center text-center">
+              <span className="text-2xl md:text-3xl font-bold leading-none mb-1"
+                style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#ffffff' }}>
+                Locação
+              </span>
+              <span className="text-xs tracking-widest uppercase" style={{ color: '#a5d1b4' }}>
+                Segura e Documentada
+              </span>
+            </div>
+            <div className="flex flex-col items-center text-center border-x"
+              style={{ borderColor: 'rgba(255,255,255,0.15)' }}>
+              <span className="text-2xl md:text-3xl font-bold leading-none mb-1"
+                style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#ffffff' }}>
+                Equipe
+              </span>
+              <span className="text-xs tracking-widest uppercase" style={{ color: '#a5d1b4' }}>
+                Qualificada e Especializada
+              </span>
+            </div>
+            <div className="flex flex-col items-center text-center">
+              <span className="text-xs md:text-sm font-bold text-center leading-snug"
+                style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#7dba93', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+                Segurança · Qualidade · Comprometimento
+              </span>
+            </div>
           </div>
         </div>
       </div>

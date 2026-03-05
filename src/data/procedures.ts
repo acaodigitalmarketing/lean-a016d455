@@ -29,6 +29,7 @@ export const rentalGroups = [
     options: [
       'Caçamba — MB Axor 3131',
       'Caçamba — VW 3260',
+      'Pipa — MB Axor 3131',
       'Munck — Ford Cargo 2629 6x4',
       'Munck — MB Atego 3133/48 6x4',
     ],

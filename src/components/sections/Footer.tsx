@@ -132,7 +132,7 @@ const Footer: React.FC = () => {
           {/* Legal */}
           <div className="border-t mt-10 pt-8" style={{ borderColor: '#1e3d28' }}>
             <p className="text-xs text-center leading-relaxed" style={{ color: '#5c9e74' }}>
-              © {new Date().getFullYear()} LEAN Transportes e Empreendimentos. Todos os direitos reservados.
+              © {new Date().getFullYear()} LEAN Locações e Serviços. Todos os direitos reservados.
             </p>
           </div>
         </div>
