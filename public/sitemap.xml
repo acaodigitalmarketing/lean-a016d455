@@ -2,43 +2,49 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://consulta.fabianalage.com.br/</loc>
-    <lastmod>2026-02-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://leantransportes.com.br/</loc>
+    <lastmod>2026-03-05</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://consulta.fabianalage.com.br/og-image.png</image:loc>
-      <image:title>Dra. Fabiana Lage - Cirurgiã Plástica em São Paulo</image:title>
-      <image:caption>Cirurgia plástica estética e reconstrutora com atendimento humanizado</image:caption>
+      <image:loc>https://leantransportes.com.br/lovable-uploads/hero-1.webp</image:loc>
+      <image:title>LEAN Transportes — Locação de Equipamentos e Terraplanagem em MG</image:title>
+      <image:caption>Locação de caminhões caçamba, munck, escavadeiras e retroescavadeiras em Minas Gerais desde 2008</image:caption>
     </image:image>
   </url>
   <url>
-    <loc>https://consulta.fabianalage.com.br/#sobre</loc>
-    <lastmod>2026-02-24</lastmod>
+    <loc>https://leantransportes.com.br/#sobre</loc>
+    <lastmod>2026-03-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://consulta.fabianalage.com.br/#procedimentos</loc>
-    <lastmod>2026-02-24</lastmod>
+    <loc>https://leantransportes.com.br/#equipamentos</loc>
+    <lastmod>2026-03-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://consulta.fabianalage.com.br/#jornada</loc>
-    <lastmod>2026-02-24</lastmod>
+    <loc>https://leantransportes.com.br/#frota</loc>
+    <lastmod>2026-03-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://leantransportes.com.br/#servicos</loc>
+    <lastmod>2026-03-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://leantransportes.com.br/#depoimentos</loc>
+    <lastmod>2026-03-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://consulta.fabianalage.com.br/#depoimentos</loc>
-    <lastmod>2026-02-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://consulta.fabianalage.com.br/#agendamento</loc>
-    <lastmod>2026-02-24</lastmod>
+    <loc>https://leantransportes.com.br/#contato</loc>
+    <lastmod>2026-03-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>

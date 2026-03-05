@@ -28,6 +28,8 @@ export default defineConfig(({ mode }) => ({
           'vendor-router': ['react-router-dom'],
           'vendor-ui': ['@radix-ui/react-dialog', '@radix-ui/react-select', '@radix-ui/react-toast', '@radix-ui/react-tooltip'],
           'vendor-carousel': ['embla-carousel-react'],
+          'vendor-gsap': ['gsap'],
+          'vendor-lenis': ['lenis'],
         },
         assetFileNames: (assetInfo) => {
           const info = assetInfo.name?.split('.') || [];

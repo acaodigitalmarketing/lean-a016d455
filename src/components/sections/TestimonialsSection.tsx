@@ -101,6 +101,9 @@ const TestimonialsSection: React.FC = () => {
             alt="LEAN Transportes em operação"
             className="absolute inset-0 w-full h-full object-cover object-center"
             loading="lazy"
+            decoding="async"
+            width="1920"
+            height="480"
           />
           {/* overlay leve para legibilidade */}
           <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.15)' }} />

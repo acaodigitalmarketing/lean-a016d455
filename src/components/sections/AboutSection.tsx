@@ -117,6 +117,8 @@ const AboutSection: React.FC = () => {
                   src="/lovable-uploads/2008.webp"
                   alt="LEAN desde 2008"
                   className="absolute inset-0 w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
                 />
                 {/* Dark overlay for readability */}
                 <div className="absolute inset-0 rounded-2xl" style={{ background: 'linear-gradient(135deg, rgba(10,28,16,0.88) 0%, rgba(30,61,40,0.82) 60%, rgba(10,28,16,0.88) 100%)' }} />

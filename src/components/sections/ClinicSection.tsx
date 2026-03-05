@@ -62,6 +62,10 @@ const ClinicSection: React.FC = () => {
         src="/lovable-uploads/stats-bg-1.webp"
         alt="Nossa frota LEAN"
         className="hidden lg:block absolute inset-0 w-full h-full object-cover"
+        loading="lazy"
+        decoding="async"
+        width="1920"
+        height="1080"
       />
       {/* Overlay desktop */}
       <div className="hidden lg:block absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(20,42,27,0.95) 0%, rgba(30,61,40,0.92) 60%, rgba(42,82,53,0.88) 100%)' }} />
@@ -75,6 +79,10 @@ const ClinicSection: React.FC = () => {
             src="/lovable-uploads/stats-bg-1.webp"
             alt="Nossa frota LEAN"
             className="w-full h-full object-cover object-center"
+            loading="lazy"
+            decoding="async"
+            width="640"
+            height="640"
           />
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

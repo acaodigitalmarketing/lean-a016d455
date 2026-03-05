@@ -99,9 +99,14 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ scrollToSection }) => {
       <img
         ref={heroImgRef}
         src="/lovable-uploads/hero-1.webp"
-        alt="LEAN Transportes"
+        alt="LEAN Transportes — frota de equipamentos para mineração e terraplanagem"
         className="hidden lg:block absolute w-full object-cover"
         style={{ height: '140%', top: '-20%', willChange: 'transform', objectPosition: 'center' }}
+        fetchPriority="high"
+        loading="eager"
+        decoding="sync"
+        width="1920"
+        height="1080"
       />
       {/* Gradient overlay desktop */}
       <div className="hidden lg:block absolute inset-0" style={{
@@ -124,8 +129,12 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ scrollToSection }) => {
           <div className="w-full aspect-square rounded-2xl overflow-hidden mb-8">
             <img
               src="/lovable-uploads/hero-1.webp"
-              alt="LEAN Transportes"
+              alt="LEAN Transportes — frota de equipamentos para mineração e terraplanagem"
               className="w-full h-full object-cover object-center"
+              loading="eager"
+              decoding="async"
+              width="640"
+              height="640"
             />
           </div>
         </div>

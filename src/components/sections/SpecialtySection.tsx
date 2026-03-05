@@ -60,6 +60,10 @@ const SpecialtySection: React.FC = () => {
                 src="/lovable-uploads/manutencao.webp"
                 alt="Manutenção de equipamentos LEAN"
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                loading="lazy"
+                decoding="async"
+                width="800"
+                height="600"
               />
               {/* Gradient overlay for readability */}
               <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(30,61,40,0.82), rgba(58,107,74,0.72))' }} />

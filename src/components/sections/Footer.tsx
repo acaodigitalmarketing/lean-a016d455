@@ -59,9 +59,9 @@ const Footer: React.FC = () => {
 
             {/* Column 2: Contato */}
             <div>
-              <h2 className="text-base font-bold mb-5" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#ffffff', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+              <h3 className="text-base font-bold mb-5" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#ffffff', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
                 Contato
-              </h2>
+              </h3>
 
               <div className="space-y-4">
                 <a href="tel:+5537998632059"
@@ -98,9 +98,9 @@ const Footer: React.FC = () => {
 
             {/* Column 3: Equipamentos */}
             <div>
-              <h2 className="text-base font-bold mb-5" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#ffffff', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+              <h3 className="text-base font-bold mb-5" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#ffffff', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
                 Equipamentos
-              </h2>
+              </h3>
 
               <ul className="space-y-2">
                 {equipamentos.map((item) => (
@@ -114,9 +114,9 @@ const Footer: React.FC = () => {
 
             {/* Column 4: Serviços */}
             <div>
-              <h2 className="text-base font-bold mb-5" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#ffffff', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+              <h3 className="text-base font-bold mb-5" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#ffffff', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
                 Serviços
-              </h2>
+              </h3>
 
               <ul className="space-y-2">
                 {servicos.map((item) => (

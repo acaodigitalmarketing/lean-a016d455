@@ -1,0 +1,26 @@
+# Cache-Control e Security Headers
+# Compatível com Cloudflare Pages e Netlify
+
+# Assets com hash de conteúdo — cache permanente
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Imagens públicas (sem hash) — cache de 7 dias
+/lovable-uploads/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+# HTML — sem cache (sempre fresco)
+/
+  Cache-Control: no-cache, no-store, must-revalidate
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+
+/*.html
+  Cache-Control: no-cache, no-store, must-revalidate
+
+# Global security headers
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
