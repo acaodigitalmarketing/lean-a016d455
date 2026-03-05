@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { AnimatedSection } from '@/hooks/useScrollAnimation';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -6,8 +6,8 @@ const trucks = [
   {
     title: 'Caçamba MB Axor 3131',
     models: 'Mercedes Benz Axor 3131',
-    description: 'Caminhão caçamba de alta robustez para operações pesadas de mineração e terraplanagem. Motor potente e estrutura reforçada para máxima produtividade em terrenos exigentes.',
-    tags: ['Mineração', 'Terraplanagem', '6x4'],
+    description: 'Projetado para operações pesadas de alta demanda, na configuração basculante é referência em terraplanagem, construção civil, mineração e obras rurais. Alta robustez, tração e produtividade em qualquer terreno.',
+    tags: ['Mineração', 'Terraplanagem', 'Construção Civil', '6x4'],
     photo: '/lovable-uploads/MERCEDES BENZ AXOR 3131.webp',
     photoLabel: 'MB Axor 3131',
   },
@@ -18,6 +18,14 @@ const trucks = [
     tags: ['Mineração', 'Terraplanagem', '6x4'],
     photo: '/lovable-uploads/VW 3260.webp',
     photoLabel: 'VW 3260',
+  },
+  {
+    title: 'Pipa MB Axor 3131',
+    models: 'Mercedes Benz Axor 3131 · 20.000 L',
+    description: 'Veículo equipado com tanque de 20.000 litros e sistema completo para atender diversas demandas operacionais com eficiência e segurança.',
+    tags: ['Umectação de Solo', 'Terraplanagem', 'Limpeza', 'Irrigação'],
+    photo: '/lovable-uploads/pipa.webp',
+    photoLabel: 'Caminhão Pipa MB Axor 3131',
   },
   {
     title: 'Munck Ford Cargo 2629',
@@ -59,7 +67,7 @@ const machines = [
 type CardItem = typeof trucks[0];
 
 const EquipmentCard: React.FC<CardItem & { photoHeight?: string }> = ({ title, models, description, tags, photo, photoLabel, photoHeight = 'h-48' }) => (
-  <div className="group flex flex-col transition-all duration-300 overflow-hidden rounded-xl flex-shrink-0 hover:-translate-y-1 hover:shadow-xl" style={{ flex: '1 0 0', minWidth: '220px', border: '1px solid #e8e8e8' }}>
+  <div className="group flex flex-col h-full transition-all duration-300 overflow-hidden rounded-xl hover:-translate-y-1 hover:shadow-xl" style={{ border: '1px solid #e8e8e8' }}>
     {/* Photo */}
     <div className={`relative ${photoHeight} overflow-hidden bg-[#1e3d28]`}>
       <img
@@ -91,27 +99,90 @@ const EquipmentCard: React.FC<CardItem & { photoHeight?: string }> = ({ title, m
   </div>
 );
 
-const CardGroup: React.FC<{ items: CardItem[]; photoHeight?: string }> = ({ items, photoHeight }) => {
-  const [current, setCurrent] = useState(0);
+// Carrossel infinito de 4 cards — desktop
+const TruckCarousel: React.FC<{ items: CardItem[]; photoHeight?: string }> = ({ items, photoHeight }) => {
+  const VISIBLE = 4;
+  const n = items.length;
+  // clone: últimos VISIBLE + itens reais + primeiros VISIBLE
+  const extended = [...items.slice(-VISIBLE), ...items, ...items.slice(0, VISIBLE)];
+  const total = extended.length;
 
-  const prev = () => setCurrent(c => Math.max(0, c - 1));
-  const next = () => setCurrent(c => Math.min(items.length - 1, c + 1));
+  const [idx, setIdx] = useState(VISIBLE);
+  const [animated, setAnimated] = useState(false);
+  const idxRef = useRef(VISIBLE);
+  const moving = useRef(false);
+
+  useEffect(() => { idxRef.current = idx; }, [idx]);
+  useEffect(() => {
+    if (!animated) {
+      const id = requestAnimationFrame(() => setAnimated(true));
+      return () => cancelAnimationFrame(id);
+    }
+  }, [animated]);
+
+  const go = (dir: 1 | -1) => {
+    if (moving.current) return;
+    moving.current = true;
+    setAnimated(true);
+    setIdx(i => i + dir);
+  };
+
+  const onTransEnd = () => {
+    moving.current = false;
+    const cur = idxRef.current;
+    if (cur >= VISIBLE + n) { setAnimated(false); setIdx(cur - n); }
+    else if (cur < VISIBLE) { setAnimated(false); setIdx(cur + n); }
+  };
+
+  // Mobile state
+  const [mIdx, setMIdx] = useState(0);
 
   return (
     <>
-      {/* Desktop: todos em linha com gap */}
-      <div className="hidden md:flex gap-4">
-        {items.map((item) => (
-          <EquipmentCard key={item.title} {...item} photoHeight={photoHeight} />
-        ))}
+      {/* Desktop: carrossel infinito 4 cards */}
+      <div className="hidden md:block relative px-6">
+        <div className="overflow-hidden">
+          <div
+            className="flex items-stretch"
+            style={{
+              width: `${(total / VISIBLE) * 100}%`,
+              transform: `translateX(-${(idx * 100) / total}%)`,
+              transition: animated ? 'transform 0.45s cubic-bezier(0.25,0.46,0.45,0.94)' : 'none',
+            }}
+            onTransitionEnd={onTransEnd}
+          >
+            {extended.map((item, i) => (
+              <div key={i} className="px-2 flex flex-col" style={{ width: `${100 / total}%`, flexShrink: 0 }}>
+                <EquipmentCard {...item} photoHeight={photoHeight} />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <button
+          onClick={() => go(-1)}
+          className="absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center shadow-md z-10"
+          style={{ background: '#1e3d28', color: '#ffffff' }}
+          aria-label="Anterior"
+        >
+          <ChevronLeft className="w-5 h-5" />
+        </button>
+        <button
+          onClick={() => go(1)}
+          className="absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center shadow-md z-10"
+          style={{ background: '#1e3d28', color: '#ffffff' }}
+          aria-label="Próximo"
+        >
+          <ChevronRight className="w-5 h-5" />
+        </button>
       </div>
 
-      {/* Mobile: carrossel */}
+      {/* Mobile: carrossel 1 card */}
       <div className="md:hidden relative">
         <div className="overflow-hidden rounded-xl">
           <div
             className="flex transition-transform duration-300 ease-in-out"
-            style={{ transform: `translateX(-${current * 100}%)` }}
+            style={{ transform: `translateX(-${mIdx * 100}%)` }}
           >
             {items.map((item) => (
               <div key={item.title} className="w-full flex-shrink-0 px-1">
@@ -122,18 +193,17 @@ const CardGroup: React.FC<{ items: CardItem[]; photoHeight?: string }> = ({ item
         </div>
 
         <button
-          onClick={prev}
-          disabled={current === 0}
+          onClick={() => setMIdx(c => Math.max(0, c - 1))}
+          disabled={mIdx === 0}
           className="absolute left-0 top-[96px] -translate-x-1/2 w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-all disabled:opacity-30 z-10"
           style={{ background: '#1e3d28', color: '#ffffff' }}
           aria-label="Anterior"
         >
           <ChevronLeft className="w-5 h-5" />
         </button>
-
         <button
-          onClick={next}
-          disabled={current === items.length - 1}
+          onClick={() => setMIdx(c => Math.min(n - 1, c + 1))}
+          disabled={mIdx === n - 1}
           className="absolute right-0 top-[96px] translate-x-1/2 w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-all disabled:opacity-30 z-10"
           style={{ background: '#1e3d28', color: '#ffffff' }}
           aria-label="Próximo"
@@ -145,11 +215,65 @@ const CardGroup: React.FC<{ items: CardItem[]; photoHeight?: string }> = ({ item
           {items.map((_, i) => (
             <button
               key={i}
-              onClick={() => setCurrent(i)}
+              onClick={() => setMIdx(i)}
               className="w-2 h-2 rounded-full transition-all"
-              style={{ background: i === current ? '#3a6b4a' : '#cce8d4' }}
+              style={{ background: i === mIdx ? '#3a6b4a' : '#cce8d4' }}
               aria-label={`Slide ${i + 1}`}
             />
+          ))}
+        </div>
+      </div>
+    </>
+  );
+};
+
+// Carrossel simples para máquinas (sem infinito — são apenas 2)
+const CardGroup: React.FC<{ items: CardItem[]; photoHeight?: string }> = ({ items, photoHeight }) => {
+  const [current, setCurrent] = useState(0);
+  return (
+    <>
+      <div className="hidden md:flex gap-4">
+        {items.map((item) => (
+          <EquipmentCard key={item.title} {...item} photoHeight={photoHeight} />
+        ))}
+      </div>
+      <div className="md:hidden relative">
+        <div className="overflow-hidden rounded-xl">
+          <div
+            className="flex transition-transform duration-300 ease-in-out"
+            style={{ transform: `translateX(-${current * 100}%)` }}
+          >
+            {items.map((item) => (
+              <div key={item.title} className="w-full flex-shrink-0 px-1">
+                <EquipmentCard {...item} photoHeight={photoHeight} />
+              </div>
+            ))}
+          </div>
+        </div>
+        <button
+          onClick={() => setCurrent(c => Math.max(0, c - 1))}
+          disabled={current === 0}
+          className="absolute left-0 top-[96px] -translate-x-1/2 w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-all disabled:opacity-30 z-10"
+          style={{ background: '#1e3d28', color: '#ffffff' }}
+          aria-label="Anterior"
+        >
+          <ChevronLeft className="w-5 h-5" />
+        </button>
+        <button
+          onClick={() => setCurrent(c => Math.min(items.length - 1, c + 1))}
+          disabled={current === items.length - 1}
+          className="absolute right-0 top-[96px] translate-x-1/2 w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-all disabled:opacity-30 z-10"
+          style={{ background: '#1e3d28', color: '#ffffff' }}
+          aria-label="Próximo"
+        >
+          <ChevronRight className="w-5 h-5" />
+        </button>
+        <div className="flex justify-center gap-2 mt-5">
+          {items.map((_, i) => (
+            <button key={i} onClick={() => setCurrent(i)}
+              className="w-2 h-2 rounded-full transition-all"
+              style={{ background: i === current ? '#3a6b4a' : '#cce8d4' }}
+              aria-label={`Slide ${i + 1}`} />
           ))}
         </div>
       </div>
@@ -185,7 +309,7 @@ const ProceduresSection: React.FC = () => {
               </h3>
               <div className="h-px flex-1" style={{ background: '#cce8d4' }} />
             </div>
-            <CardGroup items={trucks} />
+            <TruckCarousel items={trucks} />
           </div>
         </AnimatedSection>
 

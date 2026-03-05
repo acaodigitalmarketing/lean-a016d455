@@ -23,34 +23,6 @@ const StatsSection: React.FC = () => {
         scrollTrigger: { trigger: grid, start: 'top 85%', once: true },
       });
 
-      // Contador "+15"
-      const span15 = cols[0]?.querySelector('span:first-child') as HTMLSpanElement | null;
-      if (span15) {
-        const obj = { value: 0 };
-        gsap.to(obj, {
-          value: 15,
-          duration: 1.4,
-          ease: 'power2.out',
-          roundProps: 'value',
-          onUpdate: () => { span15.textContent = `+${obj.value}`; },
-          scrollTrigger: { trigger: grid, start: 'top 85%', once: true },
-        });
-      }
-
-      // Contador "Desde 2008"
-      const span2008 = cols[1]?.querySelector('span:first-child') as HTMLSpanElement | null;
-      if (span2008) {
-        const obj = { value: 1995 };
-        gsap.to(obj, {
-          value: 2008,
-          duration: 1.2,
-          ease: 'power1.inOut',
-          roundProps: 'value',
-          onUpdate: () => { span2008.textContent = `Desde ${obj.value}`; },
-          scrollTrigger: { trigger: grid, start: 'top 85%', once: true },
-        });
-      }
-
       // Texto "Segurança..." — letter-spacing reveal
       const spanText = cols[2]?.querySelector('span') as HTMLSpanElement | null;
       if (spanText) {
@@ -72,25 +44,25 @@ const StatsSection: React.FC = () => {
       <div className="container mx-auto px-6 lg:px-12">
         <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x"
           style={{ divideColor: '#a5d1b4' } as React.CSSProperties}>
-          {/* Col 1 — +15 */}
+          {/* Col 1 — Locação Segura */}
           <div className="flex flex-col items-center justify-center py-6 md:py-0">
             <span className="text-3xl md:text-4xl font-bold mb-2"
               style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#3a6b4a' }}>
-              +15
+              Locação
             </span>
             <span className="text-xs tracking-widest uppercase" style={{ color: '#4a8460' }}>
-              Anos de Experiência
+              Segura e Documentada
             </span>
           </div>
 
-          {/* Col 2 — Desde 2008 */}
+          {/* Col 2 — Equipe Qualificada */}
           <div className="flex flex-col items-center justify-center py-6 md:py-0">
             <span className="text-3xl md:text-4xl font-bold mb-2"
               style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#3a6b4a' }}>
-              Desde 2008
+              Equipe
             </span>
             <span className="text-xs tracking-widest uppercase" style={{ color: '#4a8460' }}>
-              No Mercado
+              Qualificada e Especializada
             </span>
           </div>
 

@@ -108,12 +108,12 @@ const TestimonialsSection: React.FC = () => {
 
         {/* Barra de stats */}
         <div className="w-full py-10 px-6" style={{ background: '#1e3d28' }}>
-          <div className="max-w-5xl mx-auto flex flex-wrap items-center justify-center gap-12 md:gap-20">
+          <div className="max-w-5xl mx-auto grid grid-cols-2 md:flex md:flex-wrap items-center justify-center gap-8 md:gap-20">
             {[
-              { value: '+500', label: 'Empresas\natendidas' },
-              { value: '+50.000', label: 'Cargas\nentregues' },
-              { value: '4.9/5', label: 'Avaliação\nmédia' },
-              { value: '15+', label: 'Anos de\nmercado' },
+              { value: '+500', label: 'Projetos\nconcluídos' },
+              { value: '100%', label: 'Documentação\nem dia' },
+              { value: 'MG', label: 'e região\natendidos' },
+              { value: '2008', label: 'Experiência\ndesde' },
             ].map(({ value, label }) => (
               <div key={label} className="text-center">
                 <div className="font-bold text-white" style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 'clamp(32px, 5vw, 48px)', letterSpacing: '-0.5px', lineHeight: 1 }}>

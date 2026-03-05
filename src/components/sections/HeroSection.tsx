@@ -1,6 +1,6 @@
 import React, { memo, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
-import { Truck, Package, MapPin, Clock } from 'lucide-react';
+import { Truck, Users, MapPin, Clock } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
@@ -95,18 +95,20 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ scrollToSection }) => {
 
   return (
     <section ref={sectionRef} className="pt-16 lg:pt-20 min-h-screen relative overflow-hidden flex items-center">
-      {/* Background photo — maior que o container para o parallax não mostrar bordas */}
+      {/* Background photo — oculta no mobile, visível no desktop */}
       <img
         ref={heroImgRef}
         src="/lovable-uploads/hero (1).webp"
         alt="LEAN Transportes"
-        className="absolute w-full object-cover"
+        className="hidden lg:block absolute w-full object-cover"
         style={{ height: '140%', top: '-20%', willChange: 'transform', objectPosition: 'center' }}
       />
-      {/* Gradient overlay — escuro à esquerda para legibilidade, abre à direita */}
-      <div className="absolute inset-0" style={{
+      {/* Gradient overlay desktop */}
+      <div className="hidden lg:block absolute inset-0" style={{
         background: 'linear-gradient(105deg, rgba(10,28,16,0.92) 0%, rgba(20,50,30,0.85) 45%, rgba(10,28,16,0.55) 75%, rgba(10,28,16,0.3) 100%)'
       }} />
+      {/* Fundo sólido mobile */}
+      <div className="lg:hidden absolute inset-0" style={{ background: '#0e2016' }} />
 
       {/* Decorative circles */}
       <div ref={circle1Ref} className="absolute top-[-80px] right-[-80px] w-[400px] h-[400px] rounded-full opacity-10"
@@ -116,8 +118,19 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ scrollToSection }) => {
       <div ref={circle3Ref} className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-5"
         style={{ background: '#7dba93', willChange: 'transform' }} />
 
-      <div className="container mx-auto px-6 lg:px-12 relative z-10 py-20">
-        <div className="max-w-3xl">
+      <div className="container mx-auto px-6 lg:px-12 relative z-10 w-full">
+        {/* Mobile layout: foto quadrada em cima, texto abaixo */}
+        <div className="lg:hidden pt-6 pb-4">
+          <div className="w-full aspect-square rounded-2xl overflow-hidden mb-8">
+            <img
+              src="/lovable-uploads/hero (1).webp"
+              alt="LEAN Transportes"
+              className="w-full h-full object-cover object-center"
+            />
+          </div>
+        </div>
+
+        <div className="max-w-3xl lg:py-20 pb-10 lg:pb-0">
 
           {/* Label */}
           <div ref={labelRef} className="mb-6">
@@ -175,7 +188,7 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ scrollToSection }) => {
           <div ref={statsRef} className="flex flex-wrap gap-8">
             {[
               { icon: Truck, value: '+15 Anos', label: 'no mercado' },
-              { icon: Package, value: 'Desde 2008', label: 'de experiência' },
+              { icon: Users, value: 'Operadores', label: 'qualificados' },
               { icon: Clock, value: 'Frota', label: 'moderna e atualizada' },
               { icon: MapPin, value: 'MG e região', label: 'área de atuação' },
             ].map(({ icon: Icon, value, label }) => (

@@ -111,7 +111,7 @@ const JourneySection: React.FC = () => {
                         {step.description}
                       </p>
                     </div>
-                    <div className={`${isEven ? 'md:order-2 md:pl-16' : 'md:pr-16'}`}>
+                    <div className={`hidden md:block ${isEven ? 'md:order-2 md:pl-16' : 'md:pr-16'}`}>
                       <div
                         className={`rounded-2xl p-10 flex items-center justify-center transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
                         style={{ background: step.color, minHeight: '140px' }}

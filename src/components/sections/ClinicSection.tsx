@@ -5,7 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const fleetStats = [
-  { icon: Truck, value: '+15', label: 'Anos no mercado' },
+  { icon: Truck, value: 'Ágil', label: 'Atendimento rápido' },
   { icon: Wrench, value: '100%', label: 'Manutenção preventiva' },
   { icon: Shield, value: 'Zero', label: 'Tolerância a falhas' },
   { icon: Users, value: 'Time', label: 'Especializado' },
@@ -57,24 +57,34 @@ const ClinicSection: React.FC = () => {
 
   return (
     <section ref={sectionRef} id="frota" className="section-spacing relative overflow-hidden">
-      {/* Background photo */}
+      {/* Background photo — oculta no mobile */}
       <img
         src="/lovable-uploads/stats-bg (1).webp"
         alt="Nossa frota LEAN"
-        className="absolute inset-0 w-full h-full object-cover"
+        className="hidden lg:block absolute inset-0 w-full h-full object-cover"
       />
-      {/* Overlay para legibilidade */}
-      <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(20,42,27,0.95) 0%, rgba(30,61,40,0.92) 60%, rgba(42,82,53,0.88) 100%)' }} />
+      {/* Overlay desktop */}
+      <div className="hidden lg:block absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(20,42,27,0.95) 0%, rgba(30,61,40,0.92) 60%, rgba(42,82,53,0.88) 100%)' }} />
+      {/* Fundo sólido mobile */}
+      <div className="lg:hidden absolute inset-0" style={{ background: '#0e2016' }} />
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
+        {/* Foto quadrada no mobile */}
+        <div className="lg:hidden w-full aspect-square rounded-2xl overflow-hidden mb-8">
+          <img
+            src="/lovable-uploads/stats-bg (1).webp"
+            alt="Nossa frota LEAN"
+            className="w-full h-full object-cover object-center"
+          />
+        </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Stats grid — lado esquerdo */}
-          <div ref={statGridRef} className="grid grid-cols-2 gap-4">
+          {/* Stats grid — lado esquerdo (oculto no mobile) */}
+          <div ref={statGridRef} className="hidden lg:grid grid-cols-2 gap-3 md:gap-4">
             {fleetStats.map(({ icon: Icon, value, label }) => (
-              <div key={label} className="rounded-xl p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:scale-[1.03]"
+              <div key={label} className="rounded-xl p-4 md:p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:scale-[1.03]"
                 style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)' }}>
-                <Icon className="w-8 h-8 mx-auto mb-3" style={{ color: '#7dba93' }} />
-                <div className="text-white font-black text-3xl mb-1"
+                <Icon className="w-6 h-6 md:w-8 md:h-8 mx-auto mb-2 md:mb-3" style={{ color: '#7dba93' }} />
+                <div className="text-white font-black text-2xl md:text-3xl mb-1"
                   style={{ fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: '-0.5px' }}>
                   {value}
                 </div>
