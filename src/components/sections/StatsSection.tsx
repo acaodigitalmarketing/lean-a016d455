@@ -33,7 +33,7 @@ const StatsSection: React.FC = () => {
   return (
     <section className="py-12 md:py-16 border-y" style={{ background: '#eaf5ed', borderColor: '#cce8d4' }}>
       <div className="container mx-auto px-6 lg:px-12">
-        <div ref={barsRef} className="flex flex-wrap justify-center gap-10 md:gap-16">
+        <div ref={barsRef} className="flex flex-col items-center gap-6 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-10 md:gap-16">
           {stats.map(({ icon: Icon, value, label }) => (
             <div key={label} className="flex items-center gap-4">
               <div className="w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0"
