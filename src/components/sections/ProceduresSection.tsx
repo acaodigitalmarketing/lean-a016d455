@@ -269,7 +269,7 @@ const CardGroup: React.FC<{ items: CardItem[]; photoHeight?: string }> = ({ item
         <button
           onClick={() => setCurrent(c => Math.max(0, c - 1))}
           disabled={current === 0}
-          className="absolute left-0 top-[192px] -translate-y-1/2 -translate-x-1/2 w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-all disabled:opacity-30 z-10"
+          className="absolute left-0 top-[288px] -translate-y-1/2 -translate-x-1/2 w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-all disabled:opacity-30 z-10"
           style={{ background: '#1e3d28', color: '#ffffff' }}
           aria-label="Anterior"
         >
@@ -278,7 +278,7 @@ const CardGroup: React.FC<{ items: CardItem[]; photoHeight?: string }> = ({ item
         <button
           onClick={() => setCurrent(c => Math.min(items.length - 1, c + 1))}
           disabled={current === items.length - 1}
-          className="absolute right-0 top-[192px] -translate-y-1/2 translate-x-1/2 w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-all disabled:opacity-30 z-10"
+          className="absolute right-0 top-[288px] -translate-y-1/2 translate-x-1/2 w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-all disabled:opacity-30 z-10"
           style={{ background: '#1e3d28', color: '#ffffff' }}
           aria-label="Próximo"
         >
