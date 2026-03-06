@@ -35,7 +35,7 @@ const StatsSection: React.FC = () => {
       <div className="container">
         <div
           ref={barsRef}
-          className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 sm:gap-8 xl:gap-10 max-w-[220px] sm:max-w-none mx-auto"
+          className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 sm:gap-8 xl:gap-10"
         >
           {stats.map(({ icon: Icon, value, label }) => (
             <div key={label} className="flex items-center gap-4 w-full">
