@@ -301,7 +301,7 @@ const ProceduresSection: React.FC = () => {
   return (
     <section id="equipamentos" className="section-spacing relative overflow-hidden" style={{ background: '#f7f6f3' }}>
       <div className="absolute inset-0 gradient-glow-bottom pointer-events-none" />
-      <div className="container mx-auto px-6 lg:px-12 relative z-10">
+      <div className="container relative z-10">
 
         {/* Header da seção */}
         <AnimatedSection>

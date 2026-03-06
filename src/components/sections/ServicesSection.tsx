@@ -36,7 +36,7 @@ const ServicesSection: React.FC = () => {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full pointer-events-none"
         style={{ background: 'radial-gradient(ellipse, rgba(74,132,96,0.18) 0%, transparent 70%)' }} />
 
-      <div className="container mx-auto px-6 lg:px-12 relative z-10">
+      <div className="container relative z-10">
 
         {/* Header */}
         <AnimatedSection>

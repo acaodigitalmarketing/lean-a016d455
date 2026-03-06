@@ -115,7 +115,7 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ scrollToSection }) => {
       <div ref={circle3Ref} className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-5"
         style={{ background: '#7dba93', willChange: 'transform' }} />
 
-      <div className="container mx-auto px-6 lg:px-12 relative z-10 w-full">
+      <div className="container relative z-10 w-full">
         {/* Mobile layout: foto quadrada em cima, texto abaixo */}
         <div className="lg:hidden pt-6 pb-4">
           <div className="w-full aspect-square rounded-2xl overflow-hidden mb-8">

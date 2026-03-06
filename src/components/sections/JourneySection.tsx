@@ -55,7 +55,7 @@ const JourneySection: React.FC = () => {
     <section id="como-funciona" className="section-spacing relative overflow-hidden" style={{ background: '#ffffff' }}>
       <div className="absolute top-0 right-1/4 w-[400px] h-[400px] decorative-blur decorative-blur-primary opacity-15" />
 
-      <div className="container mx-auto px-6 lg:px-12 relative z-10">
+      <div className="container relative z-10">
         <div className="text-center section-header-spacing">
           <span className="lean-label block mb-3">Processo</span>
           <h2 className="lean-section-title mb-4">Como sua carga chega</h2>

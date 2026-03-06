@@ -65,7 +65,7 @@ const AboutSection: React.FC = () => {
       <div className="absolute top-1/4 right-0 w-[400px] h-[400px] decorative-blur decorative-blur-primary opacity-30" />
       <div className="absolute bottom-0 left-0 w-[300px] h-[300px] decorative-blur decorative-blur-accent opacity-20" />
 
-      <div className="container mx-auto px-6 lg:px-12 relative z-10">
+      <div className="container relative z-10">
         <div ref={headerRef} className="text-center mb-8 md:mb-12">
           <span className="lean-label block mb-3">A Empresa</span>
           <h2 className="lean-section-title">

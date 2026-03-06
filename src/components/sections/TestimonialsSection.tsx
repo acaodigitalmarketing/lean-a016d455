@@ -53,7 +53,7 @@ const TestimonialsSection: React.FC = () => {
     <section id="depoimentos" className="pt-8 md:pt-10 lg:pt-12 relative overflow-hidden" style={{ background: '#f7f6f3' }}>
       <div className="absolute top-0 left-1/4 w-[400px] h-[400px] decorative-blur decorative-blur-primary opacity-15" />
 
-      <div className="container mx-auto px-6 lg:px-12 relative z-10">
+      <div className="container relative z-10">
         <AnimatedSection>
           <div className="text-center section-header-spacing">
             <span className="lean-label block mb-3">Depoimentos</span>

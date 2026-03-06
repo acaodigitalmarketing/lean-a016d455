@@ -59,7 +59,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] decorative-blur decorative-blur-primary opacity-15" />
       <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] decorative-blur decorative-blur-accent opacity-10" />
 
-      <div className="container mx-auto px-6 lg:px-12 relative z-10">
+      <div className="container relative z-10">
         <AnimatedSection>
           <div className="text-center section-header-spacing max-w-5xl mx-auto">
             <span className="lean-label block mb-3">Fale Conosco</span>
