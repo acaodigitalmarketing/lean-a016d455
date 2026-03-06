@@ -103,7 +103,7 @@ const Footer: React.FC = () => {
                 Equipamentos
               </h3>
 
-              <ul className="space-y-2">
+              <ul className="space-y-2 inline-block">
                 {equipamentos.map((item) => (
                   <li key={item} className="text-sm flex items-center gap-2" style={{ color: '#a5d1b4' }}>
                     <span style={{ color: '#5c9e74' }}>›</span>
@@ -119,7 +119,7 @@ const Footer: React.FC = () => {
                 Serviços
               </h3>
 
-              <ul className="space-y-2">
+              <ul className="space-y-2 inline-block">
                 {servicos.map((item) => (
                   <li key={item} className="text-sm flex items-center gap-2" style={{ color: '#a5d1b4' }}>
                     <span style={{ color: '#5c9e74' }}>›</span>
