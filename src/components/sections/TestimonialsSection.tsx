@@ -111,7 +111,7 @@ const TestimonialsSection: React.FC = () => {
 
         {/* Barra de stats */}
         <div className="w-full py-10 px-6" style={{ background: '#1e3d28' }}>
-          <div className="max-w-5xl mx-auto grid grid-cols-2 md:flex md:flex-wrap items-center justify-center gap-8 md:gap-20">
+          <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 items-center justify-center gap-8 sm:gap-12 md:gap-20">
             {[
               { value: '+500', label: 'Projetos\nconcluídos' },
               { value: '100%', label: 'Documentação\nem dia' },
