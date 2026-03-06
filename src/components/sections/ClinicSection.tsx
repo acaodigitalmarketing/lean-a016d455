@@ -72,7 +72,7 @@ const ClinicSection: React.FC = () => {
       {/* Fundo sólido mobile */}
       <div className="lg:hidden absolute inset-0" style={{ background: '#0e2016' }} />
 
-      <div className="container mx-auto px-6 lg:px-12 relative z-10">
+      <div className="container relative z-10">
         {/* Foto quadrada no mobile */}
         <div className="lg:hidden w-full aspect-square rounded-2xl overflow-hidden mb-8">
           <img

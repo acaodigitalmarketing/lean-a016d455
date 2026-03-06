@@ -41,7 +41,7 @@ const SpecialtySection: React.FC = () => {
     <section ref={sectionRef} id="servicos" className="section-spacing relative overflow-hidden" style={{ background: '#ffffff' }}>
       <div className="absolute top-0 right-1/4 w-[400px] h-[400px] decorative-blur decorative-blur-primary opacity-15" />
 
-      <div className="container mx-auto px-6 lg:px-12 relative z-10">
+      <div className="container relative z-10">
         <div ref={headerRef} className="text-center mb-16 md:mb-20">
           <span className="lean-label block mb-3">Destaque</span>
           <h2 className="lean-section-title mb-6">Disponibilidade Garantida</h2>

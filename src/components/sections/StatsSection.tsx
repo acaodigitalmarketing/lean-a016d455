@@ -32,7 +32,7 @@ const StatsSection: React.FC = () => {
 
   return (
     <section className="py-12 md:py-16 border-y" style={{ background: '#eaf5ed', borderColor: '#cce8d4' }}>
-      <div className="container mx-auto px-6 lg:px-12">
+      <div className="container">
         <div
           ref={barsRef}
           className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5 md:gap-8 xl:gap-10 max-w-[220px] md:max-w-[560px] xl:max-w-none mx-auto"
