@@ -218,7 +218,7 @@ const TruckCarousel: React.FC<{ items: CardItem[]; photoHeight?: string }> = ({ 
         <button
           onClick={() => setMIdx(c => Math.min(n - 1, c + 1))}
           disabled={mIdx === n - 1}
-          className="absolute right-0 top-[96px] translate-x-1/2 w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-all disabled:opacity-30 z-10"
+          className="absolute right-0 top-[192px] -translate-y-1/2 translate-x-1/2 w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-all disabled:opacity-30 z-10"
           style={{ background: '#1e3d28', color: '#ffffff' }}
           aria-label="Próximo"
         >
