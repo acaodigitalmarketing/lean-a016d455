@@ -35,7 +35,7 @@ const StatsSection: React.FC = () => {
       <div className="container mx-auto px-6 lg:px-12">
         <div ref={barsRef} className="flex flex-col items-center gap-5 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-10 md:gap-16">
           {stats.map(({ icon: Icon, value, label }) => (
-            <div key={label} className="flex items-center gap-4">
+            <div key={label} className="flex items-center gap-4 w-52">
               <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center flex-shrink-0"
                 style={{ background: '#cce8d4' }}>
                 <Icon className="w-6 h-6 sm:w-7 sm:h-7" style={{ color: '#3a6b4a' }} />
