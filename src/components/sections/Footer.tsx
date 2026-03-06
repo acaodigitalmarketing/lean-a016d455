@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
     <>
       <footer className="border-t py-12 md:py-16" style={{ background: '#152a1b', borderColor: '#1e3d28' }}>
         <div className="container">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 text-center sm:text-left">
 
             {/* Column 1: Logo + Info */}
             <div>
@@ -29,6 +29,7 @@ const Footer: React.FC = () => {
                 <img
                   src="/lovable-uploads/ativo-2.svg"
                   alt="LEAN Transportes"
+                  className="mx-auto sm:mx-0"
                   style={{ height: '48px', width: 'auto' }}
                 />
               </div>
@@ -41,7 +42,7 @@ const Footer: React.FC = () => {
                 Desde 2008 · Qualidade e Resultado
               </p>
 
-              <div className="flex space-x-3">
+              <div className="flex justify-center sm:justify-start space-x-3">
                 <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
                   style={{ background: '#3a6b4a' }}
@@ -65,24 +66,24 @@ const Footer: React.FC = () => {
 
               <div className="space-y-4">
                 <a href="tel:+5537998632059"
-                  className="flex items-start gap-3 hover:opacity-80 transition-opacity group">
+                  className="flex items-start gap-3 hover:opacity-80 transition-opacity group justify-center sm:justify-start">
                   <Phone className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: '#7dba93' }} />
                   <span className="text-sm" style={{ color: '#a5d1b4' }}>(37) 99863-2059 — Munk</span>
                 </a>
 
                 <a href="tel:+5537999811841"
-                  className="flex items-start gap-3 hover:opacity-80 transition-opacity group">
+                  className="flex items-start gap-3 hover:opacity-80 transition-opacity group justify-center sm:justify-start">
                   <Phone className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: '#7dba93' }} />
                   <span className="text-sm" style={{ color: '#a5d1b4' }}>(37) 99981-1841 — Diretor</span>
                 </a>
 
                 <a href="tel:+5537999931841"
-                  className="flex items-start gap-3 hover:opacity-80 transition-opacity group">
+                  className="flex items-start gap-3 hover:opacity-80 transition-opacity group justify-center sm:justify-start">
                   <Phone className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: '#7dba93' }} />
                   <span className="text-sm" style={{ color: '#a5d1b4' }}>(37) 99993-1841 — Escritório</span>
                 </a>
 
-                <div className="flex items-start gap-3">
+                <div className="flex items-start gap-3 justify-center sm:justify-start">
                   <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: '#7dba93' }} />
                   <div className="text-sm" style={{ color: '#a5d1b4' }}>
                     <p>Minas Gerais — MG</p>
