@@ -186,28 +186,28 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ scrollToSection }) => {
           </div>
 
           {/* Selos de autoridade */}
-          <div className="grid grid-cols-3 gap-4 border-t pt-8"
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-0 border-t pt-8"
             style={{ borderColor: 'rgba(255,255,255,0.15)' }}>
-            <div className="flex flex-col items-center text-center">
+            <div className="flex flex-col items-center text-center py-4 sm:py-0">
               <span className="text-2xl md:text-3xl font-bold leading-none mb-1"
                 style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#ffffff' }}>
                 Locação
               </span>
-              <span className="text-xs tracking-widest uppercase" style={{ color: '#a5d1b4' }}>
+              <span className="text-[11px] sm:text-xs tracking-[0.12em] sm:tracking-widest uppercase leading-relaxed" style={{ color: '#a5d1b4' }}>
                 Segura e Documentada
               </span>
             </div>
-            <div className="flex flex-col items-center text-center border-x"
+            <div className="flex flex-col items-center text-center py-4 sm:py-0 border-y sm:border-y-0 sm:border-x"
               style={{ borderColor: 'rgba(255,255,255,0.15)' }}>
               <span className="text-2xl md:text-3xl font-bold leading-none mb-1"
                 style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#ffffff' }}>
                 Equipe
               </span>
-              <span className="text-xs tracking-widest uppercase" style={{ color: '#a5d1b4' }}>
+              <span className="text-[11px] sm:text-xs tracking-[0.12em] sm:tracking-widest uppercase leading-relaxed" style={{ color: '#a5d1b4' }}>
                 Qualificada e Especializada
               </span>
             </div>
-            <div className="flex flex-col items-center text-center">
+            <div className="flex flex-col items-center text-center py-4 sm:py-0">
               <span className="text-xs md:text-sm font-bold text-center leading-snug"
                 style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#7dba93', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
                 Segurança · Qualidade · Comprometimento
