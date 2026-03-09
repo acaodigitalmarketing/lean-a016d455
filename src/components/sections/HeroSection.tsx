@@ -167,7 +167,7 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ scrollToSection }) => {
             <Button
               onClick={() => window.dispatchEvent(new CustomEvent('open-whatsapp-form'))}
               size="lg"
-              className="btn-pill text-base font-bold min-h-[52px]"
+              className="btn-pill text-base font-bold min-h-[52px] w-full sm:w-auto transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5 hover:shadow-xl active:scale-95"
               style={{ background: '#ffffff', color: '#1e3d28', fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: '0.08em', textTransform: 'uppercase' }}
               aria-label="Solicitar Orçamento"
             >
@@ -177,7 +177,7 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ scrollToSection }) => {
               onClick={() => scrollToSection('equipamentos')}
               size="lg"
               variant="outline"
-              className="btn-pill text-base font-bold min-h-[52px]"
+              className="btn-pill text-base font-bold min-h-[52px] w-full sm:w-auto transition-all duration-200 hover:bg-white/10 hover:border-white/70 hover:-translate-y-0.5 active:scale-95"
               style={{ borderColor: 'rgba(255,255,255,0.4)', color: '#ffffff', background: 'transparent', fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: '0.08em', textTransform: 'uppercase' }}
               aria-label="Conheça os Equipamentos"
             >

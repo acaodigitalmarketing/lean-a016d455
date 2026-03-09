@@ -139,7 +139,7 @@ const JourneySection: React.FC = () => {
               </p>
               <button
                 onClick={() => window.dispatchEvent(new CustomEvent('open-whatsapp-form'))}
-                className="btn-pill btn-primary font-bold text-sm px-6 py-3 mt-4"
+                className="btn-pill btn-primary font-bold text-sm px-6 py-3 mt-4 w-full sm:w-auto"
               >
                 Solicitar Cotacao
               </button>

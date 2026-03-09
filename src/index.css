@@ -351,13 +351,24 @@
 
 /* ── INFINITE SCROLL CAROUSEL ── */
 @keyframes testimonials-scroll {
-  to { transform: translateX(calc(-50% - 12px)); }
+  from { transform: translateX(0); }
+  to { transform: translateX(-1820px); }
 }
 .testimonials-track {
   animation: testimonials-scroll 40s linear infinite;
 }
-.testimonials-track:hover {
-  animation-play-state: paused;
+@media (hover: hover) {
+  .testimonials-track:hover {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes stats-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.stats-marquee {
+  animation: stats-marquee 14s linear infinite;
 }
 
 /* ── DECORATIVE ELEMENTS ── */

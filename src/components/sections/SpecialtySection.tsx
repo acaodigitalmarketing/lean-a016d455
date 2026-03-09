@@ -124,7 +124,7 @@ const SpecialtySection: React.FC = () => {
               <div className="pt-2">
                 <button
                   onClick={() => window.dispatchEvent(new CustomEvent('open-whatsapp-form'))}
-                  className="btn-pill btn-primary font-bold text-sm px-6 py-3"
+                  className="btn-pill btn-primary font-bold text-sm px-6 py-3 w-full sm:w-auto"
                 >
                   Solicitar Orçamento
                 </button>

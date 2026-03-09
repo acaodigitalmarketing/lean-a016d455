@@ -130,6 +130,19 @@ const WhatsAppPopup: React.FC<WhatsAppPopupProps> = ({
   const isMobile = useIsMobile();
   const [activeTab, setActiveTab] = useState<Tab>('rental');
 
+  // Auto-switch tab when popup opens based on preferredTab or procedure value
+  useEffect(() => {
+    if (!isWhatsAppOpen) return;
+    const preferred = (whatsAppFormData as any).preferredTab as Tab | undefined;
+    if (preferred) { setActiveTab(preferred); return; }
+    if (whatsAppFormData.procedure) {
+      const inService = serviceGroups.some(g => g.options.includes(whatsAppFormData.procedure));
+      const inRental = rentalGroups.some(g => g.options.includes(whatsAppFormData.procedure));
+      if (inService) setActiveTab('service');
+      else if (inRental) setActiveTab('rental');
+    }
+  }, [isWhatsAppOpen, whatsAppFormData.procedure]);
+
   const handleTabChange = (tab: Tab) => {
     setActiveTab(tab);
     setWhatsAppFormData({ ...whatsAppFormData, procedure: '', customProcedure: '' });

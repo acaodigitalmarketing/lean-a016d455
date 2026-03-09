@@ -2,13 +2,16 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Building2, Wrench, Truck, Route } from 'lucide-react';
 
+type NavLink = { label: string; id: string; Icon: React.ElementType };
+
 interface HeaderProps {
   isMenuOpen: boolean;
   setIsMenuOpen: (open: boolean) => void;
   scrollToSection: (sectionId: string) => void;
+  navLinks?: NavLink[];
 }
 
-const navLinks = [
+const defaultNavLinks: NavLink[] = [
   { label: 'A Lean', id: 'sobre', Icon: Building2 },
   { label: 'Diferenciais', id: 'servicos', Icon: Wrench },
   { label: 'Equipamentos', id: 'equipamentos', Icon: Truck },
@@ -17,7 +20,7 @@ const navLinks = [
 
 const openForm = () => window.dispatchEvent(new CustomEvent('open-whatsapp-form'));
 
-const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen, scrollToSection }) => {
+const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen, scrollToSection, navLinks = defaultNavLinks }) => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 header-lean">
       <div className="container">

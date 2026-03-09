@@ -43,8 +43,8 @@ const StarRating = ({ count }: { count: number }) => (
   </div>
 );
 
-// duplica para loop infinito
-const allTestimonials = [...testimonials, ...testimonials];
+// triplica para garantir que sempre haja cards entrando pela direita
+const allTestimonials = [...testimonials, ...testimonials, ...testimonials];
 
 const TestimonialsSection: React.FC = () => {
   const photoContainerRef = useRef<HTMLDivElement>(null);
@@ -132,7 +132,7 @@ const TestimonialsSection: React.FC = () => {
             <p className="text-sm" style={{ color: '#a5c9b2' }}>Ficou com alguma dúvida? Fale com a gente.</p>
             <button
               onClick={() => window.dispatchEvent(new CustomEvent('open-whatsapp-form'))}
-              className="btn-pill font-bold text-sm px-8 py-3 transition-all duration-300 hover:bg-white/10 hover:border-white/70 hover:-translate-y-0.5"
+              className="btn-pill font-bold text-sm px-8 py-3 w-full sm:w-auto transition-all duration-300 hover:bg-white/10 hover:border-white/70 hover:-translate-y-0.5"
               style={{ border: '1.5px solid rgba(255,255,255,0.4)', color: '#ffffff', background: 'transparent', fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: '0.08em', textTransform: 'uppercase' }}
             >
               Entrar em Contato

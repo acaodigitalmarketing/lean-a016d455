@@ -50,15 +50,37 @@ export const rentalGroups = [
 // Opções para aba "Prestação de Serviço"
 export const serviceGroups = [
   {
-    label: 'Serviços',
+    label: 'Mineração',
     options: [
-      'Terraplanagem',
-      'Mineração',
-      'Obras Rurais e Agrícolas',
-      'Construção Civil',
-      'Movimentação de Cargas Especiais',
-      'Escavação e Valas',
-      'Nivelamento de Terreno',
+      'Transporte de Minério — Mineração',
+      'Transporte de Resíduos — Mineração',
+      'Umectação de Solo — Mineração',
+    ],
+  },
+  {
+    label: 'Fazendas e Agronegócio',
+    options: [
+      'Abertura de Valas — Agronegócio',
+      'Recuperação de Estradas — Agronegócio',
+      'Limpeza de Terrenos — Agronegócio',
+      'Carregamento de Materiais — Agronegócio',
+      'Tanques e Represas — Agronegócio',
+    ],
+  },
+  {
+    label: 'Indústrias e Áreas Industriais',
+    options: [
+      'Terraplanagem Industrial',
+      'Escavação para Fundações — Industrial',
+      'Carregamento a Granel — Industrial',
+      'Movimentação de Carga — Industrial',
+    ],
+  },
+  {
+    label: 'Uso Residencial',
+    options: [
+      'Limpeza de Entulhos — Residencial',
+      'Preparação de Terreno — Residencial',
     ],
   },
   {

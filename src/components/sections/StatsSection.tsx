@@ -11,6 +11,18 @@ const stats = [
   { icon: MapPin, value: 'MG e região', label: 'área de atuação' },
 ];
 
+const StatCard: React.FC<{ icon: React.ElementType; value: string; label: string }> = ({ icon: Icon, value, label }) => (
+  <div className="flex items-center gap-3 flex-shrink-0 px-5">
+    <div className="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0" style={{ background: '#cce8d4' }}>
+      <Icon className="w-5 h-5" style={{ color: '#3a6b4a' }} />
+    </div>
+    <div>
+      <div className="font-bold text-lg leading-none" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#3a6b4a' }}>{value}</div>
+      <div className="text-xs mt-1 whitespace-nowrap" style={{ color: '#4a8460' }}>{label}</div>
+    </div>
+  </div>
+);
+
 const StatsSection: React.FC = () => {
   const barsRef = useRef<HTMLDivElement>(null);
 
@@ -32,22 +44,29 @@ const StatsSection: React.FC = () => {
 
   return (
     <section className="py-12 md:py-16 border-y" style={{ background: '#eaf5ed', borderColor: '#cce8d4' }}>
-      <div className="container">
+
+      {/* Mobile: carrossel horizontal automático */}
+      <div className="sm:hidden overflow-hidden">
+        <div className="stats-marquee flex">
+          {[...stats, ...stats].map(({ icon, value, label }, i) => (
+            <StatCard key={i} icon={icon} value={value} label={label} />
+          ))}
+        </div>
+      </div>
+
+      {/* Desktop: grid */}
+      <div className="container hidden sm:block">
         <div
           ref={barsRef}
-          className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 sm:gap-8 xl:gap-10"
+          className="grid grid-cols-2 xl:grid-cols-4 gap-5 sm:gap-8 xl:gap-10"
         >
           {stats.map(({ icon: Icon, value, label }) => (
             <div key={label} className="flex items-center gap-4 w-full">
-              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center flex-shrink-0"
-                style={{ background: '#cce8d4' }}>
-                <Icon className="w-6 h-6 sm:w-7 sm:h-7" style={{ color: '#3a6b4a' }} />
+              <div className="w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0" style={{ background: '#cce8d4' }}>
+                <Icon className="w-7 h-7" style={{ color: '#3a6b4a' }} />
               </div>
               <div>
-                <div className="font-bold text-xl sm:text-2xl md:text-3xl leading-none"
-                  style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#3a6b4a' }}>
-                  {value}
-                </div>
+                <div className="font-bold text-2xl md:text-3xl leading-none" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#3a6b4a' }}>{value}</div>
                 <div className="text-sm mt-1" style={{ color: '#4a8460' }}>{label}</div>
               </div>
             </div>

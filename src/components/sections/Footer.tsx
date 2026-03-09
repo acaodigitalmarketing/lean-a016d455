@@ -98,12 +98,12 @@ const Footer: React.FC = () => {
             </div>
 
             {/* Column 3: Equipamentos */}
-            <div>
+            <div className="flex flex-col items-center sm:items-start">
               <h3 className="text-base font-bold mb-5" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#ffffff', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
                 Equipamentos
               </h3>
 
-              <ul className="space-y-2 inline-block">
+              <ul className="space-y-2">
                 {equipamentos.map((item) => (
                   <li key={item} className="text-sm flex items-center gap-2" style={{ color: '#a5d1b4' }}>
                     <span style={{ color: '#5c9e74' }}>›</span>
@@ -114,12 +114,12 @@ const Footer: React.FC = () => {
             </div>
 
             {/* Column 4: Serviços */}
-            <div>
+            <div className="flex flex-col items-center sm:items-start">
               <h3 className="text-base font-bold mb-5" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#ffffff', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
                 Serviços
               </h3>
 
-              <ul className="space-y-2 inline-block">
+              <ul className="space-y-2">
                 {servicos.map((item) => (
                   <li key={item} className="text-sm flex items-center gap-2" style={{ color: '#a5d1b4' }}>
                     <span style={{ color: '#5c9e74' }}>›</span>

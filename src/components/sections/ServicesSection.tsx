@@ -1,5 +1,6 @@
 import React from 'react';
 import { HardHat, Layers, Truck, Shovel, ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { AnimatedSection } from '@/hooks/useScrollAnimation';
 
 const services = [
@@ -26,6 +27,7 @@ const services = [
 ];
 
 const ServicesSection: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <section
       id="prestacao-de-servicos"
@@ -93,10 +95,10 @@ const ServicesSection: React.FC = () => {
 
         {/* CTA */}
         <AnimatedSection delay={200}>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-center gap-4">
           <button
-            onClick={() => window.dispatchEvent(new CustomEvent('open-whatsapp-form'))}
-            className="btn-pill btn-primary font-bold text-sm px-8 py-3.5 flex items-center gap-2"
+            onClick={() => navigate('/servicos')}
+            className="btn-pill btn-primary font-bold text-sm px-8 py-3.5 flex items-center justify-center gap-2 w-full sm:w-auto transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5 active:scale-95"
           >
             Saiba Mais
             <ArrowRight className="w-4 h-4" />
