@@ -5,7 +5,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 
 const NotFound = lazy(() => import("./pages/NotFound"));
-const Servicos = lazy(() => import("./pages/Servicos"));
 const CookieConsent = lazy(() =>
   import("@/components/ui/cookie-consent").then((m) => ({ default: m.CookieConsent }))
 );
