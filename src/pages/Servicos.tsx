@@ -86,7 +86,7 @@ const agronegocio: ServiceCard[] = [
     subtitle: 'Retroescavadeira JCB',
     description: 'Escavação de valas para sistemas de drenagem, irrigação e instalações hidráulicas em propriedades rurais com precisão e agilidade.',
     tags: ['Drenagem', 'Irrigação', 'Agrícola'],
-    photo: '/lovable-uploads/retroescavadeira.webp',
+    photo: '/lovable-uploads/Abertura de Valas.webp',
     photoLabel: 'Retroescavadeira JCB abrindo valas',
     procedureValue: 'Abertura de Valas — Agronegócio',
   },
@@ -95,7 +95,7 @@ const agronegocio: ServiceCard[] = [
     subtitle: 'Escavadeira XCMG',
     description: 'Raspagem, nivelamento e cascalhamento de estradas internas para melhorar o acesso e o escoamento da produção na propriedade rural.',
     tags: ['Estradas', 'Nivelamento', 'Cascalhamento'],
-    photo: '/lovable-uploads/escavadeira.webp',
+    photo: '/lovable-uploads/Recuperação de Estradas Vicinais.webp',
     photoLabel: 'Escavadeira XCMG em estrada vicinal',
     procedureValue: 'Recuperação de Estradas — Agronegócio',
   },
@@ -113,7 +113,7 @@ const agronegocio: ServiceCard[] = [
     subtitle: 'Caminhão Caçamba MB Axor 3131',
     description: 'Carga e transporte de adubo, calcário, terra, areia e brita para uso nas atividades produtivas da fazenda com eficiência e rapidez.',
     tags: ['Calcário', 'Adubo', 'Transporte'],
-    photo: '/lovable-uploads/mercedes-axor-3131.webp',
+    photo: '/lovable-uploads/Carregamento de Materiais.webp',
     photoLabel: 'Carregamento de insumos rurais',
     procedureValue: 'Carregamento de Materiais — Agronegócio',
   },
@@ -122,7 +122,7 @@ const agronegocio: ServiceCard[] = [
     subtitle: 'Retroescavadeira JCB',
     description: 'Escavação de tanques e pequenas represas para reservatórios de água e bebedouros de animais, otimizando os recursos hídricos da propriedade.',
     tags: ['Tanques', 'Represas', 'Hídrico'],
-    photo: '/lovable-uploads/retroescavadeira.webp',
+    photo: '/lovable-uploads/Tanques e Represas.webp',
     photoLabel: 'Criação de tanques e represas',
     procedureValue: 'Tanques e Represas — Agronegócio',
   },
@@ -134,7 +134,7 @@ const industrial: ServiceCard[] = [
     subtitle: 'Escavadeira XCMG',
     description: 'Preparação do terreno para expansão de galpões, pátios de manobra e estacionamentos em ambientes industriais com alta produtividade.',
     tags: ['Terraplanagem', 'Galpões', 'Pátios'],
-    photo: '/lovable-uploads/escavadeira.webp',
+    photo: '/lovable-uploads/Terraplanagem e Nivelamento.webp',
     photoLabel: 'Terraplanagem industrial',
     procedureValue: 'Terraplanagem Industrial',
   },
@@ -143,7 +143,7 @@ const industrial: ServiceCard[] = [
     subtitle: 'Retroescavadeira JCB',
     description: 'Valas para alicerces, redes de esgoto, instalações elétricas e hidráulicas com precisão e agilidade para não parar sua linha de produção.',
     tags: ['Fundações', 'Instalações', 'Esgoto'],
-    photo: '/lovable-uploads/retroescavadeira.webp',
+    photo: '/lovable-uploads/Escavação para Fundações.webp',
     photoLabel: 'Escavação de fundações industriais',
     procedureValue: 'Escavação para Fundações — Industrial',
   },
@@ -152,7 +152,7 @@ const industrial: ServiceCard[] = [
     subtitle: 'Caminhão Caçamba VW 3260',
     description: 'Manuseio e transporte de resíduos industriais, sucata, carvão, areia, brita e matérias-primas dentro e fora do perímetro industrial.',
     tags: ['Resíduos', 'Sucata', 'Matérias-primas'],
-    photo: '/lovable-uploads/vw-3260.webp',
+    photo: '/lovable-uploads/Carregamento a Granel.webp',
     photoLabel: 'Carregamento a granel industrial',
     procedureValue: 'Carregamento a Granel — Industrial',
   },
@@ -173,7 +173,7 @@ const residencial: ServiceCard[] = [
     subtitle: 'Caminhão Caçamba MB Axor 3131',
     description: 'Remoção rápida e eficiente de entulhos, demolição autorizada e limpeza geral de terrenos para agilizar obras residenciais do dia a dia.',
     tags: ['Entulho', 'Demolição', 'Limpeza'],
-    photo: '/lovable-uploads/mercedes-axor-3131.webp',
+    photo: '/lovable-uploads/Limpeza de Entulhos.webp',
     photoLabel: 'Remoção de entulhos residenciais',
     procedureValue: 'Limpeza de Entulhos — Residencial',
   },
@@ -182,7 +182,7 @@ const residencial: ServiceCard[] = [
     subtitle: 'Retroescavadeira JCB',
     description: 'Nivelamento e preparação de terrenos para construção residencial, fundações e instalações, economizando tempo e dinheiro na sua obra.',
     tags: ['Nivelamento', 'Construção', 'Residencial'],
-    photo: '/lovable-uploads/retroescavadeira.webp',
+    photo: '/lovable-uploads/Preparação de Terreno.webp',
     photoLabel: 'Preparação de terreno residencial',
     procedureValue: 'Preparação de Terreno — Residencial',
   },
@@ -500,7 +500,7 @@ const SectionTitle: React.FC<{ label: string }> = ({ label }) => (
 );
 
 // ─── Hero ───────────────────────────────────────────────────────────────────────
-const ServicosHero: React.FC<{ onCta: () => void; onBack: () => void }> = ({ onCta, onBack }) => {
+const ServicosHero: React.FC<{ onCta: () => void }> = ({ onCta }) => {
   const sectionRef = useRef<HTMLElement>(null);
   const heroImgRef = useRef<HTMLImageElement>(null);
 
@@ -520,7 +520,7 @@ const ServicosHero: React.FC<{ onCta: () => void; onBack: () => void }> = ({ onC
       {/* BG desktop */}
       <img
         ref={heroImgRef}
-        src="/lovable-uploads/stats-bg-1.webp"
+        src="/lovable-uploads/hero-service.webp"
         alt="LEAN Transportes — serviços de terraplanagem e mineração"
         className="hidden lg:block absolute w-full object-cover"
         style={{ height: '140%', top: '-20%', willChange: 'transform', objectPosition: 'center' }}
@@ -533,15 +533,11 @@ const ServicosHero: React.FC<{ onCta: () => void; onBack: () => void }> = ({ onC
         {/* Mobile: foto em cima */}
         <div className="lg:hidden pt-6 pb-4">
           <div className="w-full aspect-video rounded-2xl overflow-hidden mb-8">
-            <img src="/lovable-uploads/stats-bg-1.webp" alt="LEAN Transportes serviços" className="w-full h-full object-cover object-center" loading="eager" decoding="async" width="640" height="360" />
+            <img src="/lovable-uploads/hero-service.webp" alt="LEAN Transportes serviços" className="w-full h-full object-cover object-center" loading="eager" decoding="async" width="640" height="360" />
           </div>
         </div>
 
         <div className="max-w-3xl lg:py-20 pb-16 lg:pb-20">
-          <button onClick={onBack} className="inline-flex items-center gap-2 text-sm mb-6 transition-opacity hover:opacity-70" style={{ color: '#7dba93', fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: '0.06em' }}>
-            <ArrowLeft className="w-4 h-4" /> Voltar ao início
-          </button>
-
           <div className="mb-6">
             <span className="inline-block text-[#7dba93] text-xs font-bold tracking-[0.3em] uppercase" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
               Serviços Especializados · MG e Região · Desde 2008
@@ -683,7 +679,7 @@ const Servicos = () => {
     <div className="min-h-screen" style={{ background: '#f7f6f3' }}>
       <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} scrollToSection={scrollToSection} navLinks={servicosNavLinks} />
 
-      <ServicosHero onCta={handleWhatsAppOpen} onBack={() => navigate('/')} />
+      <ServicosHero onCta={handleWhatsAppOpen} />
 
       <Suspense fallback={null}>
         <StatsSection />
