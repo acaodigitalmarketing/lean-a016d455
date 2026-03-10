@@ -540,17 +540,17 @@ const ServicosHero: React.FC<{ onCta: () => void }> = ({ onCta }) => {
         <div className="max-w-3xl lg:py-20 pb-16 lg:pb-20">
           <div className="mb-6">
             <span className="inline-block text-[#7dba93] text-xs font-bold tracking-[0.3em] uppercase" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
-              Serviços Especializados · MG e Região · Desde 2008
+              Serviços Especializados · Minas Gerais e Região · Desde 2008
             </span>
           </div>
 
           <h1 className="text-white mb-6 leading-[0.95]" style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 'clamp(40px, 6.5vw, 80px)', fontWeight: 800, letterSpacing: '-1px' }}>
-            Serviço completo,<br />
+            Serviço completo em Oliveira – MG e região,<br />
             <span style={{ color: '#7dba93' }}>do contrato à entrega.</span>
           </h1>
 
           <p className="text-[#a5d1b4] text-lg md:text-xl leading-relaxed mb-10 max-w-xl" style={{ fontFamily: "'Barlow', sans-serif", fontWeight: 400 }}>
-            Equipe qualificada e equipamento adequado para mineração, agronegócio, obras industriais e residenciais. A LEAN executa — você acompanha o resultado.
+            A Lean Transportes, sediada em Oliveira – MG, atua com soluções completas em logística e locação de equipamentos para mineração, agronegócio e operações industriais. Nossa equipe técnica e frota especializada garantem eficiência, segurança e acompanhamento em todas as etapas do projeto.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
@@ -563,19 +563,6 @@ const ServicosHero: React.FC<{ onCta: () => void }> = ({ onCta }) => {
             </button>
           </div>
 
-          {/* Mini selos */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-0 border-t mt-12 pt-8" style={{ borderColor: 'rgba(255,255,255,0.15)' }}>
-            {[
-              { v: 'Mineração', l: 'Mina e Carvoaria' },
-              { v: 'Agronegócio', l: 'Fazendas e Sítios' },
-              { v: 'Industrial', l: 'Indústrias e Galpões' },
-            ].map(({ v, l }, i) => (
-              <div key={v} className={`flex flex-col items-center text-center py-4 sm:py-0 ${i === 1 ? 'border-y sm:border-y-0 sm:border-x' : ''}`} style={{ borderColor: 'rgba(255,255,255,0.15)' }}>
-                <span className="text-2xl font-bold leading-none mb-1" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#ffffff' }}>{v}</span>
-                <span className="text-xs tracking-widest uppercase" style={{ color: '#a5d1b4' }}>{l}</span>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>
@@ -755,15 +742,15 @@ const Servicos = () => {
               <div className="text-center mb-14">
                 <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase mb-4 px-3 py-1 rounded-full"
                   style={{ color: '#7dba93', background: 'rgba(125,186,147,0.12)', fontFamily: "'Barlow Condensed', sans-serif" }}>
-                  Locação de Equipamentos
+                  Locação de Equipamentos · Terraplanagem · Mineração
                 </span>
                 <h2 className="text-3xl md:text-5xl font-black mb-5 leading-tight"
                   style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#ffffff', letterSpacing: '-0.5px' }}>
-                  Precisa do equipamento<br />
-                  <span style={{ color: '#7dba93' }}>sem o operador?</span>
+                  Soluções robustas para<br />
+                  <span style={{ color: '#7dba93' }}>grandes projetos</span>
                 </h2>
                 <p className="text-base max-w-2xl mx-auto leading-relaxed" style={{ color: '#a5c9b2' }}>
-                  Além dos serviços completos, a LEAN também oferece locação de caminhões caçamba, munck, escavadeira e retroescavadeira. Frota moderna, documentação em dia e disponibilidade imediata.
+                  A Lean Transportes, sediada em Oliveira – Minas Gerais, oferece locação de equipamentos e soluções logísticas para operações de mineração, terraplanagem e obras de grande porte. Atuamos com frota moderna, equipe especializada e foco em eficiência operacional.
                 </p>
               </div>
             </AnimatedSection>
@@ -796,10 +783,10 @@ const Servicos = () => {
             <AnimatedSection delay={200}>
               <div className="flex flex-col sm:flex-row sm:items-center justify-center gap-4">
                 <button
-                  onClick={() => navigate('/')}
+                  onClick={handleWhatsAppOpen}
                   className="btn-pill btn-primary font-bold text-sm px-8 py-3.5 flex items-center justify-center gap-2 w-full sm:w-auto transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5 active:scale-95"
                 >
-                  Ver Equipamentos Disponíveis
+                  Solicitar Orçamento
                   <ArrowRight className="w-4 h-4" />
                 </button>
                 <p className="text-xs" style={{ color: '#7dba93' }}>

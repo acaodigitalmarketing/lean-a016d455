@@ -162,13 +162,13 @@ const AboutSection: React.FC = () => {
           {credentials.map((item, index) => (
             <div
               key={index}
-              className="lean-card lean-card-accent flex items-start gap-4 p-5 group transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+              className="lean-card lean-card-accent flex items-center gap-4 p-5 group transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
             >
               <div className="w-10 h-10 rounded-lg border flex items-center justify-center flex-shrink-0 transition-all"
                 style={{ background: '#eaf5ed', borderColor: '#cce8d4' }}>
                 <item.icon className="h-4 w-4" style={{ color: '#3a6b4a' }} strokeWidth={1.5} />
               </div>
-              <p className="text-sm leading-snug pt-2" style={{ color: '#2d2d2d' }}>{item.title}</p>
+              <p className="text-sm leading-snug" style={{ color: '#2d2d2d' }}>{item.title}</p>
             </div>
           ))}
         </div>

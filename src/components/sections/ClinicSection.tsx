@@ -28,6 +28,7 @@ const ClinicSection: React.FC = () => {
           stagger: 0.12,
           duration: 0.55,
           ease: 'back.out(1.4)',
+          immediateRender: false,
           scrollTrigger: { trigger: statGridRef.current, start: 'top 80%', once: true },
         });
       }
@@ -35,6 +36,7 @@ const ClinicSection: React.FC = () => {
       // Coluna direita — fade da direita
       gsap.from(contentColRef.current, {
         opacity: 0, x: 30, duration: 0.8, ease: 'power3.out',
+        immediateRender: false,
         scrollTrigger: { trigger: statGridRef.current, start: 'top 80%', once: true },
       });
 
@@ -47,6 +49,7 @@ const ClinicSection: React.FC = () => {
           duration: 0.4,
           ease: 'power2.out',
           delay: 0.4,
+          immediateRender: false,
           scrollTrigger: { trigger: checklistRef.current, start: 'top 85%', once: true },
         });
       }
@@ -85,8 +88,23 @@ const ClinicSection: React.FC = () => {
             height="640"
           />
         </div>
+        {/* Stats grid — mobile only (sem GSAP) */}
+        <div className="lg:hidden grid grid-cols-2 gap-3 mb-8">
+          {fleetStats.map(({ icon: Icon, value, label }) => (
+            <div key={label} className="rounded-xl p-4 text-center"
+              style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)' }}>
+              <Icon className="w-6 h-6 mx-auto mb-2" style={{ color: '#7dba93' }} />
+              <div className="text-white font-black text-2xl mb-1"
+                style={{ fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: '-0.5px' }}>
+                {value}
+              </div>
+              <div className="text-xs" style={{ color: '#a5d1b4' }}>{label}</div>
+            </div>
+          ))}
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Stats grid — lado esquerdo (oculto no mobile) */}
+          {/* Stats grid — desktop only (com GSAP) */}
           <div ref={statGridRef} className="hidden lg:grid grid-cols-2 gap-3 md:gap-4">
             {fleetStats.map(({ icon: Icon, value, label }) => (
               <div key={label} className="rounded-xl p-4 md:p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:scale-[1.03]"
