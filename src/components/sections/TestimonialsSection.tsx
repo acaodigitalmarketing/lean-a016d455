@@ -98,7 +98,7 @@ const TestimonialsSection: React.FC = () => {
           <img
             ref={photoImgRef}
             src="/lovable-uploads/stats-bg.webp"
-            alt="LEAN Transportes em operação"
+            alt="LEAN Locação e Serviços em operação"
             className="absolute inset-0 w-full h-full object-cover object-center"
             loading="lazy"
             decoding="async"

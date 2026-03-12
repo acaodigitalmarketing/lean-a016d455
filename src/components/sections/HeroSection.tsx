@@ -158,7 +158,7 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ scrollToSection }) => {
           {/* Subtitle */}
           <p ref={subtitleRef} className="text-[#a5d1b4] text-lg md:text-xl leading-relaxed mb-10 max-w-xl"
             style={{ fontFamily: "'Barlow', sans-serif", fontWeight: 400 }}>
-            A Lean Transportes, sediada em Morro do Ferro, distrito de Oliveira – MG, oferece locação de equipamentos e soluções logísticas para operações de mineração, terraplanagem e obras de grande porte. Atuamos com frota moderna, equipe especializada e foco em eficiência operacional.
+            A Lean Locação e Serviços, sediada em Morro do Ferro, distrito de Oliveira – MG, oferece locação de equipamentos e soluções logísticas para operações de mineração, terraplanagem e obras de grande porte. Atuamos com frota moderna, equipe especializada e foco em eficiência operacional.
           </p>
 
           {/* CTAs */}

@@ -87,7 +87,7 @@ const AboutSection: React.FC = () => {
 
             <div className="space-y-4 leading-relaxed text-sm md:text-base" style={{ color: '#555555' }}>
               <p>
-                A <strong style={{ color: '#1a1a1a' }}>LEAN TRANSPORTES E EMPREENDIMENTOS LTDA.</strong> atua desde 2008 com excelência na locação de equipamentos e execução de terraplanagem. Somos referência em locações de caminhões para mineração e movimentação de terra em Minas Gerais.
+                A <strong style={{ color: '#1a1a1a' }}>LEAN LOCAÇÃO E SERVIÇOS LTDA.</strong> atua desde 2008 com excelência na locação de equipamentos e execução de terraplanagem. Somos referência em locações de caminhões para mineração e movimentação de terra em Minas Gerais.
               </p>
               <p>
                 Oferecemos soluções de qualidade, buscando sempre as melhores alternativas para nossos clientes. Valorizamos nossos colaboradores, contribuímos com a comunidade e o meio ambiente, operando com <strong style={{ color: '#1a1a1a' }}>responsabilidade, ética, comprometimento e segurança</strong>.
