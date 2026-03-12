@@ -32,11 +32,16 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen, scrollToSect
             className="focus:outline-none"
             aria-label="LEAN Transportes e Empreendimentos - Início"
           >
-            <img
-              src="/lovable-uploads/ativo-1.svg"
-              alt="LEAN Transportes"
-              style={{ height: '40px', width: 'auto' }}
-            />
+            <div className="flex items-center gap-2">
+              <img
+                src="/lovable-uploads/ativo-1.svg"
+                alt="LEAN Transportes"
+                style={{ height: '40px', width: 'auto' }}
+              />
+              <span className="text-xs font-bold tracking-wide uppercase hidden sm:block" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#2d2d2d', lineHeight: '1.1' }}>
+                Locação<br />e Serviços
+              </span>
+            </div>
           </button>
 
           {/* Desktop Menu */}
