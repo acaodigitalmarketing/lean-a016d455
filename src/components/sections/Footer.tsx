@@ -121,7 +121,7 @@ const Footer: React.FC = () => {
             {/* Column 4: Serviços */}
             <div className="flex flex-col items-center sm:items-start">
               <h3 className="text-base font-bold mb-5" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#ffffff', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
-                Serviços
+                Segmentos
               </h3>
 
               <ul className="space-y-2">
