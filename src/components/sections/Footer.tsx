@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
               </div>
 
               <p className="text-sm leading-relaxed mb-5" style={{ color: '#a5d1b4' }}>
-                Locação de equipamentos para mineração e terraplanagem com frota moderna. Experiência, segurança e comprometimento desde 2008.
+                Locação e prestação de serviços para mineração, terraplanagem, construção civil, agronegócio e obras rurais. Frota moderna, experiência e comprometimento desde 2008.
               </p>
 
               <p className="text-xs mb-5" style={{ color: '#7dba93', fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: '0.1em', textTransform: 'uppercase' }}>
