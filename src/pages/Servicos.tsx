@@ -782,24 +782,8 @@ const Servicos = () => {
               </div>
             </AnimatedSection>
 
-            {/* Munck */}
-            <AnimatedSection delay={250}>
-              <div className="mb-14">
-                <SectionTitle label="Serviços de Munck" />
-                <ServiceCarousel items={munck} />
-              </div>
-            </AnimatedSection>
-
-            {/* Pipa */}
-            <AnimatedSection delay={300}>
-              <div className="mb-14">
-                <SectionTitle label="Caminhão Pipa" />
-                <ServiceCarousel items={pipa} />
-              </div>
-            </AnimatedSection>
-
             {/* Residencial */}
-            <AnimatedSection delay={350}>
+            <AnimatedSection delay={250}>
               <div className="mb-4">
                 <SectionTitle label="Utilidade Domiciliar" />
                 <ServiceCarousel items={residencial} />
