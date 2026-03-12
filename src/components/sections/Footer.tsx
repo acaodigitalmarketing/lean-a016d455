@@ -5,14 +5,17 @@ import { Instagram, Facebook, Phone, MapPin, Mail } from 'lucide-react';
 const equipamentos = [
   'Caminhões Caçamba',
   'Caminhão Munck',
+  'Caminhão Pipa',
   'Escavadeira XCMG',
   'Retroescavadeira JCB',
 ];
 
 const servicos = [
-  'Terraplanagem',
   'Mineração',
-  'Movimentação de Terra',
+  'Terraplanagem',
+  'Construção Civil',
+  'Agronegócio',
+  'Obras Rurais',
   'Locação de Equipamentos',
 ];
 
