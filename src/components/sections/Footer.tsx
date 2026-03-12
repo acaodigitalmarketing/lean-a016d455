@@ -86,8 +86,9 @@ const Footer: React.FC = () => {
                 <div className="flex items-start gap-3 justify-center sm:justify-start">
                   <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: '#7dba93' }} />
                   <div className="text-sm" style={{ color: '#a5d1b4' }}>
-                    <p>Minas Gerais — MG</p>
-                    <p className="text-xs mt-0.5" style={{ color: '#5c9e74' }}>MG e regioes adjacentes</p>
+                    <p>Av. Waldemar Fernal</p>
+                    <p>Morro do Ferro, Oliveira – MG</p>
+                    <p className="text-xs mt-0.5" style={{ color: '#5c9e74' }}>CEP 35540-000</p>
                   </div>
                 </div>
               </div>
