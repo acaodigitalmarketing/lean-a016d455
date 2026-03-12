@@ -395,9 +395,9 @@ const Index = () => {
         <JourneySection />
       </Suspense>
       
-      <Suspense fallback={<SectionLoader />}>
+      {/* <Suspense fallback={<SectionLoader />}>
         <TestimonialsSection />
-      </Suspense>
+      </Suspense> */}
       
       </main>
       

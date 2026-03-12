@@ -800,9 +800,9 @@ const Servicos = () => {
           <AboutSection />
         </Suspense>
 
-        <Suspense fallback={null}>
+        {/* <Suspense fallback={null}>
           <TestimonialsSection />
-        </Suspense>
+        </Suspense> */}
 
       </main>
 
