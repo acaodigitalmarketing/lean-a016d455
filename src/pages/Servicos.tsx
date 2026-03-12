@@ -78,6 +78,15 @@ const mineracao: ServiceCard[] = [
     photoLabel: 'Caminhão Pipa na mineração',
     procedureValue: 'Umectação de Solo — Mineração',
   },
+  {
+    title: 'Apoio à Terraplanagem',
+    subtitle: 'Caminhão Pipa MB Axor 3131 · 20.000 L',
+    description: 'Abastecimento de água para compactação de solo, nivelamento de terrenos e obras de infraestrutura com tanque de alta capacidade.',
+    tags: ['Terraplanagem', 'Compactação', '20.000 L'],
+    photo: '/lovable-uploads/pipa.webp',
+    photoLabel: 'Caminhão Pipa em terraplanagem',
+    procedureValue: 'Apoio à Terraplanagem — Mineração',
+  },
 ];
 
 const agronegocio: ServiceCard[] = [
@@ -126,6 +135,15 @@ const agronegocio: ServiceCard[] = [
     photoLabel: 'Criação de tanques e represas',
     procedureValue: 'Tanques e Represas — Agronegócio',
   },
+  {
+    title: 'Irrigação',
+    subtitle: 'Caminhão Pipa MB Axor 3131 · 20.000 L',
+    description: 'Irrigação de áreas agrícolas, jardins e espaços verdes com sistema completo para distribuição controlada de água em grandes volumes.',
+    tags: ['Irrigação', 'Agrícola', '20.000 L'],
+    photo: '/lovable-uploads/pipa.webp',
+    photoLabel: 'Caminhão Pipa em irrigação',
+    procedureValue: 'Irrigação — Agronegócio',
+  },
 ];
 
 const industrial: ServiceCard[] = [
@@ -157,13 +175,40 @@ const industrial: ServiceCard[] = [
     procedureValue: 'Carregamento a Granel — Industrial',
   },
   {
-    title: 'Movimentação de Carga',
+    title: 'Içamento de Cargas Pesadas',
     subtitle: 'Munck Ford Cargo 2629',
-    description: 'Içamento e movimentação de máquinas industriais, geradores e transformadores pesados dentro do perímetro da planta com segurança total.',
-    tags: ['Içamento', '10.000 kg', 'Cargas Especiais'],
+    description: 'Movimentação de máquinas industriais, geradores, transformadores e motores de grande porte com segurança e precisão operacional.',
+    tags: ['Içamento', 'Munck', 'Carga Pesada'],
     photo: '/lovable-uploads/ford-cargo-2629-munck.webp',
-    photoLabel: 'Munck movimentando carga industrial',
-    procedureValue: 'Movimentação de Carga — Industrial',
+    photoLabel: 'Munck içando carga pesada',
+    procedureValue: 'Içamento de Cargas Pesadas — Industrial',
+  },
+  {
+    title: 'Construção Civil',
+    subtitle: 'Munck Atego 3133',
+    description: 'Movimentação e posicionamento de estruturas metálicas, vigas, pré-moldados e materiais de construção em locais de difícil acesso.',
+    tags: ['Munck', 'Pré-moldados', 'Vigas'],
+    photo: '/lovable-uploads/atego-3133-munck.webp',
+    photoLabel: 'Munck em operação na construção civil',
+    procedureValue: 'Construção Civil — Industrial',
+  },
+  {
+    title: 'Operações com Cesto Aéreo',
+    subtitle: 'Munck Atego 3133',
+    description: 'Serviços que exigem altura, como manutenção e montagem industrial, utilizando cesto acoplado para duas pessoas com total segurança.',
+    tags: ['Cesto Aéreo', 'Munck', 'Montagem'],
+    photo: '/lovable-uploads/atego-3133-munck.webp',
+    photoLabel: 'Munck com cesto aéreo',
+    procedureValue: 'Operações com Cesto Aéreo — Industrial',
+  },
+  {
+    title: 'Limpeza com Água',
+    subtitle: 'Caminhão Pipa MB Axor 3131 · 20.000 L',
+    description: 'Lavagem de vias, pátios, equipamentos e áreas industriais com sistema de jato pressurizado acoplado ao tanque de 20.000 litros.',
+    tags: ['Limpeza', 'Pipa', 'Jato'],
+    photo: '/lovable-uploads/pipa.webp',
+    photoLabel: 'Caminhão Pipa em limpeza industrial',
+    procedureValue: 'Limpeza com Água — Industrial',
   },
   {
     title: 'Demolição Moderada',
@@ -204,83 +249,14 @@ const residencial: ServiceCard[] = [
     photoLabel: 'Preparação de terreno residencial',
     procedureValue: 'Preparação de Terreno — Residencial',
   },
-];
-
-const munck: ServiceCard[] = [
-  {
-    title: 'Içamento de Cargas Pesadas',
-    subtitle: 'Munck Ford Cargo 2629',
-    description: 'Movimentação de máquinas industriais, geradores, transformadores e motores de grande porte com segurança e precisão operacional.',
-    tags: ['Içamento', 'Carga Pesada', 'Industrial'],
-    photo: '/lovable-uploads/ford-cargo-2629-munck.webp',
-    photoLabel: 'Munck içando carga pesada',
-    procedureValue: 'Içamento de Cargas Pesadas — Munck',
-  },
-  {
-    title: 'Construção Civil',
-    subtitle: 'Munck Atego 3133',
-    description: 'Movimentação e posicionamento de estruturas metálicas, vigas, pré-moldados e materiais de construção em locais de difícil acesso.',
-    tags: ['Estruturas', 'Pré-moldados', 'Vigas'],
-    photo: '/lovable-uploads/atego-3133-munck.webp',
-    photoLabel: 'Munck em operação na construção civil',
-    procedureValue: 'Construção Civil — Munck',
-  },
   {
     title: 'Transporte e Logística',
     subtitle: 'Munck Ford Cargo 2629',
     description: 'Transporte de equipamentos pesados e materiais diversos utilizando a carroceria do próprio caminhão, com içamento integrado para carga e descarga.',
-    tags: ['Transporte', 'Logística', 'Equipamentos'],
+    tags: ['Munck', 'Transporte', 'Logística'],
     photo: '/lovable-uploads/ford-cargo-2629-munck.webp',
     photoLabel: 'Munck em operação de transporte',
-    procedureValue: 'Transporte e Logística — Munck',
-  },
-  {
-    title: 'Operações com Cesto Aéreo',
-    subtitle: 'Munck Atego 3133',
-    description: 'Serviços que exigem altura, como manutenção e montagem industrial, utilizando cesto acoplado para duas pessoas com total segurança.',
-    tags: ['Cesto Aéreo', 'Altura', 'Montagem'],
-    photo: '/lovable-uploads/atego-3133-munck.webp',
-    photoLabel: 'Munck com cesto aéreo',
-    procedureValue: 'Operações com Cesto Aéreo — Munck',
-  },
-];
-
-const pipa: ServiceCard[] = [
-  {
-    title: 'Umectação de Solo',
-    subtitle: 'Caminhão Pipa MB Axor 3131 · 20.000 L',
-    description: 'Controle de poeira e umectação de vias e áreas de operação, garantindo segurança e conforto em canteiros de obras, mineração e terraplanagem.',
-    tags: ['Umectação', 'Poeira', 'Segurança'],
-    photo: '/lovable-uploads/pipa.webp',
-    photoLabel: 'Caminhão Pipa umectando solo',
-    procedureValue: 'Umectação de Solo — Pipa',
-  },
-  {
-    title: 'Apoio à Terraplanagem',
-    subtitle: 'Caminhão Pipa MB Axor 3131 · 20.000 L',
-    description: 'Abastecimento de água para compactação de solo, nivelamento de terrenos e obras de infraestrutura com tanque de alta capacidade.',
-    tags: ['Terraplanagem', 'Compactação', '20.000 L'],
-    photo: '/lovable-uploads/pipa.webp',
-    photoLabel: 'Caminhão Pipa em terraplanagem',
-    procedureValue: 'Apoio à Terraplanagem — Pipa',
-  },
-  {
-    title: 'Limpeza com Água',
-    subtitle: 'Caminhão Pipa MB Axor 3131 · 20.000 L',
-    description: 'Lavagem de vias, pátios, equipamentos e áreas industriais com sistema de jato pressurizado acoplado ao tanque de 20.000 litros.',
-    tags: ['Limpeza', 'Jato', 'Industrial'],
-    photo: '/lovable-uploads/pipa.webp',
-    photoLabel: 'Caminhão Pipa em limpeza',
-    procedureValue: 'Limpeza com Água — Pipa',
-  },
-  {
-    title: 'Irrigação',
-    subtitle: 'Caminhão Pipa MB Axor 3131 · 20.000 L',
-    description: 'Irrigação de áreas agrícolas, jardins e espaços verdes com sistema completo para distribuição controlada de água em grandes volumes.',
-    tags: ['Irrigação', 'Agrícola', 'Áreas Verdes'],
-    photo: '/lovable-uploads/pipa.webp',
-    photoLabel: 'Caminhão Pipa em irrigação',
-    procedureValue: 'Irrigação — Pipa',
+    procedureValue: 'Transporte e Logística — Residencial',
   },
 ];
 
