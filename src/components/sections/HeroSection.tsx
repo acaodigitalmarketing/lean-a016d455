@@ -91,7 +91,7 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ scrollToSection }) => {
       <img
         ref={heroImgRef}
         src="/lovable-uploads/hero-1.webp"
-        alt="LEAN Transportes — frota de equipamentos para mineração e terraplanagem"
+        alt="LEAN Locação e Serviços — frota de equipamentos para mineração e terraplanagem"
         className="hidden lg:block absolute w-full object-cover"
         style={{ height: '140%', top: '-20%', willChange: 'transform', objectPosition: 'center' }}
         fetchPriority="high"
