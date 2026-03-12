@@ -78,7 +78,7 @@ const AboutSection: React.FC = () => {
           <div ref={contentRef} className="space-y-6">
             <div className="space-y-3">
               <h3 className="text-3xl md:text-4xl font-bold" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#1a1a1a' }}>
-                LEAN Transportes e Empreendimentos
+                LEAN Locação e Serviços
               </h3>
               <p className="text-lg font-semibold" style={{ color: '#3a6b4a', fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: '0.02em' }}>
                 Força, Segurança e Resultado desde 2008.
