@@ -227,6 +227,45 @@ const munck: ServiceCard[] = [
   },
 ];
 
+const pipa: ServiceCard[] = [
+  {
+    title: 'Umectação de Solo',
+    subtitle: 'Caminhão Pipa MB Axor 3131 · 20.000 L',
+    description: 'Controle de poeira e umectação de vias e áreas de operação, garantindo segurança e conforto em canteiros de obras, mineração e terraplanagem.',
+    tags: ['Umectação', 'Poeira', 'Segurança'],
+    photo: '/lovable-uploads/pipa.webp',
+    photoLabel: 'Caminhão Pipa umectando solo',
+    procedureValue: 'Umectação de Solo — Pipa',
+  },
+  {
+    title: 'Apoio à Terraplanagem',
+    subtitle: 'Caminhão Pipa MB Axor 3131 · 20.000 L',
+    description: 'Abastecimento de água para compactação de solo, nivelamento de terrenos e obras de infraestrutura com tanque de alta capacidade.',
+    tags: ['Terraplanagem', 'Compactação', '20.000 L'],
+    photo: '/lovable-uploads/pipa.webp',
+    photoLabel: 'Caminhão Pipa em terraplanagem',
+    procedureValue: 'Apoio à Terraplanagem — Pipa',
+  },
+  {
+    title: 'Limpeza com Água',
+    subtitle: 'Caminhão Pipa MB Axor 3131 · 20.000 L',
+    description: 'Lavagem de vias, pátios, equipamentos e áreas industriais com sistema de jato pressurizado acoplado ao tanque de 20.000 litros.',
+    tags: ['Limpeza', 'Jato', 'Industrial'],
+    photo: '/lovable-uploads/pipa.webp',
+    photoLabel: 'Caminhão Pipa em limpeza',
+    procedureValue: 'Limpeza com Água — Pipa',
+  },
+  {
+    title: 'Irrigação',
+    subtitle: 'Caminhão Pipa MB Axor 3131 · 20.000 L',
+    description: 'Irrigação de áreas agrícolas, jardins e espaços verdes com sistema completo para distribuição controlada de água em grandes volumes.',
+    tags: ['Irrigação', 'Agrícola', 'Áreas Verdes'],
+    photo: '/lovable-uploads/pipa.webp',
+    photoLabel: 'Caminhão Pipa em irrigação',
+    procedureValue: 'Irrigação — Pipa',
+  },
+];
+
 // ─── ServiceCard Component ──────────────────────────────────────────────────────
 const ServiceCardItem: React.FC<ServiceCard> = ({ title, subtitle, description, tags, photo, photoLabel, procedureValue }) => (
   <div className="group flex flex-col h-full transition-all duration-300 overflow-hidden rounded-xl hover:-translate-y-1 hover:shadow-xl" style={{ border: '1px solid #e8e8e8' }}>
