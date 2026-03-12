@@ -152,7 +152,7 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ scrollToSection }) => {
               letterSpacing: '-1px',
             }}
           >
-            Máquinas pesadas <span style={{ color: '#7dba93' }}>para projetos que exigem resultado.</span>
+            Locação de máquinas pesadas <span style={{ color: '#7dba93' }}>em Minas Gerais.</span>
           </h1>
 
           {/* Subtitle */}
