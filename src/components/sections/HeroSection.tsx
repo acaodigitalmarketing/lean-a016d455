@@ -91,7 +91,7 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ scrollToSection }) => {
       <img
         ref={heroImgRef}
         src="/lovable-uploads/hero-1.webp"
-        alt="LEAN Transportes — frota de equipamentos para mineração e terraplanagem"
+        alt="LEAN Locação e Serviços — frota de equipamentos para mineração e terraplanagem"
         className="hidden lg:block absolute w-full object-cover"
         style={{ height: '140%', top: '-20%', willChange: 'transform', objectPosition: 'center' }}
         fetchPriority="high"
@@ -121,7 +121,7 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ scrollToSection }) => {
           <div className="w-full aspect-square rounded-2xl overflow-hidden mb-8">
             <img
               src="/lovable-uploads/hero-1.webp"
-              alt="LEAN Transportes — frota de equipamentos para mineração e terraplanagem"
+              alt="LEAN Locação e Serviços — frota de equipamentos para mineração e terraplanagem"
               className="w-full h-full object-cover object-center"
               loading="eager"
               decoding="async"
@@ -158,7 +158,7 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ scrollToSection }) => {
           {/* Subtitle */}
           <p ref={subtitleRef} className="text-[#a5d1b4] text-lg md:text-xl leading-relaxed mb-10 max-w-xl"
             style={{ fontFamily: "'Barlow', sans-serif", fontWeight: 400 }}>
-            A Lean Transportes, sediada em Morro do Ferro, distrito de Oliveira – MG, oferece locação de equipamentos e soluções logísticas para operações de mineração, terraplanagem e obras de grande porte. Atuamos com frota moderna, equipe especializada e foco em eficiência operacional.
+            A Lean Locação e Serviços, sediada em Morro do Ferro, distrito de Oliveira – MG, oferece locação de equipamentos e soluções logísticas para operações de mineração, terraplanagem e obras de grande porte. Atuamos com frota moderna, equipe especializada e foco em eficiência operacional.
           </p>
 
           {/* CTAs */}

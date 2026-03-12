@@ -30,12 +30,12 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen, scrollToSect
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="focus:outline-none"
-            aria-label="LEAN Transportes e Empreendimentos - Início"
+            aria-label="LEAN Locação e Serviços - Início"
           >
             <div className="flex items-center gap-2">
               <img
                 src="/lovable-uploads/ativo-1.svg"
-                alt="LEAN Transportes"
+                alt="LEAN Locação e Serviços"
                 style={{ height: '40px', width: 'auto' }}
               />
               <span className="text-xs font-bold tracking-wide uppercase hidden sm:block" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#2d2d2d', lineHeight: '1.1' }}>

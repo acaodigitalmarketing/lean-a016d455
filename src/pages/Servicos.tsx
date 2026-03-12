@@ -521,7 +521,7 @@ const ServicosHero: React.FC<{ onCta: () => void }> = ({ onCta }) => {
       <img
         ref={heroImgRef}
         src="/lovable-uploads/hero-service.webp"
-        alt="LEAN Transportes — serviços de terraplanagem e mineração"
+        alt="LEAN Locação e Serviços — serviços de terraplanagem e mineração"
         className="hidden lg:block absolute w-full object-cover"
         style={{ height: '140%', top: '-20%', willChange: 'transform', objectPosition: 'center' }}
         fetchPriority="high" loading="eager" decoding="sync" width="1920" height="1080"
@@ -533,7 +533,7 @@ const ServicosHero: React.FC<{ onCta: () => void }> = ({ onCta }) => {
         {/* Mobile: foto em cima */}
         <div className="lg:hidden pt-6 pb-4">
           <div className="w-full aspect-video rounded-2xl overflow-hidden mb-8">
-            <img src="/lovable-uploads/hero-service.webp" alt="LEAN Transportes serviços" className="w-full h-full object-cover object-center" loading="eager" decoding="async" width="640" height="360" />
+            <img src="/lovable-uploads/hero-service.webp" alt="LEAN Locação e Serviços" className="w-full h-full object-cover object-center" loading="eager" decoding="async" width="640" height="360" />
           </div>
         </div>
 
@@ -549,7 +549,7 @@ const ServicosHero: React.FC<{ onCta: () => void }> = ({ onCta }) => {
           </h1>
 
           <p className="text-[#a5d1b4] text-lg md:text-xl leading-relaxed mb-10 max-w-xl" style={{ fontFamily: "'Barlow', sans-serif", fontWeight: 400 }}>
-            A Lean Transportes, sediada em Morro do Ferro, distrito de Oliveira – MG, atua com soluções completas em logística e locação de equipamentos para mineração, agronegócio e operações industriais. Nossa equipe técnica e frota especializada garantem eficiência, segurança e acompanhamento em todas as etapas do projeto.
+            A Lean Locação e Serviços, sediada em Morro do Ferro, distrito de Oliveira – MG, atua com soluções completas em logística e locação de equipamentos para mineração, agronegócio e operações industriais. Nossa equipe técnica e frota especializada garantem eficiência, segurança e acompanhamento em todas as etapas do projeto.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
@@ -749,7 +749,7 @@ const Servicos = () => {
                   <span style={{ color: '#7dba93' }}>grandes projetos</span>
                 </h2>
                 <p className="text-base max-w-2xl mx-auto leading-relaxed" style={{ color: '#a5c9b2' }}>
-                  A Lean Transportes, sediada em Morro do Ferro, distrito de Oliveira – MG, oferece locação de equipamentos e soluções logísticas para operações de mineração, terraplanagem e obras de grande porte. Atuamos com frota moderna, equipe especializada e foco em eficiência operacional.
+                  A Lean Locação e Serviços, sediada em Morro do Ferro, distrito de Oliveira – MG, oferece locação de equipamentos e soluções logísticas para operações de mineração, terraplanagem e obras de grande porte. Atuamos com frota moderna, equipe especializada e foco em eficiência operacional.
                 </p>
               </div>
             </AnimatedSection>
