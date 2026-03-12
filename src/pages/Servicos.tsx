@@ -533,7 +533,7 @@ const ServicosHero: React.FC<{ onCta: () => void }> = ({ onCta }) => {
         {/* Mobile: foto em cima */}
         <div className="lg:hidden pt-6 pb-4">
           <div className="w-full aspect-video rounded-2xl overflow-hidden mb-8">
-            <img src="/lovable-uploads/hero-service.webp" alt="LEAN Transportes serviços" className="w-full h-full object-cover object-center" loading="eager" decoding="async" width="640" height="360" />
+            <img src="/lovable-uploads/hero-service.webp" alt="LEAN Locação e Serviços" className="w-full h-full object-cover object-center" loading="eager" decoding="async" width="640" height="360" />
           </div>
         </div>
 
