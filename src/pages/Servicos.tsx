@@ -165,9 +165,25 @@ const industrial: ServiceCard[] = [
     photoLabel: 'Munck movimentando carga industrial',
     procedureValue: 'Movimentação de Carga — Industrial',
   },
+  {
+    title: 'Demolição Moderada',
+    subtitle: 'Escavadeira XCMG · 22.500 kg',
+    description: 'Demolição controlada de estruturas, remoção de concreto e desmontagem de edificações com lanças e braços reforçados em aço de alta resistência.',
+    tags: ['Demolição', 'Concreto', 'Desmontagem'],
+    photo: '/lovable-uploads/escavadeira.webp',
+    photoLabel: 'Escavadeira XCMG em demolição',
+    procedureValue: 'Demolição Moderada — Industrial',
+  },
+  {
+    title: 'Obras de Infraestrutura',
+    subtitle: 'Escavadeira XCMG · 22.500 kg',
+    description: 'Escavação e movimentação de terra para obras de infraestrutura como estradas, redes de saneamento, drenagem e projetos de grande porte.',
+    tags: ['Infraestrutura', 'Saneamento', 'Drenagem'],
+    photo: '/lovable-uploads/escavadeira.webp',
+    photoLabel: 'Escavadeira em obra de infraestrutura',
+    procedureValue: 'Obras de Infraestrutura — Industrial',
+  },
 ];
-
-const residencial: ServiceCard[] = [
   {
     title: 'Limpeza de Entulhos',
     subtitle: 'Caminhão Caçamba MB Axor 3131',
