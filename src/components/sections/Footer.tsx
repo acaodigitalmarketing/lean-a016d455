@@ -12,11 +12,9 @@ const equipamentos = [
 
 const servicos = [
   'Mineração',
-  'Terraplanagem',
-  'Construção Civil',
   'Agronegócio',
-  'Obras Rurais',
-  'Locação de Equipamentos',
+  'Industrial',
+  'Residencial',
 ];
 
 const Footer: React.FC = () => {
