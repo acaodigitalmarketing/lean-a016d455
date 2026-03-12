@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
                 <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
                   style={{ background: '#3a6b4a' }}
-                  aria-label="Instagram LEAN Transportes">
+                  aria-label="Instagram LEAN Locação e Serviços">
                   <Instagram className="h-4 w-4" style={{ color: '#ffffff' }} />
                 </a>
                 <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
