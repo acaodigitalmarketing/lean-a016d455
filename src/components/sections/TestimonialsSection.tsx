@@ -59,7 +59,7 @@ const TestimonialsSection: React.FC = () => {
             <span className="lean-label block mb-3">Depoimentos</span>
             <h2 className="lean-section-title mb-4">O que dizem nossos clientes</h2>
             <p className="text-base max-w-2xl mx-auto leading-relaxed mt-4" style={{ color: '#555555' }}>
-              A confianca de quem confia sua carga a LEAN Transportes.
+              A confiança de quem confia sua operação à LEAN Locação e Serviços.
             </p>
           </div>
         </AnimatedSection>
