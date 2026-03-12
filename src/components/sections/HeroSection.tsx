@@ -147,7 +147,7 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ scrollToSection }) => {
             className="text-white mb-6 leading-[0.95]"
             style={{
               fontFamily: "'Barlow Condensed', sans-serif",
-              fontSize: 'clamp(44px, 7vw, 88px)',
+              fontSize: 'clamp(36px, 6vw, 80px)',
               fontWeight: 800,
               letterSpacing: '-1px',
             }}
