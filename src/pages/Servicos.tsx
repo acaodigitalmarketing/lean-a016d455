@@ -545,8 +545,7 @@ const ServicosHero: React.FC<{ onCta: () => void }> = ({ onCta }) => {
           </div>
 
           <h1 className="text-white mb-6 leading-[0.95]" style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 'clamp(32px, 5.5vw, 72px)', fontWeight: 800, letterSpacing: '-1px' }}>
-            Serviço completo em Morro do Ferro, Oliveira – MG e região,<br />
-            <span style={{ color: '#7dba93' }}>do contrato à entrega.</span>
+            Serviço completo em Morro do Ferro, Oliveira – MG e região, <span style={{ color: '#7dba93' }}>do contrato à entrega.</span>
           </h1>
 
           <p className="text-[#a5d1b4] text-lg md:text-xl leading-relaxed mb-10 max-w-xl" style={{ fontFamily: "'Barlow', sans-serif", fontWeight: 400 }}>
