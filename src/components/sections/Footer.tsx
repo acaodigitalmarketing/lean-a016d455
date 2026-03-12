@@ -32,6 +32,9 @@ const Footer: React.FC = () => {
                   className="mx-auto sm:mx-0"
                   style={{ height: '48px', width: 'auto' }}
                 />
+                <p className="text-xs font-bold tracking-wide uppercase mt-2" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#a5d1b4', letterSpacing: '0.1em' }}>
+                  Locação e Serviços
+                </p>
               </div>
 
               <p className="text-sm leading-relaxed mb-5" style={{ color: '#a5d1b4' }}>
