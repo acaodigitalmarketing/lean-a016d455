@@ -617,7 +617,7 @@ const ServicosHero: React.FC<{ onCta: () => void }> = ({ onCta }) => {
           </div>
 
           <h1 className="text-white mb-6 leading-[0.95]" style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 'clamp(32px, 5.5vw, 72px)', fontWeight: 800, letterSpacing: '-1px' }}>
-            Serviços de terraplanagem, escavação <span style={{ color: '#7dba93' }}>e transporte em Minas Gerais.</span>
+            Serviços de terraplanagem, escavação <span style={{ color: '#7dba93' }}>e operação de máquinas em Minas Gerais.</span>
           </h1>
 
           <p className="text-[#a5d1b4] text-lg md:text-xl leading-relaxed mb-10 max-w-xl" style={{ fontFamily: "'Barlow', sans-serif", fontWeight: 400 }}>
