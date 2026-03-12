@@ -521,7 +521,7 @@ const ServicosHero: React.FC<{ onCta: () => void }> = ({ onCta }) => {
       <img
         ref={heroImgRef}
         src="/lovable-uploads/hero-service.webp"
-        alt="LEAN Transportes — serviços de terraplanagem e mineração"
+        alt="LEAN Locação e Serviços — serviços de terraplanagem e mineração"
         className="hidden lg:block absolute w-full object-cover"
         style={{ height: '140%', top: '-20%', willChange: 'transform', objectPosition: 'center' }}
         fetchPriority="high" loading="eager" decoding="sync" width="1920" height="1080"
