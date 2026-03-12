@@ -121,7 +121,7 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ scrollToSection }) => {
           <div className="w-full aspect-square rounded-2xl overflow-hidden mb-8">
             <img
               src="/lovable-uploads/hero-1.webp"
-              alt="LEAN Transportes — frota de equipamentos para mineração e terraplanagem"
+              alt="LEAN Locação e Serviços — frota de equipamentos para mineração e terraplanagem"
               className="w-full h-full object-cover object-center"
               loading="eager"
               decoding="async"
