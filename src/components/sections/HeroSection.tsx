@@ -147,18 +147,18 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ scrollToSection }) => {
             className="text-white mb-6 leading-[0.95]"
             style={{
               fontFamily: "'Barlow Condensed', sans-serif",
-              fontSize: 'clamp(44px, 7vw, 88px)',
+              fontSize: 'clamp(36px, 6vw, 80px)',
               fontWeight: 800,
               letterSpacing: '-1px',
             }}
           >
-            Soluções <span style={{ color: '#7dba93' }}>para grandes projetos</span> em Oliveira – MG e região.
+            Soluções <span style={{ color: '#7dba93' }}>para grandes projetos</span> em Morro do Ferro, Oliveira – MG e região.
           </h1>
 
           {/* Subtitle */}
           <p ref={subtitleRef} className="text-[#a5d1b4] text-lg md:text-xl leading-relaxed mb-10 max-w-xl"
             style={{ fontFamily: "'Barlow', sans-serif", fontWeight: 400 }}>
-            A Lean Transportes, sediada em Oliveira – Minas Gerais, oferece locação de equipamentos e soluções logísticas para operações de mineração, terraplanagem e obras de grande porte. Atuamos com frota moderna, equipe especializada e foco em eficiência operacional.
+            A Lean Transportes, sediada em Morro do Ferro, distrito de Oliveira – MG, oferece locação de equipamentos e soluções logísticas para operações de mineração, terraplanagem e obras de grande porte. Atuamos com frota moderna, equipe especializada e foco em eficiência operacional.
           </p>
 
           {/* CTAs */}
