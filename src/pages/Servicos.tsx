@@ -188,6 +188,45 @@ const residencial: ServiceCard[] = [
   },
 ];
 
+const munck: ServiceCard[] = [
+  {
+    title: 'Içamento de Cargas Pesadas',
+    subtitle: 'Munck Ford Cargo 2629',
+    description: 'Movimentação de máquinas industriais, geradores, transformadores e motores de grande porte com segurança e precisão operacional.',
+    tags: ['Içamento', 'Carga Pesada', 'Industrial'],
+    photo: '/lovable-uploads/ford-cargo-2629-munck.webp',
+    photoLabel: 'Munck içando carga pesada',
+    procedureValue: 'Içamento de Cargas Pesadas — Munck',
+  },
+  {
+    title: 'Construção Civil',
+    subtitle: 'Munck Atego 3133',
+    description: 'Movimentação e posicionamento de estruturas metálicas, vigas, pré-moldados e materiais de construção em locais de difícil acesso.',
+    tags: ['Estruturas', 'Pré-moldados', 'Vigas'],
+    photo: '/lovable-uploads/atego-3133-munck.webp',
+    photoLabel: 'Munck em operação na construção civil',
+    procedureValue: 'Construção Civil — Munck',
+  },
+  {
+    title: 'Transporte e Logística',
+    subtitle: 'Munck Ford Cargo 2629',
+    description: 'Transporte de equipamentos pesados e materiais diversos utilizando a carroceria do próprio caminhão, com içamento integrado para carga e descarga.',
+    tags: ['Transporte', 'Logística', 'Equipamentos'],
+    photo: '/lovable-uploads/ford-cargo-2629-munck.webp',
+    photoLabel: 'Munck em operação de transporte',
+    procedureValue: 'Transporte e Logística — Munck',
+  },
+  {
+    title: 'Operações com Cesto Aéreo',
+    subtitle: 'Munck Atego 3133',
+    description: 'Serviços que exigem altura, como manutenção e montagem industrial, utilizando cesto acoplado para duas pessoas com total segurança.',
+    tags: ['Cesto Aéreo', 'Altura', 'Montagem'],
+    photo: '/lovable-uploads/atego-3133-munck.webp',
+    photoLabel: 'Munck com cesto aéreo',
+    procedureValue: 'Operações com Cesto Aéreo — Munck',
+  },
+];
+
 // ─── ServiceCard Component ──────────────────────────────────────────────────────
 const ServiceCardItem: React.FC<ServiceCard> = ({ title, subtitle, description, tags, photo, photoLabel, procedureValue }) => (
   <div className="group flex flex-col h-full transition-all duration-300 overflow-hidden rounded-xl hover:-translate-y-1 hover:shadow-xl" style={{ border: '1px solid #e8e8e8' }}>
@@ -710,8 +749,16 @@ const Servicos = () => {
               </div>
             </AnimatedSection>
 
-            {/* Residencial */}
+            {/* Munck */}
             <AnimatedSection delay={250}>
+              <div className="mb-14">
+                <SectionTitle label="Serviços de Munck" />
+                <ServiceCarousel items={munck} />
+              </div>
+            </AnimatedSection>
+
+            {/* Residencial */}
+            <AnimatedSection delay={300}>
               <div className="mb-4">
                 <SectionTitle label="Utilidade Domiciliar" />
                 <ServiceCarousel items={residencial} />
