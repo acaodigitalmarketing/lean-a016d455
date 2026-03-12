@@ -250,13 +250,13 @@ const residencial: ServiceCard[] = [
     procedureValue: 'Preparação de Terreno — Residencial',
   },
   {
-    title: 'Transporte e Logística',
+    title: 'Içamento e Movimentação',
     subtitle: 'Munck Ford Cargo 2629',
-    description: 'Transporte de equipamentos pesados e materiais diversos utilizando a carroceria do próprio caminhão, com içamento integrado para carga e descarga.',
-    tags: ['Munck', 'Transporte', 'Logística'],
+    description: 'Içamento e posicionamento de materiais de construção como vigas, caixas d\'água, estruturas metálicas e pré-moldados em obras residenciais com segurança e precisão.',
+    tags: ['Munck', 'Içamento', 'Obras'],
     photo: '/lovable-uploads/ford-cargo-2629-munck.webp',
-    photoLabel: 'Munck em operação de transporte',
-    procedureValue: 'Transporte e Logística — Residencial',
+    photoLabel: 'Munck içando materiais em obra residencial',
+    procedureValue: 'Içamento e Movimentação — Residencial',
   },
 ];
 
