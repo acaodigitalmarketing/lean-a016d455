@@ -594,7 +594,7 @@ const Servicos = () => {
   const preloadFormUtils = useCallback(() => { getFormUtils(); }, []);
 
   useEffect(() => {
-    let timer: NodeJS.Timeout;
+    let timer: ReturnType<typeof setTimeout>;
     if (isSuccessPopupOpen && countdown > 0) timer = setTimeout(() => setCountdown(c => c - 1), 1000);
     return () => clearTimeout(timer);
   }, [isSuccessPopupOpen, countdown]);
