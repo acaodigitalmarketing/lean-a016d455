@@ -184,6 +184,8 @@ const industrial: ServiceCard[] = [
     procedureValue: 'Obras de Infraestrutura — Industrial',
   },
 ];
+
+const residencial: ServiceCard[] = [
   {
     title: 'Limpeza de Entulhos',
     subtitle: 'Caminhão Caçamba MB Axor 3131',
