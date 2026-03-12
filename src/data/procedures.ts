@@ -89,5 +89,60 @@ export const serviceGroups = [
   },
 ];
 
-// Mantido por compatibilidade (ContactSection)
-export const procedureGroups = [...rentalGroups];
+// Unificado para ContactSection: equipamentos + serviços
+export const procedureGroups = [
+  {
+    label: 'Locação de Equipamentos',
+    options: [
+      'Caçamba — MB Axor 3131',
+      'Caçamba — VW 3260',
+      'Pipa — MB Axor 3131',
+      'Munck — Ford Cargo 2629 6x4',
+      'Munck — MB Atego 3133/48 6x4',
+      'Escavadeira XCMG (22.500 kg)',
+      'Retroescavadeira JCB (8.185 kg)',
+    ],
+  },
+  {
+    label: 'Serviços — Mineração',
+    options: [
+      'Transporte de Minério',
+      'Transporte de Resíduos',
+      'Umectação de Solo',
+    ],
+  },
+  {
+    label: 'Serviços — Agronegócio',
+    options: [
+      'Abertura de Valas',
+      'Recuperação de Estradas Rurais',
+      'Limpeza de Terrenos',
+      'Carregamento de Materiais',
+      'Tanques e Represas',
+      'Irrigação',
+    ],
+  },
+  {
+    label: 'Serviços — Industrial / Construção Civil',
+    options: [
+      'Terraplanagem Industrial',
+      'Escavação para Fundações',
+      'Carregamento a Granel',
+      'Movimentação de Carga',
+      'Içamento de Cargas Pesadas',
+      'Demolição Moderada',
+      'Obras de Infraestrutura',
+    ],
+  },
+  {
+    label: 'Serviços — Residencial',
+    options: [
+      'Limpeza de Entulhos',
+      'Preparação de Terreno',
+    ],
+  },
+  {
+    label: 'Outros',
+    options: ['Outro (especificar nas observações)'],
+  },
+];
