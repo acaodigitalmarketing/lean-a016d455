@@ -813,15 +813,15 @@ const Servicos = () => {
               <div className="text-center mb-14">
                 <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase mb-4 px-3 py-1 rounded-full"
                   style={{ color: '#7dba93', background: 'rgba(125,186,147,0.12)', fontFamily: "'Barlow Condensed', sans-serif" }}>
-                  Locação de Equipamentos · Terraplanagem · Mineração
+                  Locação de Equipamentos
                 </span>
                 <h2 className="text-3xl md:text-5xl font-black mb-5 leading-tight"
                   style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#ffffff', letterSpacing: '-0.5px' }}>
-                  Soluções robustas para<br />
-                  <span style={{ color: '#7dba93' }}>grandes projetos</span>
+                  Também alugamos<br />
+                  <span style={{ color: '#7dba93' }}>equipamentos pesados</span>
                 </h2>
                 <p className="text-base max-w-2xl mx-auto leading-relaxed" style={{ color: '#a5c9b2' }}>
-                  A Lean Locação e Serviços, sediada em Morro do Ferro, distrito de Oliveira – MG, oferece locação de equipamentos e soluções logísticas para operações de mineração, terraplanagem e obras de grande porte. Atuamos com frota moderna, equipe especializada e foco em eficiência operacional.
+                  Além da prestação de serviços, a LEAN oferece locação de caminhões, escavadeiras e retroescavadeiras para sua operação. Conheça nossa frota completa.
                 </p>
               </div>
             </AnimatedSection>
