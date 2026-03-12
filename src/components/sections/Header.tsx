@@ -38,7 +38,7 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen, scrollToSect
                 alt="LEAN Locação e Serviços"
                 style={{ height: '40px', width: 'auto' }}
               />
-              <span className="text-xs font-bold tracking-wide uppercase hidden sm:block" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#2d2d2d', lineHeight: '1.1' }}>
+              <span className="text-xs font-bold tracking-wide uppercase hidden sm:block text-left" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#2d2d2d', lineHeight: '1.1' }}>
                 Locação<br />e Serviços
               </span>
             </div>
