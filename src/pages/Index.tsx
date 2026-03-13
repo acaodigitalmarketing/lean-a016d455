@@ -71,6 +71,18 @@ const Index = () => {
   const { toast } = useToast();
   const trackingData = useUserTracking();
   const dataLayer = useDataLayer();
+  const location = useLocation();
+
+  // Scroll to #equipamentos when coming from /locacao-de-equipamento
+  useEffect(() => {
+    if (location.pathname === '/locacao-de-equipamento') {
+      const timeout = setTimeout(() => {
+        const el = document.getElementById('equipamentos');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 500);
+      return () => clearTimeout(timeout);
+    }
+  }, [location.pathname]);
 
   // Track form field interactions
   const [hasStartedMainForm, setHasStartedMainForm] = useState(false);
