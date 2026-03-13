@@ -877,6 +877,7 @@ const Servicos = () => {
 
       </main>
 
+      <Suspense fallback={null}><StatsBar /></Suspense>
       <Suspense fallback={null}><Footer /></Suspense>
 
       <Suspense fallback={null}>
