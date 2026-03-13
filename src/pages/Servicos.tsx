@@ -794,13 +794,13 @@ const Servicos = () => {
 
         <ServicosJourney />
 
-        <Suspense fallback={null}>
+        {/* <Suspense fallback={null}>
           <ClinicSection />
         </Suspense>
 
         <Suspense fallback={null}>
           <SpecialtySection />
-        </Suspense>
+        </Suspense> */}
 
         {/* Seção Locação */}
         <section className="section-spacing relative overflow-hidden" style={{ background: '#1e3d28' }}>
