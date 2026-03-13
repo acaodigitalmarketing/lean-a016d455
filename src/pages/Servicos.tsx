@@ -853,7 +853,7 @@ const Servicos = () => {
             <AnimatedSection delay={200}>
               <div className="flex flex-col sm:flex-row sm:items-center justify-center gap-4">
                 <button
-                  onClick={() => navigate('/#equipamentos')}
+                  onClick={() => navigate('/locacao-de-equipamento')}
                   className="btn-pill btn-primary font-bold text-sm px-8 py-3.5 flex items-center justify-center gap-2 w-full sm:w-auto transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5 active:scale-95"
                 >
                   Ver Equipamentos

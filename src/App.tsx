@@ -20,6 +20,7 @@ const App = () => (
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/servicos" element={<Servicos />} />
+        <Route path="/locacao-de-equipamento" element={<Index />} />
         <Route path="*" element={
           <Suspense fallback={null}>
             <NotFound />
