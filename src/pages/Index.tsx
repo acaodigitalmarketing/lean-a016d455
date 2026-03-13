@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect, lazy, Suspense, useCallback } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useToast } from '@/hooks/use-toast';
 import { useUserTracking } from '@/hooks/useUserTracking';
 import { useDataLayer } from '@/hooks/useDataLayer';
