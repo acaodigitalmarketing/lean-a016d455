@@ -413,6 +413,10 @@ const Index = () => {
       </Suspense> */}
       
       </main>
+
+      <Suspense fallback={null}>
+        <StatsBar />
+      </Suspense>
       
       <Suspense fallback={null}>
         <Footer />
