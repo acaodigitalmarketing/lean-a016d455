@@ -265,7 +265,7 @@ const ServiceCardItem: React.FC<ServiceCard> = ({ title, subtitle, description, 
   <div className="group flex flex-col h-full transition-all duration-300 overflow-hidden rounded-xl hover:-translate-y-1 hover:shadow-xl" style={{ border: '1px solid #e8e8e8' }}>
     <div className="relative h-48 overflow-hidden" style={{ background: '#1e3d28' }}>
       <img
-        src={photo}
+        src={encodeURI(photo)}
         alt={photoLabel}
         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         loading="lazy"
