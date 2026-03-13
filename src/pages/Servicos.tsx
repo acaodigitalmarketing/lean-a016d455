@@ -794,9 +794,9 @@ const Servicos = () => {
 
         <ServicosJourney />
 
-        <Suspense fallback={null}>
+        {/* <Suspense fallback={null}>
           <ClinicSection />
-        </Suspense>
+        </Suspense> */}
 
         {/* <Suspense fallback={null}>
           <SpecialtySection />
