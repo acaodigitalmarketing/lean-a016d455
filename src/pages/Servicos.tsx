@@ -644,7 +644,6 @@ const ServicosHero: React.FC<{ onCta: () => void }> = ({ onCta }) => {
 const servicosNavLinks = [
   { label: 'Serviços', id: 'servicos', Icon: Wrench },
   { label: 'Como Funciona', id: 'processo', Icon: Route },
-  { label: 'Nossa Frota', id: 'frota', Icon: Truck },
   { label: 'Sobre', id: 'sobre', Icon: Building2 },
 ];
 
