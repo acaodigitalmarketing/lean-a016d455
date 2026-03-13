@@ -794,11 +794,11 @@ const Servicos = () => {
 
         <ServicosJourney />
 
-        {/* <Suspense fallback={null}>
+        <Suspense fallback={null}>
           <ClinicSection />
         </Suspense>
 
-        <Suspense fallback={null}>
+        {/* <Suspense fallback={null}>
           <SpecialtySection />
         </Suspense> */}
 
