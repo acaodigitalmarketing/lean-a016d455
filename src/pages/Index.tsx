@@ -19,6 +19,7 @@ const ServicesSection = lazy(() => import('@/components/sections/ServicesSection
 const JourneySection = lazy(() => import('@/components/sections/JourneySection'));
 const TestimonialsSection = lazy(() => import('@/components/sections/TestimonialsSection'));
 const Footer = lazy(() => import('@/components/sections/Footer'));
+const StatsBar = lazy(() => import('@/components/sections/StatsBar'));
 const WhatsAppPopup = lazy(() => import('@/components/sections/WhatsAppPopup'));
 const SuccessPopup = lazy(() => import('@/components/ui/success-popup'));
 
