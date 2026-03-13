@@ -644,7 +644,6 @@ const ServicosHero: React.FC<{ onCta: () => void }> = ({ onCta }) => {
 const servicosNavLinks = [
   { label: 'Serviços', id: 'servicos', Icon: Wrench },
   { label: 'Como Funciona', id: 'processo', Icon: Route },
-  { label: 'Nossa Frota', id: 'frota', Icon: Truck },
   { label: 'Sobre', id: 'sobre', Icon: Building2 },
 ];
 
@@ -795,13 +794,13 @@ const Servicos = () => {
 
         <ServicosJourney />
 
-        <Suspense fallback={null}>
+        {/* <Suspense fallback={null}>
           <ClinicSection />
         </Suspense>
 
         <Suspense fallback={null}>
           <SpecialtySection />
-        </Suspense>
+        </Suspense> */}
 
         {/* Seção Locação */}
         <section className="section-spacing relative overflow-hidden" style={{ background: '#1e3d28' }}>
