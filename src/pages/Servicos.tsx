@@ -18,6 +18,7 @@ const SpecialtySection = lazy(() => import('@/components/sections/SpecialtySecti
 const AboutSection = lazy(() => import('@/components/sections/AboutSection'));
 const TestimonialsSection = lazy(() => import('@/components/sections/TestimonialsSection'));
 const Footer = lazy(() => import('@/components/sections/Footer'));
+const StatsBar = lazy(() => import('@/components/sections/StatsBar'));
 const WhatsAppPopup = lazy(() => import('@/components/sections/WhatsAppPopup'));
 const SuccessPopup = lazy(() => import('@/components/ui/success-popup'));
 
@@ -877,6 +878,7 @@ const Servicos = () => {
 
       </main>
 
+      <Suspense fallback={null}><StatsBar /></Suspense>
       <Suspense fallback={null}><Footer /></Suspense>
 
       <Suspense fallback={null}>
