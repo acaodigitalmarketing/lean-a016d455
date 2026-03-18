@@ -751,15 +751,17 @@ const SegmentTabs: React.FC = () => {
       </div>
 
       {/* Segment banner — full width */}
-      <div className="flex items-center gap-6 px-8 py-8 mb-8"
+      <div className="py-8 mb-8"
         style={{ background: '#1e3d28', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', width: '100vw' }}>
-        <seg.Icon className="w-14 h-14 flex-shrink-0 hidden sm:block" style={{ color: '#7dba93' }} />
-        <div>
-          <h3 className="font-black leading-tight mb-2 text-white"
-            style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 'clamp(26px, 3.5vw, 44px)', letterSpacing: '-0.5px' }}>
-            {seg.titleLine} <span style={{ color: '#7dba93' }}>{seg.titleHighlight}</span>
-          </h3>
-          <p className="text-sm leading-relaxed max-w-2xl" style={{ color: '#a5d1b4' }}>{seg.description}</p>
+        <div className="container flex items-center gap-6">
+          <seg.Icon className="w-14 h-14 flex-shrink-0 hidden sm:block" style={{ color: '#7dba93' }} />
+          <div>
+            <h3 className="font-black leading-tight mb-2 text-white"
+              style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 'clamp(26px, 3.5vw, 44px)', letterSpacing: '-0.5px' }}>
+              {seg.titleLine} <span style={{ color: '#7dba93' }}>{seg.titleHighlight}</span>
+            </h3>
+            <p className="text-sm leading-relaxed max-w-2xl" style={{ color: '#a5d1b4' }}>{seg.description}</p>
+          </div>
         </div>
       </div>
 
@@ -848,15 +850,17 @@ const EquipmentTabs: React.FC = () => {
       </div>
 
       {/* Equipment banner — full width */}
-      <div className="flex items-center gap-6 px-8 py-8 mb-8"
+      <div className="py-8 mb-8"
         style={{ background: '#1e3d28', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', width: '100vw' }}>
-        <eq.Icon className="w-14 h-14 flex-shrink-0 hidden sm:block" style={{ color: '#7dba93' }} />
-        <div>
-          <h3 className="font-black leading-tight mb-2 text-white"
-            style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 'clamp(26px, 3.5vw, 44px)', letterSpacing: '-0.5px' }}>
-            {eq.titleLine} <span style={{ color: '#7dba93' }}>{eq.titleHighlight}</span>
-          </h3>
-          <p className="text-sm leading-relaxed max-w-2xl" style={{ color: '#a5d1b4' }}>{eq.description}</p>
+        <div className="container flex items-center gap-6">
+          <eq.Icon className="w-14 h-14 flex-shrink-0 hidden sm:block" style={{ color: '#7dba93' }} />
+          <div>
+            <h3 className="font-black leading-tight mb-2 text-white"
+              style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 'clamp(26px, 3.5vw, 44px)', letterSpacing: '-0.5px' }}>
+              {eq.titleLine} <span style={{ color: '#7dba93' }}>{eq.titleHighlight}</span>
+            </h3>
+            <p className="text-sm leading-relaxed max-w-2xl" style={{ color: '#a5d1b4' }}>{eq.description}</p>
+          </div>
         </div>
       </div>
 
