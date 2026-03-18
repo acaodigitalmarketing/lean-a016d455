@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/André/**)",
+      "Read(//e/Ação Digital/Lean/**)",
+      "Bash(find 'e:\\\\Ação Digital\\\\Lean' -name *.pdf)",
+      "Bash(find C:UsersAndréDownloads -name *catalogo* -o -name *Lean*)",
+      "Bash(choco --version)",
+      "Bash(winget --version)",
+      "Bash(scoop --version)",
+      "Bash(choco install:*)",
+      "Bash(winget install:*)",
+      "Bash(pdftotext \"C:\\\\Users\\\\André\\\\Downloads\\\\catalogoLEAN.pdf\" -)",
+      "Bash(\"/c/Program Files/poppler/bin/pdftotext.exe\" \"C:\\\\Users\\\\André\\\\Downloads\\\\catalogoLEAN.pdf\" -)",
+      "Bash(npx tsc:*)"
+    ]
+  }
+}

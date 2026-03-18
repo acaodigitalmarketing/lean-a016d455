@@ -53,8 +53,7 @@ export const serviceGroups = [
     label: 'Mineração',
     options: [
       'Transporte de Minério — Mineração',
-      'Transporte de Resíduos — Mineração',
-      'Umectação de Solo — Mineração',
+      'Escavação em Mineração — XCMG',
     ],
   },
   {
@@ -65,6 +64,10 @@ export const serviceGroups = [
       'Limpeza de Terrenos — Agronegócio',
       'Carregamento de Materiais — Agronegócio',
       'Tanques e Represas — Agronegócio',
+      'Limpeza de Estábulos — Agronegócio',
+      'Obras Rurais — XCMG',
+      'Serviços Agrícolas — JCB',
+      'Transporte em Obras Rurais — Caçamba',
     ],
   },
   {
@@ -74,13 +77,43 @@ export const serviceGroups = [
       'Escavação para Fundações — Industrial',
       'Carregamento a Granel — Industrial',
       'Movimentação de Carga — Industrial',
+      'Manutenção de Infraestrutura — Industrial',
+      'Demolição e Infraestrutura — XCMG',
+      'Construção Civil — XCMG',
+      'Construção Civil — Munck',
+    ],
+  },
+  {
+    label: 'Terraplanagem e Obras',
+    options: [
+      'Terraplanagem e Nivelamento — JCB',
+      'Escavação Profunda — JCB',
+      'Carregamento de Materiais — JCB',
+      'Limpeza de Terrenos — JCB',
+      'Transporte em Terraplanagem — Caçamba',
+    ],
+  },
+  {
+    label: 'Caminhão Munck',
+    options: [
+      'Içamento de Cargas Pesadas — Munck',
+      'Transporte e Logística — Munck',
+      'Operações com Cesto Aéreo — Munck',
+    ],
+  },
+  {
+    label: 'Caminhão Pipa',
+    options: [
+      'Umectação de Solo — Pipa',
+      'Terraplanagem — Pipa',
+      'Limpeza — Pipa',
+      'Irrigação — Pipa',
     ],
   },
   {
     label: 'Uso Residencial',
     options: [
       'Limpeza de Entulhos — Residencial',
-      'Preparação de Terreno — Residencial',
     ],
   },
   {

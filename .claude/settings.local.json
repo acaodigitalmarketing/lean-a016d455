@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(git config --global credential.githubAuthModes browser)",
-      "Bash(git config --global browser \"C:/Program Files/Google/Chrome/Application/chrome.exe\")"
+      "Bash(git config --global browser \"C:/Program Files/Google/Chrome/Application/chrome.exe\")",
+      "Bash(npm run:*)"
     ]
   }
 }

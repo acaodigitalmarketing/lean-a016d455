@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useToast } from '@/hooks/use-toast';
 import { useUserTracking } from '@/hooks/useUserTracking';
 import { useDataLayer } from '@/hooks/useDataLayer';
-import { ChevronLeft, ChevronRight, ArrowLeft, ArrowRight, Wrench, Truck, Route, Building2 } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ArrowLeft, ArrowRight, Wrench, Truck, Route, Building2, HardHat, Leaf, Factory, Home, Droplets } from 'lucide-react';
 import { AnimatedSection } from '@/hooks/useScrollAnimation';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -51,99 +51,66 @@ type ServiceCard = {
   procedureValue: string;
 };
 
+// ── Segmento: apenas os serviços listados no catálogo ───────────────────────────
 const mineracao: ServiceCard[] = [
   {
     title: 'Transporte de Minério Bruto',
     subtitle: 'Caminhão Caçamba MB Axor 3131',
-    description: 'Transporte eficiente e seguro de minério bruto dentro e fora da mina. Equipamentos preparados para operar em solos difíceis e ciclos contínuos de carga e descarga.',
-    tags: ['Mineração', 'Carga Pesada', 'Solo Difícil'],
-    photo: '/lovable-uploads/mercedes-axor-3131.webp',
+    description: 'Transporte do Minério Bruto e até resíduos, de forma eficiente e segura, são caminhões preparados para operar em solos difíceis, muito usados dentro da mina.',
+    tags: [], photo: '/lovable-uploads/mercedes-axor-3131.webp',
     photoLabel: 'Caçamba MB Axor 3131 na mineração',
     procedureValue: 'Transporte de Minério — Mineração',
-  },
-  {
-    title: 'Transporte de Resíduos',
-    subtitle: 'Caminhão Caçamba VW 3260',
-    description: 'Remoção e transporte de resíduos e subprodutos da mineração de forma segura e eficiente, mantendo a operação sempre em ritmo.',
-    tags: ['Resíduos', 'Mineração', '6x4'],
-    photo: '/lovable-uploads/vw-3260.webp',
-    photoLabel: 'Caçamba VW 3260',
-    procedureValue: 'Transporte de Resíduos — Mineração',
-  },
-  {
-    title: 'Umectação de Solo',
-    subtitle: 'Caminhão Pipa MB Axor 3131 · 20.000 L',
-    description: 'Controle de poeira e umectação de vias internas da mina com caminhão pipa de 20.000 litros, garantindo segurança e conforto operacional.',
-    tags: ['Poeira', 'Umectação', 'Segurança'],
-    photo: '/lovable-uploads/pipa.webp',
-    photoLabel: 'Caminhão Pipa na mineração',
-    procedureValue: 'Umectação de Solo — Mineração',
-  },
-  {
-    title: 'Apoio à Terraplanagem',
-    subtitle: 'Caminhão Pipa MB Axor 3131 · 20.000 L',
-    description: 'Abastecimento de água para compactação de solo, nivelamento de terrenos e obras de infraestrutura com tanque de alta capacidade.',
-    tags: ['Terraplanagem', 'Compactação', '20.000 L'],
-    photo: '/lovable-uploads/pipa.webp',
-    photoLabel: 'Caminhão Pipa em terraplanagem',
-    procedureValue: 'Apoio à Terraplanagem — Mineração',
   },
 ];
 
 const agronegocio: ServiceCard[] = [
   {
-    title: 'Abertura de Valas',
+    title: 'Abertura e Limpeza de Valas',
     subtitle: 'Retroescavadeira JCB',
-    description: 'Escavação de valas para sistemas de drenagem, irrigação e instalações hidráulicas em propriedades rurais com precisão e agilidade.',
-    tags: ['Drenagem', 'Irrigação', 'Agrícola'],
-    photo: '/lovable-uploads/Abertura de Valas.webp',
+    description: 'Para sistemas de drenagem ou irrigação.',
+    tags: [], photo: '/lovable-uploads/Abertura de Valas.webp',
     photoLabel: 'Retroescavadeira JCB abrindo valas',
     procedureValue: 'Abertura de Valas — Agronegócio',
   },
   {
     title: 'Recuperação de Estradas Vicinais',
     subtitle: 'Escavadeira XCMG',
-    description: 'Raspagem, nivelamento e cascalhamento de estradas internas para melhorar o acesso e o escoamento da produção na propriedade rural.',
-    tags: ['Estradas', 'Nivelamento', 'Cascalhamento'],
-    photo: '/lovable-uploads/Recuperação de Estradas Vicinais.webp',
+    description: 'Raspagem, nivelamento e cascalhamento para melhorar o acesso na propriedade.',
+    tags: [], photo: '/lovable-uploads/Recuperação de Estradas Vicinais.webp',
     photoLabel: 'Escavadeira XCMG em estrada vicinal',
     procedureValue: 'Recuperação de Estradas — Agronegócio',
   },
   {
-    title: 'Limpeza de Terrenos',
+    title: 'Limpeza de Terrenos e Áreas',
     subtitle: 'Escavadeira XCMG',
-    description: 'Remoção de vegetação, troncos e pedras para preparação de novas áreas de plantio, pasto ou instalação de infraestrutura rural.',
-    tags: ['Limpeza', 'Vegetação', 'Preparo de Solo'],
-    photo: '/lovable-uploads/escavadeira.webp',
+    description: 'Remoção de vegetação, troncos e pedras para preparação de novas áreas de plantio.',
+    tags: [], photo: '/lovable-uploads/escavadeira.webp',
     photoLabel: 'Limpeza de terreno rural',
     procedureValue: 'Limpeza de Terrenos — Agronegócio',
   },
   {
     title: 'Carregamento de Materiais',
     subtitle: 'Caminhão Caçamba MB Axor 3131',
-    description: 'Carga e transporte de adubo, calcário, terra, areia e brita para uso nas atividades produtivas da fazenda com eficiência e rapidez.',
-    tags: ['Calcário', 'Adubo', 'Transporte'],
-    photo: '/lovable-uploads/Carregamento de Materiais.webp',
+    description: 'Carga de adubo, calcário, terra, areia e brita em caminhões.',
+    tags: [], photo: '/lovable-uploads/Carregamento de Materiais.webp',
     photoLabel: 'Carregamento de insumos rurais',
     procedureValue: 'Carregamento de Materiais — Agronegócio',
   },
   {
-    title: 'Tanques e Represas',
+    title: 'Criação de Tanques e Represas',
     subtitle: 'Retroescavadeira JCB',
-    description: 'Escavação de tanques e pequenas represas para reservatórios de água e bebedouros de animais, otimizando os recursos hídricos da propriedade.',
-    tags: ['Tanques', 'Represas', 'Hídrico'],
-    photo: '/lovable-uploads/Tanques e Represas.webp',
+    description: 'Pequenas escavações para reservatórios de água e bebedouros de animais.',
+    tags: [], photo: '/lovable-uploads/Tanques e Represas.webp',
     photoLabel: 'Criação de tanques e represas',
     procedureValue: 'Tanques e Represas — Agronegócio',
   },
   {
-    title: 'Irrigação',
-    subtitle: 'Caminhão Pipa MB Axor 3131 · 20.000 L',
-    description: 'Irrigação de áreas agrícolas, jardins e espaços verdes com sistema completo para distribuição controlada de água em grandes volumes.',
-    tags: ['Irrigação', 'Agrícola', '20.000 L'],
-    photo: '/lovable-uploads/pipa.webp',
-    photoLabel: 'Caminhão Pipa em irrigação',
-    procedureValue: 'Irrigação — Agronegócio',
+    title: 'Limpeza de Estábulos e Currais',
+    subtitle: 'Retroescavadeira JCB',
+    description: 'Remoção de esterco e entulhos.',
+    tags: [], photo: '/lovable-uploads/Abertura de Valas.webp',
+    photoLabel: 'Limpeza de estábulos e currais',
+    procedureValue: 'Limpeza de Estábulos — Agronegócio',
   },
 ];
 
@@ -151,83 +118,42 @@ const industrial: ServiceCard[] = [
   {
     title: 'Terraplanagem e Nivelamento',
     subtitle: 'Escavadeira XCMG',
-    description: 'Preparação do terreno para expansão de galpões, pátios de manobra e estacionamentos em ambientes industriais com alta produtividade.',
-    tags: ['Terraplanagem', 'Galpões', 'Pátios'],
-    photo: '/lovable-uploads/Terraplanagem e Nivelamento.webp',
+    description: 'Preparação do terreno para expansão de galpões, pátios de manobra ou estacionamentos.',
+    tags: [], photo: '/lovable-uploads/Terraplanagem e Nivelamento.webp',
     photoLabel: 'Terraplanagem industrial',
     procedureValue: 'Terraplanagem Industrial',
   },
   {
     title: 'Escavação para Fundações',
     subtitle: 'Retroescavadeira JCB',
-    description: 'Valas para alicerces, redes de esgoto, instalações elétricas e hidráulicas com precisão e agilidade para não parar sua linha de produção.',
-    tags: ['Fundações', 'Instalações', 'Esgoto'],
-    photo: '/lovable-uploads/Escavação para Fundações.webp',
+    description: 'Valas para alicerces, redes de esgoto, instalações elétricas e hidráulicas.',
+    tags: [], photo: '/lovable-uploads/Escavação para Fundações.webp',
     photoLabel: 'Escavação de fundações industriais',
     procedureValue: 'Escavação para Fundações — Industrial',
   },
   {
-    title: 'Carregamento a Granel',
+    title: 'Carregamento de Materiais a Granel',
     subtitle: 'Caminhão Caçamba VW 3260',
-    description: 'Manuseio e transporte de resíduos industriais, sucata, carvão, areia, brita e matérias-primas dentro e fora do perímetro industrial.',
-    tags: ['Resíduos', 'Sucata', 'Matérias-primas'],
-    photo: '/lovable-uploads/Carregamento a Granel.webp',
+    description: 'Manuseio de resíduos industriais, sucata, carvão, areia, brita ou matérias-primas.',
+    tags: [], photo: '/lovable-uploads/Carregamento a Granel.webp',
     photoLabel: 'Carregamento a granel industrial',
     procedureValue: 'Carregamento a Granel — Industrial',
   },
   {
-    title: 'Içamento de Cargas Pesadas',
-    subtitle: 'Munck Ford Cargo 2629',
-    description: 'Movimentação de máquinas industriais, geradores, transformadores e motores de grande porte com segurança e precisão operacional.',
-    tags: ['Içamento', 'Munck', 'Carga Pesada'],
-    photo: '/lovable-uploads/ford-cargo-2629-munck.webp',
-    photoLabel: 'Munck içando carga pesada',
-    procedureValue: 'Içamento de Cargas Pesadas — Industrial',
+    title: 'Movimentação de Carga',
+    subtitle: 'Munck Ford Cargo 2629 · M.Benz Atego 3133/48',
+    description: 'Uso da concha frontal para transportar materiais pesados dentro do perímetro industrial.',
+    tags: [], photo: '/lovable-uploads/ford-cargo-2629-munck.webp',
+    photoLabel: 'Munck movimentando carga industrial',
+    procedureValue: 'Movimentação de Carga — Industrial',
   },
   {
-    title: 'Construção Civil',
-    subtitle: 'Munck Atego 3133',
-    description: 'Movimentação e posicionamento de estruturas metálicas, vigas, pré-moldados e materiais de construção em locais de difícil acesso.',
-    tags: ['Munck', 'Pré-moldados', 'Vigas'],
-    photo: '/lovable-uploads/atego-3133-munck.webp',
-    photoLabel: 'Munck em operação na construção civil',
-    procedureValue: 'Construção Civil — Industrial',
-  },
-  {
-    title: 'Operações com Cesto Aéreo',
-    subtitle: 'Munck Atego 3133',
-    description: 'Serviços que exigem altura, como manutenção e montagem industrial, utilizando cesto acoplado para duas pessoas com total segurança.',
-    tags: ['Cesto Aéreo', 'Munck', 'Montagem'],
-    photo: '/lovable-uploads/atego-3133-munck.webp',
-    photoLabel: 'Munck com cesto aéreo',
-    procedureValue: 'Operações com Cesto Aéreo — Industrial',
-  },
-  {
-    title: 'Limpeza com Água',
-    subtitle: 'Caminhão Pipa MB Axor 3131 · 20.000 L',
-    description: 'Lavagem de vias, pátios, equipamentos e áreas industriais com sistema de jato pressurizado acoplado ao tanque de 20.000 litros.',
-    tags: ['Limpeza', 'Pipa', 'Jato'],
-    photo: '/lovable-uploads/pipa.webp',
-    photoLabel: 'Caminhão Pipa em limpeza industrial',
-    procedureValue: 'Limpeza com Água — Industrial',
-  },
-  {
-    title: 'Demolição Moderada',
-    subtitle: 'Escavadeira XCMG · 22.500 kg',
-    description: 'Demolição controlada de estruturas, remoção de concreto e desmontagem de edificações com lanças e braços reforçados em aço de alta resistência.',
-    tags: ['Demolição', 'Concreto', 'Desmontagem'],
-    photo: '/lovable-uploads/escavadeira.webp',
-    photoLabel: 'Escavadeira XCMG em demolição',
-    procedureValue: 'Demolição Moderada — Industrial',
-  },
-  {
-    title: 'Obras de Infraestrutura',
-    subtitle: 'Escavadeira XCMG · 22.500 kg',
-    description: 'Escavação e movimentação de terra para obras de infraestrutura como estradas, redes de saneamento, drenagem e projetos de grande porte.',
-    tags: ['Infraestrutura', 'Saneamento', 'Drenagem'],
-    photo: '/lovable-uploads/escavadeira.webp',
-    photoLabel: 'Escavadeira em obra de infraestrutura',
-    procedureValue: 'Obras de Infraestrutura — Industrial',
+    title: 'Manutenção de Infraestrutura',
+    subtitle: 'Escavadeira XCMG',
+    description: 'Limpeza de áreas externas, manutenção de caixas de inspeção e reparações rápidas em vias internas.',
+    tags: [], photo: '/lovable-uploads/escavadeira.webp',
+    photoLabel: 'Manutenção de infraestrutura industrial',
+    procedureValue: 'Manutenção de Infraestrutura — Industrial',
   },
 ];
 
@@ -235,20 +161,178 @@ const residencial: ServiceCard[] = [
   {
     title: 'Limpeza de Entulhos',
     subtitle: 'Caminhão Caçamba MB Axor 3131',
-    description: 'Remoção rápida e eficiente de entulhos, demolição autorizada e limpeza geral de terrenos para agilizar obras residenciais do dia a dia.',
-    tags: ['Entulho', 'Demolição', 'Limpeza'],
-    photo: '/lovable-uploads/Limpeza de Entulhos.webp',
+    description: 'Remoção de entulhos, demolição autorizada e dentre outros.',
+    tags: [], photo: '/lovable-uploads/Limpeza de Entulhos.webp',
     photoLabel: 'Remoção de entulhos residenciais',
     procedureValue: 'Limpeza de Entulhos — Residencial',
   },
+];
+
+// ── Por equipamento: serviços específicos de cada máquina ───────────────────────
+const equipXCMG: ServiceCard[] = [
   {
-    title: 'Preparação de Terreno',
+    title: 'Escavação em Mineração',
+    subtitle: 'Escavadeira XCMG',
+    description: 'Com peso operacional de 22.500 kg e caçamba de 1,2 m³, essa máquina é a escolha ideal para uma ampla gama de projetos. Principalmente utilizada para serviços de mineração, garante desempenho confiável e econômico.',
+    tags: [], photo: '/lovable-uploads/escavadeira.webp',
+    photoLabel: 'Escavadeira XCMG em mineração',
+    procedureValue: 'Escavação em Mineração — XCMG',
+  },
+  {
+    title: 'Obras Rurais',
+    subtitle: 'Escavadeira XCMG',
+    description: 'Principalmente utilizada para obras rurais e outros ambientes de trabalho. Conta com lanças e braços reforçados com aço de alta resistência e grande gama de opcionais de caçamba.',
+    tags: [], photo: '/lovable-uploads/Recuperação de Estradas Vicinais.webp',
+    photoLabel: 'Escavadeira XCMG em obras rurais',
+    procedureValue: 'Obras Rurais — XCMG',
+  },
+  {
+    title: 'Demolição e Infraestrutura',
+    subtitle: 'Escavadeira XCMG',
+    description: 'Perfeita para aplicações de demolição moderada e projetos de infraestrutura, oferece a potência e a precisão necessárias para lidar com desafios diversos.',
+    tags: [], photo: '/lovable-uploads/Terraplanagem e Nivelamento.webp',
+    photoLabel: 'Escavadeira XCMG em demolição',
+    procedureValue: 'Demolição e Infraestrutura — XCMG',
+  },
+  {
+    title: 'Construção Civil',
+    subtitle: 'Escavadeira XCMG',
+    description: 'Com peso operacional de 22.500 kg e caçamba de 1,2 m³. Lanças e braços reforçados com aço de alta resistência e grande gama de opcionais de caçamba. Principalmente utilizada para construção civil.',
+    tags: [], photo: '/lovable-uploads/Terraplanagem e Nivelamento.webp',
+    photoLabel: 'Escavadeira XCMG em construção civil',
+    procedureValue: 'Construção Civil — XCMG',
+  },
+];
+
+const equipJCB: ServiceCard[] = [
+  {
+    title: 'Escavação Profunda',
     subtitle: 'Retroescavadeira JCB',
-    description: 'Nivelamento e preparação de terrenos para construção residencial, fundações e instalações, economizando tempo e dinheiro na sua obra.',
-    tags: ['Nivelamento', 'Construção', 'Residencial'],
-    photo: '/lovable-uploads/Preparação de Terreno.webp',
-    photoLabel: 'Preparação de terreno residencial',
-    procedureValue: 'Preparação de Terreno — Residencial',
+    description: 'Com profundidade de escavação de 4,54 metros (com braço extensor), é ideal para abrir valas para tubulações de água, esgoto, drenagem e redes elétricas.',
+    tags: [], photo: '/lovable-uploads/Escavação para Fundações.webp',
+    photoLabel: 'Retroescavadeira JCB em escavação profunda',
+    procedureValue: 'Escavação Profunda — JCB',
+  },
+  {
+    title: 'Terraplanagem e Nivelamento',
+    subtitle: 'Retroescavadeira JCB',
+    description: 'Utiliza a caçamba frontal para espalhar terra, nivelar terrenos, pavimentação e canteiros de obras.',
+    tags: [], photo: '/lovable-uploads/Preparação de Terreno.webp',
+    photoLabel: 'Retroescavadeira JCB nivelando terreno',
+    procedureValue: 'Terraplanagem e Nivelamento — JCB',
+  },
+  {
+    title: 'Carregamento de Materiais',
+    subtitle: 'Retroescavadeira JCB',
+    description: 'Eficiente para carregar caminhões basculantes com terra, areia, brita e materiais de construção.',
+    tags: [], photo: '/lovable-uploads/Carregamento de Materiais.webp',
+    photoLabel: 'Retroescavadeira JCB carregando materiais',
+    procedureValue: 'Carregamento de Materiais — JCB',
+  },
+  {
+    title: 'Limpeza de Terrenos',
+    subtitle: 'Retroescavadeira JCB',
+    description: 'Remoção de entulhos, vegetação leve e preparação de terrenos para construção.',
+    tags: [], photo: '/lovable-uploads/Preparação de Terreno.webp',
+    photoLabel: 'Retroescavadeira JCB limpando terreno',
+    procedureValue: 'Limpeza de Terrenos — JCB',
+  },
+  {
+    title: 'Serviços Agrícolas',
+    subtitle: 'Retroescavadeira JCB',
+    description: 'Manutenção de estradas rurais, limpeza de valas, carregamento de insumos e pequenas terraplanagens na fazenda.',
+    tags: [], photo: '/lovable-uploads/Abertura de Valas.webp',
+    photoLabel: 'Retroescavadeira JCB em serviços agrícolas',
+    procedureValue: 'Serviços Agrícolas — JCB',
+  },
+];
+
+const equipMunck: ServiceCard[] = [
+  {
+    title: 'Içamento de Cargas Pesadas',
+    subtitle: 'Munck Ford Cargo 2629 · M.Benz Atego 3133/48',
+    description: 'Movimentação de máquinas industriais, geradores, transformadores e motores de grande porte.',
+    tags: [], photo: '/lovable-uploads/ford-cargo-2629-munck.webp',
+    photoLabel: 'Munck içando carga pesada',
+    procedureValue: 'Içamento de Cargas Pesadas — Munck',
+  },
+  {
+    title: 'Construção Civil',
+    subtitle: 'Munck Ford Cargo 2629 · M.Benz Atego 3133/48',
+    description: 'Movimentação e posicionamento de estruturas metálicas, vigas, pré-moldados e materiais de construção em locais de difícil acesso.',
+    tags: [], photo: '/lovable-uploads/ford-cargo-2629-munck.webp',
+    photoLabel: 'Munck em construção civil',
+    procedureValue: 'Construção Civil — Munck',
+  },
+  {
+    title: 'Transporte e Logística',
+    subtitle: 'Munck Ford Cargo 2629 · M.Benz Atego 3133/48',
+    description: 'Transporte de equipamentos pesados e materiais diversos utilizando a carroceria do próprio caminhão.',
+    tags: [], photo: '/lovable-uploads/ford-cargo-2629-munck.webp',
+    photoLabel: 'Munck em transporte e logística',
+    procedureValue: 'Transporte e Logística — Munck',
+  },
+  {
+    title: 'Operações com Cesto Aéreo',
+    subtitle: 'Munck Ford Cargo 2629 · M.Benz Atego 3133/48',
+    description: 'Serviços que exigem altura, como manutenção e montagem industrial, utilizando cesto acoplado para duas pessoas.',
+    tags: [], photo: '/lovable-uploads/ford-cargo-2629-munck.webp',
+    photoLabel: 'Munck com cesto aéreo',
+    procedureValue: 'Operações com Cesto Aéreo — Munck',
+  },
+];
+
+const equipPipa: ServiceCard[] = [
+  {
+    title: 'Umectação de Solo',
+    subtitle: 'Caminhão Pipa MB Axor 3131 · 20.000 L',
+    description: 'Veículo equipado com tanque de 20.000 litros, projetado para o transporte e acoplado de um sistema completo para atender várias demandas — incluindo umectação de solo.',
+    tags: [], photo: '/lovable-uploads/pipa.webp',
+    photoLabel: 'Caminhão Pipa umectando solo',
+    procedureValue: 'Umectação de Solo — Pipa',
+  },
+  {
+    title: 'Terraplanagem',
+    subtitle: 'Caminhão Pipa MB Axor 3131 · 20.000 L',
+    description: 'Veículo equipado com tanque de 20.000 litros, projetado para o transporte e acoplado de um sistema completo para atender várias demandas — incluindo terraplanagem.',
+    tags: [], photo: '/lovable-uploads/pipa.webp',
+    photoLabel: 'Caminhão Pipa em suporte à terraplanagem',
+    procedureValue: 'Terraplanagem — Pipa',
+  },
+  {
+    title: 'Limpeza',
+    subtitle: 'Caminhão Pipa MB Axor 3131 · 20.000 L',
+    description: 'Veículo equipado com tanque de 20.000 litros, projetado para o transporte e acoplado de um sistema completo para atender várias demandas — incluindo limpeza.',
+    tags: [], photo: '/lovable-uploads/pipa.webp',
+    photoLabel: 'Caminhão Pipa em limpeza',
+    procedureValue: 'Limpeza — Pipa',
+  },
+  {
+    title: 'Irrigação',
+    subtitle: 'Caminhão Pipa MB Axor 3131 · 20.000 L',
+    description: 'Veículo equipado com tanque de 20.000 litros, projetado para o transporte e acoplado de um sistema completo para atender várias demandas — incluindo irrigação.',
+    tags: [], photo: '/lovable-uploads/pipa.webp',
+    photoLabel: 'Caminhão Pipa em irrigação',
+    procedureValue: 'Irrigação — Pipa',
+  },
+];
+
+const equipCacamba: ServiceCard[] = [
+  {
+    title: 'Transporte em Obras Rurais',
+    subtitle: 'Caminhão Caçamba MB Axor 3131',
+    description: 'Veículos projetados para operações pesadas que exigem alta robustez e capacidade de tração. Principalmente utilizados para obras rurais e outros ambientes de trabalho.',
+    tags: [], photo: '/lovable-uploads/mercedes-axor-3131.webp',
+    photoLabel: 'Caminhão Axor 3131 em obra rural',
+    procedureValue: 'Transporte em Obras Rurais — Caçamba',
+  },
+  {
+    title: 'Transporte em Terraplanagem e Obras',
+    subtitle: 'Caminhão Caçamba MB Axor 3131',
+    description: 'Veículos projetados para operações pesadas que exigem alta robustez e capacidade de tração. Locações dos caminhões e serviços prestados em mineração e terraplanagem.',
+    tags: [], photo: '/lovable-uploads/mercedes-axor-3131.webp',
+    photoLabel: 'Caminhão Axor 3131 em terraplanagem',
+    procedureValue: 'Transporte em Terraplanagem — Caçamba',
   },
   {
     title: 'Içamento e Movimentação',
@@ -281,14 +365,6 @@ const ServiceCardItem: React.FC<ServiceCard> = ({ title, subtitle, description, 
         <p className="text-xs font-semibold" style={{ color: '#4a8460', fontFamily: "'Barlow Condensed', sans-serif" }}>{subtitle}</p>
       </div>
       <p className="text-sm leading-relaxed flex-1" style={{ color: '#555555' }}>{description}</p>
-      <div className="flex flex-wrap gap-2 mt-auto pt-1">
-        {tags.map(tag => (
-          <span key={tag} className="text-xs font-bold px-2.5 py-1 rounded-full"
-            style={{ background: '#eaf5ed', color: '#3a6b4a', fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: '0.05em', textTransform: 'uppercase' }}>
-            {tag}
-          </span>
-        ))}
-      </div>
       <button
         onClick={() => window.dispatchEvent(new CustomEvent('open-whatsapp-form', { detail: { procedure: procedureValue } }))}
         className="btn-pill btn-primary font-bold text-xs w-full py-2.5 mt-1"
@@ -417,6 +493,47 @@ const ServiceCarousel: React.FC<{ items: ServiceCard[] }> = ({ items }) => {
     </>
   );
 };
+
+// ─── ServiceGrid (static grid, replaces carousel in segment section) ────────────
+const ServiceGridCard: React.FC<ServiceCard> = ({ title, subtitle, description, tags, photo, photoLabel, procedureValue }) => (
+  <div className="group flex flex-col h-full transition-all duration-300 overflow-hidden rounded-xl hover:-translate-y-1 hover:shadow-xl" style={{ border: '1px solid #e8e8e8', background: '#ffffff' }}>
+    <div className="relative overflow-hidden" style={{ aspectRatio: '16/9', background: '#1e3d28' }}>
+      <img
+        src={photo}
+        alt={photoLabel}
+        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+    <div className="p-5 flex flex-col gap-3 flex-1">
+      <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg w-fit" style={{ background: 'rgba(125,186,147,0.12)' }}>
+        <Truck className="w-3.5 h-3.5 flex-shrink-0" style={{ color: '#3a6b4a' }} />
+        <span className="text-xs font-bold" style={{ color: '#3a6b4a', fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: '0.04em' }}>
+          {subtitle}
+        </span>
+      </div>
+      <h3 className="font-bold text-lg leading-tight" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#1a1a1a', letterSpacing: '0.02em' }}>
+        {title}
+      </h3>
+      <p className="text-sm leading-relaxed flex-1" style={{ color: '#555555' }}>{description}</p>
+      <button
+        onClick={() => window.dispatchEvent(new CustomEvent('open-whatsapp-form', { detail: { procedure: procedureValue } }))}
+        className="btn-pill btn-primary font-bold text-xs w-full py-2.5 mt-1"
+      >
+        Solicitar este Serviço
+      </button>
+    </div>
+  </div>
+);
+
+const ServiceGrid: React.FC<{ items: ServiceCard[] }> = ({ items }) => (
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    {items.map((item) => (
+      <ServiceGridCard key={item.title} {...item} />
+    ))}
+  </div>
+);
 
 // ─── Journey de Serviços ────────────────────────────────────────────────────────
 const serviceSteps = [
@@ -560,6 +677,195 @@ const ServicosJourney: React.FC = () => {
   );
 };
 
+// ─── Segment Tabs ───────────────────────────────────────────────────────────────
+const segmentData = [
+  {
+    id: 'mineracao',
+    tabLabel: 'Mineração',
+    titleLine: 'Serviços em',
+    titleHighlight: 'Mineração',
+    description: 'Caminhões preparados para operar em solos difíceis, muito usados dentro da mina.',
+    Icon: HardHat,
+    items: mineracao,
+    intro: null,
+  },
+  {
+    id: 'agronegocio',
+    tabLabel: 'Agronegócio',
+    titleLine: 'Serviços em Fazendas e Áreas Rurais',
+    titleHighlight: 'Agronegócio',
+    description: 'Abertura de valas, recuperação de estradas, carregamento de materiais e preparo do solo na propriedade rural.',
+    Icon: Leaf,
+    items: agronegocio,
+    intro: null,
+  },
+  {
+    id: 'industrial',
+    tabLabel: 'Indústrias',
+    titleLine: 'Serviços em Indústrias e',
+    titleHighlight: 'Áreas Industriais',
+    description: 'Terraplanagem, escavação para fundações, carregamento a granel, movimentação de carga e manutenção de infraestrutura.',
+    Icon: Factory,
+    items: industrial,
+    intro: null,
+  },
+  {
+    id: 'residencial',
+    tabLabel: 'Uso Domiciliar',
+    titleLine: 'Serviços de',
+    titleHighlight: 'Utilidade Domiciliar',
+    description: 'Esses serviços são essenciais não somente em grande escala, fazendas e indústrias, mas para utilidade domiciliar com finalidade de agilizar e facilitar as operações produtivas do dia a dia, ganhando tempo e dinheiro.',
+    Icon: Home,
+    items: residencial,
+    intro: null,
+  },
+];
+
+const SegmentTabs: React.FC = () => {
+  const [active, setActive] = useState(0);
+  const seg = segmentData[active];
+
+  return (
+    <div>
+      {/* Tab row */}
+      <div className="flex overflow-x-auto border-b" style={{ borderColor: '#e0e0e0' }}>
+        {segmentData.map((s, i) => (
+          <button
+            key={s.id}
+            onClick={() => setActive(i)}
+            className="flex items-center gap-2 px-5 py-4 font-bold text-sm whitespace-nowrap transition-colors relative flex-shrink-0"
+            style={{
+              fontFamily: "'Barlow Condensed', sans-serif",
+              letterSpacing: '0.08em',
+              textTransform: 'uppercase',
+              color: active === i ? '#3a6b4a' : '#888888',
+            }}
+          >
+            <s.Icon className="w-4 h-4" />
+            {s.tabLabel}
+            {active === i && (
+              <span className="absolute bottom-0 left-0 right-0 h-0.5" style={{ background: '#3a6b4a' }} />
+            )}
+          </button>
+        ))}
+      </div>
+
+      {/* Segment banner — full width */}
+      <div className="flex items-center gap-6 px-8 py-8 mb-8"
+        style={{ background: '#1e3d28', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', width: '100vw' }}>
+        <seg.Icon className="w-14 h-14 flex-shrink-0 hidden sm:block" style={{ color: '#7dba93' }} />
+        <div>
+          <h3 className="font-black leading-tight mb-2 text-white"
+            style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 'clamp(26px, 3.5vw, 44px)', letterSpacing: '-0.5px' }}>
+            {seg.titleLine} <span style={{ color: '#7dba93' }}>{seg.titleHighlight}</span>
+          </h3>
+          <p className="text-sm leading-relaxed max-w-2xl" style={{ color: '#a5d1b4' }}>{seg.description}</p>
+        </div>
+      </div>
+
+      {/* Grid */}
+      <ServiceGrid items={seg.items} />
+    </div>
+  );
+};
+
+// ─── Equipment Tabs ─────────────────────────────────────────────────────────────
+const equipmentData = [
+  {
+    id: 'xcmg',
+    tabLabel: 'Escavadeira XCMG',
+    titleLine: 'Escavadeira',
+    titleHighlight: 'XCMG',
+    description: 'Peso operacional de 22.500 kg e caçamba de 1,2 m³. Lanças e braços reforçados com aço de alta resistência. Ideal para mineração, obras rurais, demolição e construção civil.',
+    Icon: Building2,
+    items: equipXCMG,
+  },
+  {
+    id: 'jcb',
+    tabLabel: 'Retroescavadeira JCB',
+    titleLine: 'Retroescavadeira',
+    titleHighlight: 'JCB',
+    description: 'Profundidade de escavação de 4,54 metros (com braço extensor). Peso operacional de 8.185 kg. Versátil para escavação profunda, terraplanagem, carregamento e serviços agrícolas.',
+    Icon: Wrench,
+    items: equipJCB,
+  },
+  {
+    id: 'munck',
+    tabLabel: 'Caminhão Munck',
+    titleLine: 'Caminhão',
+    titleHighlight: 'Munck',
+    description: 'Ford Cargo 2629 e M.Benz Atego 3133/48. Içamento de cargas pesadas, posicionamento de estruturas, transporte de equipamentos e operações com cesto aéreo.',
+    Icon: Truck,
+    items: equipMunck,
+  },
+  {
+    id: 'pipa',
+    tabLabel: 'Caminhão Pipa',
+    titleLine: 'Caminhão',
+    titleHighlight: 'Pipa',
+    description: 'MB Axor 3131 com tanque de 20.000 litros e sistema completo de bombeamento. Umectação de solo, suporte à terraplanagem, limpeza e irrigação.',
+    Icon: Droplets,
+    items: equipPipa,
+  },
+  {
+    id: 'cacamba',
+    tabLabel: 'Caçamba',
+    titleLine: 'Caminhão',
+    titleHighlight: 'Caçamba',
+    description: 'MB Axor 3131 — veículos projetados para operações pesadas que exigem alta robustez e capacidade de tração. Locações para obras rurais, mineração e terraplanagem.',
+    Icon: Route,
+    items: equipCacamba,
+  },
+];
+
+const EquipmentTabs: React.FC = () => {
+  const [active, setActive] = useState(0);
+  const eq = equipmentData[active];
+
+  return (
+    <div>
+      {/* Tab row */}
+      <div className="flex overflow-x-auto border-b" style={{ borderColor: '#e0e0e0' }}>
+        {equipmentData.map((e, i) => (
+          <button
+            key={e.id}
+            onClick={() => setActive(i)}
+            className="flex items-center gap-2 px-5 py-4 font-bold text-sm whitespace-nowrap transition-colors relative flex-shrink-0"
+            style={{
+              fontFamily: "'Barlow Condensed', sans-serif",
+              letterSpacing: '0.08em',
+              textTransform: 'uppercase',
+              color: active === i ? '#3a6b4a' : '#888888',
+            }}
+          >
+            <e.Icon className="w-4 h-4" />
+            {e.tabLabel}
+            {active === i && (
+              <span className="absolute bottom-0 left-0 right-0 h-0.5" style={{ background: '#3a6b4a' }} />
+            )}
+          </button>
+        ))}
+      </div>
+
+      {/* Equipment banner — full width */}
+      <div className="flex items-center gap-6 px-8 py-8 mb-8"
+        style={{ background: '#1e3d28', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', width: '100vw' }}>
+        <eq.Icon className="w-14 h-14 flex-shrink-0 hidden sm:block" style={{ color: '#7dba93' }} />
+        <div>
+          <h3 className="font-black leading-tight mb-2 text-white"
+            style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 'clamp(26px, 3.5vw, 44px)', letterSpacing: '-0.5px' }}>
+            {eq.titleLine} <span style={{ color: '#7dba93' }}>{eq.titleHighlight}</span>
+          </h3>
+          <p className="text-sm leading-relaxed max-w-2xl" style={{ color: '#a5d1b4' }}>{eq.description}</p>
+        </div>
+      </div>
+
+      {/* Grid */}
+      <ServiceGrid items={eq.items} />
+    </div>
+  );
+};
+
 // ─── Section divider ────────────────────────────────────────────────────────────
 const SectionTitle: React.FC<{ label: string }> = ({ label }) => (
   <div className="flex items-center gap-3 mb-6">
@@ -644,6 +950,7 @@ const ServicosHero: React.FC<{ onCta: () => void }> = ({ onCta }) => {
 // ─── Nav links da página de serviços ────────────────────────────────────────────
 const servicosNavLinks = [
   { label: 'Serviços', id: 'servicos', Icon: Wrench },
+  { label: 'Equipamentos', id: 'equipamentos', Icon: Truck },
   { label: 'Como Funciona', id: 'processo', Icon: Route },
   { label: 'Sobre', id: 'sobre', Icon: Building2 },
 ];
@@ -751,45 +1058,39 @@ const Servicos = () => {
             <AnimatedSection>
               <div className="text-center section-header-spacing">
                 <span className="lean-label block mb-3">O que fazemos</span>
-                <h2 className="lean-section-title mb-4">Serviços por Segmento</h2>
+                <h2 className="lean-section-title mb-4">
+                  Nossos <span style={{ color: '#3a6b4a' }}>Serviços</span>
+                </h2>
                 <p className="text-base max-w-2xl mx-auto leading-relaxed mt-4" style={{ color: '#555555' }}>
-                  Com frota moderna e equipe qualificada, atendemos mineração, agronegócio, indústria e uso residencial em Minas Gerais e regiões adjacentes.
+                  Soluções completas com equipamentos pesados para mineração, agronegócio, indústria e uso domiciliar.
                 </p>
               </div>
             </AnimatedSection>
 
-            {/* Mineração */}
             <AnimatedSection delay={100}>
-              <div className="mb-14">
-                <SectionTitle label="Mineração" />
-                <ServiceCarousel items={mineracao} />
+              <SegmentTabs />
+            </AnimatedSection>
+
+          </div>
+        </section>
+
+        <section id="equipamentos" className="section-spacing relative overflow-hidden" style={{ background: '#ffffff' }}>
+          <div className="container relative z-10">
+            <AnimatedSection>
+              <div className="text-center section-header-spacing">
+                <span className="lean-label block mb-3">Nossa Frota</span>
+                <h2 className="lean-section-title mb-4">
+                  Serviços por <span style={{ color: '#3a6b4a' }}>Equipamento</span>
+                </h2>
+                <p className="text-base max-w-2xl mx-auto leading-relaxed mt-4" style={{ color: '#555555' }}>
+                  Cada máquina da nossa frota tem aplicações específicas. Veja o que cada equipamento pode fazer pelo seu projeto.
+                </p>
               </div>
             </AnimatedSection>
 
-            {/* Agronegócio */}
-            <AnimatedSection delay={150}>
-              <div className="mb-14">
-                <SectionTitle label="Fazendas e Agronegócio" />
-                <ServiceCarousel items={agronegocio} />
-              </div>
+            <AnimatedSection delay={100}>
+              <EquipmentTabs />
             </AnimatedSection>
-
-            {/* Industrial */}
-            <AnimatedSection delay={200}>
-              <div className="mb-14">
-                <SectionTitle label="Indústrias e Áreas Industriais" />
-                <ServiceCarousel items={industrial} />
-              </div>
-            </AnimatedSection>
-
-            {/* Residencial */}
-            <AnimatedSection delay={250}>
-              <div className="mb-4">
-                <SectionTitle label="Utilidade Domiciliar" />
-                <ServiceCarousel items={residencial} />
-              </div>
-            </AnimatedSection>
-
           </div>
         </section>
 
