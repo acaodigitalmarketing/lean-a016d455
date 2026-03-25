@@ -216,7 +216,7 @@ const WhatsAppPopup: React.FC<WhatsAppPopupProps> = ({
         </div>
 
         <div className="flex-1 overflow-y-auto overflow-x-hidden pr-1">
-          <form onSubmit={handleWhatsAppFormSubmit} className="space-y-3 sm:space-y-4">
+          <form onSubmit={handleWhatsAppFormSubmit} className="w-full min-w-0 space-y-3 sm:space-y-4">
             <input type="hidden" name="origem" value={trackingData.origem} />
             <input type="hidden" name="midia" value={trackingData.midia} />
             <input type="hidden" name="url" value={trackingData.url} />
