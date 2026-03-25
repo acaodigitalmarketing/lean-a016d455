@@ -169,7 +169,7 @@ const WhatsAppPopup: React.FC<WhatsAppPopupProps> = ({
       <SheetContent
         side={isMobile ? "center" : "bottom-right"}
         hideOverlay={!isMobile}
-        className={`border-gray-200 p-3 sm:p-4 flex flex-col bg-white ${
+        className={`border-gray-200 p-3 sm:p-4 flex flex-col bg-white overflow-x-hidden ${
           isMobile
             ? 'w-[calc(100vw-2rem)] max-w-md'
             : 'w-full max-w-[calc(100vw-2rem)] sm:max-w-md'
