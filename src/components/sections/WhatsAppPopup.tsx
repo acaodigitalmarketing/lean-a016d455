@@ -169,53 +169,15 @@ const WhatsAppPopup: React.FC<WhatsAppPopupProps> = ({
       <SheetContent
         side={isMobile ? "center" : "bottom-right"}
         hideOverlay={!isMobile}
-        className={`border-gray-200 p-3 sm:p-4 flex flex-col bg-white overflow-x-hidden ${
+        className={`border-gray-200 p-3 sm:p-4 flex flex-col bg-white ${
           isMobile
             ? 'w-[calc(100vw-2rem)] max-w-md'
             : 'left-4 right-4 w-auto sm:left-auto sm:w-full sm:max-w-md'
         }`}
         style={{ height: 'auto', maxHeight: isMobile ? '90vh' : '85vh' }}
       >
-        <SheetHeader className="flex-shrink-0 pb-2">
-          <SheetTitle className="text-gray-900 text-lg sm:text-xl font-semibold">
-            Fale Conosco pelo WhatsApp
-          </SheetTitle>
-          <SheetDescription className="text-gray-600 text-xs sm:text-sm">
-            Preencha o formulário e nossa equipe entrará em contato via WhatsApp.
-          </SheetDescription>
-        </SheetHeader>
-
-        {/* Abas */}
-        <div className="flex-shrink-0 flex rounded-lg overflow-hidden mb-3 border border-gray-200">
-          <button
-            type="button"
-            onClick={() => handleTabChange('rental')}
-            className="flex-1 py-2.5 text-xs font-bold tracking-wide uppercase transition-all"
-            style={{
-              background: activeTab === 'rental' ? '#3a6b4a' : '#f9f9f9',
-              color: activeTab === 'rental' ? '#ffffff' : '#555555',
-              fontFamily: "'Barlow Condensed', sans-serif",
-              letterSpacing: '0.06em',
-            }}
-          >
-            Aluguel de Equipamentos
-          </button>
-          <button
-            type="button"
-            onClick={() => handleTabChange('service')}
-            className="flex-1 py-2.5 text-xs font-bold tracking-wide uppercase transition-all border-l border-gray-200"
-            style={{
-              background: activeTab === 'service' ? '#3a6b4a' : '#f9f9f9',
-              color: activeTab === 'service' ? '#ffffff' : '#555555',
-              fontFamily: "'Barlow Condensed', sans-serif",
-              letterSpacing: '0.06em',
-            }}
-          >
-            Prestação de Serviço
-          </button>
-        </div>
-
-        <div className="flex-1 overflow-y-auto overflow-x-hidden pr-1">
+...
+        <div className="flex-1 overflow-y-auto pr-1">
           <form onSubmit={handleWhatsAppFormSubmit} className="w-full min-w-0 space-y-3 sm:space-y-4">
             <input type="hidden" name="origem" value={trackingData.origem} />
             <input type="hidden" name="midia" value={trackingData.midia} />
