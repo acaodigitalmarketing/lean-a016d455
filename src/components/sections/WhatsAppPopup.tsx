@@ -267,7 +267,7 @@ const WhatsAppPopup: React.FC<WhatsAppPopupProps> = ({
                 <SelectTrigger className="h-11 text-base rounded-lg border-gray-300 bg-gray-50 text-gray-900" aria-label={selectLabel}>
                   <SelectValue placeholder={selectPlaceholder} />
                 </SelectTrigger>
-                <SelectContent className="bg-white border-gray-200 max-h-72 z-[60]">
+                <SelectContent className="bg-white border-gray-200 max-h-72 z-[60] min-w-[min(360px,90vw)]">
                   {currentGroups.map((group) => (
                     <SelectGroup key={group.label}>
                       <SelectLabel className="text-gray-600 text-xs uppercase tracking-wider px-3 py-2 font-semibold">{group.label}</SelectLabel>
