@@ -172,7 +172,7 @@ const WhatsAppPopup: React.FC<WhatsAppPopupProps> = ({
         className={`border-gray-200 p-3 sm:p-4 flex flex-col bg-white overflow-x-hidden ${
           isMobile
             ? 'w-[calc(100vw-2rem)] max-w-md'
-            : 'w-full max-w-[calc(100vw-2rem)] sm:max-w-md'
+            : 'left-4 right-4 w-auto sm:left-auto sm:w-full sm:max-w-md'
         }`}
         style={{ height: 'auto', maxHeight: isMobile ? '90vh' : '85vh' }}
       >
