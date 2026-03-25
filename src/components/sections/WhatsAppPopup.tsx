@@ -169,10 +169,10 @@ const WhatsAppPopup: React.FC<WhatsAppPopupProps> = ({
       <SheetContent
         side={isMobile ? "center" : "bottom-right"}
         hideOverlay={!isMobile}
-        className={`border-gray-200 p-3 sm:p-4 flex flex-col bg-white ${
+        className={`border-gray-200 p-3 sm:p-4 flex flex-col bg-white overflow-x-hidden ${
           isMobile
             ? 'w-[calc(100vw-2rem)] max-w-md'
-            : 'w-full max-w-[calc(100vw-2rem)] sm:max-w-md'
+            : 'left-4 right-4 w-auto sm:left-auto sm:w-full sm:max-w-md'
         }`}
         style={{ height: 'auto', maxHeight: isMobile ? '90vh' : '85vh' }}
       >
@@ -216,7 +216,7 @@ const WhatsAppPopup: React.FC<WhatsAppPopupProps> = ({
         </div>
 
         <div className="flex-1 overflow-y-auto overflow-x-hidden pr-1">
-          <form onSubmit={handleWhatsAppFormSubmit} className="space-y-3 sm:space-y-4">
+          <form onSubmit={handleWhatsAppFormSubmit} className="w-full min-w-0 space-y-3 sm:space-y-4">
             <input type="hidden" name="origem" value={trackingData.origem} />
             <input type="hidden" name="midia" value={trackingData.midia} />
             <input type="hidden" name="url" value={trackingData.url} />
