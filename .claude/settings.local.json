@@ -3,7 +3,10 @@
     "allow": [
       "Bash(git config --global credential.githubAuthModes browser)",
       "Bash(git config --global browser \"C:/Program Files/Google/Chrome/Application/chrome.exe\")",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(xargs wc:*)",
+      "Bash(start http://localhost:8081/servicos)",
+      "Bash(start http://localhost:8082/servicos)"
     ]
   }
 }

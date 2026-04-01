@@ -3,11 +3,12 @@ import React from 'react';
 import { Instagram, Facebook, Phone, MapPin, Mail } from 'lucide-react';
 
 const equipamentos = [
-  'Caminhões Caçamba',
-  'Caminhão Munck',
-  'Caminhão Pipa',
-  'Escavadeira XCMG',
-  'Retroescavadeira JCB',
+  'Caminhões Basculantes',
+  'Caminhões Munck',
+  'Caminhões Pipa',
+  'Escavadeiras',
+  'Retroescavadeiras',
+  'Carregadeiras',
 ];
 
 const servicos = [
@@ -102,36 +103,41 @@ const Footer: React.FC = () => {
               </p>
             </div>
 
-            {/* Column 3: Equipamentos */}
-            <div className="flex flex-col items-center sm:items-start">
-              <h3 className="text-base font-bold mb-5" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#ffffff', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
-                Equipamentos
-              </h3>
+            {/* Columns 3+4: Equipamentos e Segmentos — lado a lado no mobile */}
+            <div className="sm:col-span-2 lg:col-span-2">
+              <div className="flex justify-center gap-8 sm:grid sm:grid-cols-2 sm:gap-6 sm:justify-items-start">
 
-              <ul className="space-y-2">
-                {equipamentos.map((item) => (
-                  <li key={item} className="text-sm flex items-center gap-2" style={{ color: '#a5d1b4' }}>
-                    <span style={{ color: '#5c9e74' }}>›</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
+                {/* Column 3: Equipamentos */}
+                <div className="flex flex-col items-start text-left">
+                  <h3 className="text-base font-bold mb-5" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#ffffff', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+                    Equipamentos
+                  </h3>
+                  <ul className="space-y-2">
+                    {equipamentos.map((item) => (
+                      <li key={item} className="text-sm flex items-center gap-2" style={{ color: '#a5d1b4' }}>
+                        <span style={{ color: '#5c9e74' }}>›</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-            {/* Column 4: Serviços */}
-            <div className="flex flex-col items-center sm:items-start">
-              <h3 className="text-base font-bold mb-5" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#ffffff', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
-                Segmentos
-              </h3>
+                {/* Column 4: Segmentos */}
+                <div className="flex flex-col items-start text-left">
+                  <h3 className="text-base font-bold mb-5" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#ffffff', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+                    Segmentos
+                  </h3>
+                  <ul className="space-y-2">
+                    {servicos.map((item) => (
+                      <li key={item} className="text-sm flex items-center gap-2" style={{ color: '#a5d1b4' }}>
+                        <span style={{ color: '#5c9e74' }}>›</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-              <ul className="space-y-2">
-                {servicos.map((item) => (
-                  <li key={item} className="text-sm flex items-center gap-2" style={{ color: '#a5d1b4' }}>
-                    <span style={{ color: '#5c9e74' }}>›</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              </div>
             </div>
           </div>
 

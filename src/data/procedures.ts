@@ -11,14 +11,19 @@ export const procedures = [
     procedures: ['Ford Cargo 2629', 'MB Atego 3133', 'Icamento', 'Cesto Aereo'],
   },
   {
-    title: 'Escavadeira XCMG',
+    title: 'Escavadeiras',
     subtext: 'Peso operacional 22.500 kg, cacamba 1,2 m3. Alta performance para terraplanagem e mineracao.',
     procedures: ['22.500 kg', '1,2 m3', 'Terraplanagem', 'Mineracao'],
   },
   {
-    title: 'Retroescavadeira JCB',
+    title: 'Retroescavadeiras',
     subtext: 'Peso 8.185 kg, escavacao ate 4,54 m. Ideal para obras urbanas e servicos agricolas.',
     procedures: ['8.185 kg', '4,54 m', 'Obras Urbanas', 'Agricola'],
+  },
+  {
+    title: 'Carregadeiras',
+    subtext: 'Capacidade de cacamba ate 3,0 m3. Carregamento a granel e movimentacao de terra.',
+    procedures: ['3,0 m3', 'Carregamento', 'Mineracao', 'Terraplanagem'],
   },
 ];
 
@@ -27,18 +32,19 @@ export const rentalGroups = [
   {
     label: 'Caminhões',
     options: [
-      'Caçamba — MB Axor 3131',
-      'Caçamba — VW 3260',
-      'Pipa — MB Axor 3131',
-      'Munck — Ford Cargo 2629 6x4',
-      'Munck — MB Atego 3133/48 6x4',
+      'Caminhões Basculantes — MB Axor 3131',
+      'Caminhões Basculantes — VW 3260',
+      'Caminhões Pipa — MB Axor 3131',
+      'Caminhões Munck — Ford Cargo 2629 6x4',
+      'Caminhões Munck — MB Atego 3133/48 6x4',
     ],
   },
   {
     label: 'Máquinas e Equipamentos',
     options: [
-      'Escavadeira XCMG (22.500 kg)',
-      'Retroescavadeira JCB (8.185 kg)',
+      'Escavadeiras (22.500 kg)',
+      'Retroescavadeiras (8.185 kg)',
+      'Carregadeiras',
     ],
   },
   {
@@ -53,7 +59,8 @@ export const serviceGroups = [
     label: 'Mineração',
     options: [
       'Transporte de Minério — Mineração',
-      'Escavação em Mineração — XCMG',
+      'Escavação em Mineração — Escavadeiras',
+      'Carregamento a Granel — Mineração',
     ],
   },
   {
@@ -65,9 +72,10 @@ export const serviceGroups = [
       'Carregamento de Materiais — Agronegócio',
       'Tanques e Represas — Agronegócio',
       'Limpeza de Estábulos — Agronegócio',
-      'Obras Rurais — XCMG',
-      'Serviços Agrícolas — JCB',
-      'Transporte em Obras Rurais — Caçamba',
+      'Carregamento de Insumos — Agronegócio',
+      'Obras Rurais — Escavadeiras',
+      'Serviços Agrícolas — Retroescavadeiras',
+      'Transporte em Obras Rurais — Caminhões Basculantes',
     ],
   },
   {
@@ -78,23 +86,32 @@ export const serviceGroups = [
       'Carregamento a Granel — Industrial',
       'Movimentação de Carga — Industrial',
       'Manutenção de Infraestrutura — Industrial',
-      'Demolição e Infraestrutura — XCMG',
-      'Construção Civil — XCMG',
+      'Demolição e Infraestrutura — Escavadeiras',
+      'Construção Civil — Escavadeiras',
       'Construção Civil — Munck',
     ],
   },
   {
     label: 'Terraplanagem e Obras',
     options: [
-      'Terraplanagem e Nivelamento — JCB',
-      'Escavação Profunda — JCB',
-      'Carregamento de Materiais — JCB',
-      'Limpeza de Terrenos — JCB',
-      'Transporte em Terraplanagem — Caçamba',
+      'Terraplanagem e Nivelamento — Retroescavadeiras',
+      'Escavação Profunda — Retroescavadeiras',
+      'Carregamento de Materiais — Retroescavadeiras',
+      'Limpeza de Terrenos — Retroescavadeiras',
+      'Transporte em Terraplanagem — Caminhões Basculantes',
     ],
   },
   {
-    label: 'Caminhão Munck',
+    label: 'Carregadeiras',
+    options: [
+      'Carregamento a Granel — Carregadeiras',
+      'Movimentação de Terra — Carregadeiras',
+      'Suporte à Mineração — Carregadeiras',
+      'Obras Rurais — Carregadeiras',
+    ],
+  },
+  {
+    label: 'Caminhões Munck',
     options: [
       'Içamento de Cargas Pesadas — Munck',
       'Transporte e Logística — Munck',
@@ -102,7 +119,7 @@ export const serviceGroups = [
     ],
   },
   {
-    label: 'Caminhão Pipa',
+    label: 'Caminhões Pipa',
     options: [
       'Umectação de Solo — Pipa',
       'Terraplanagem — Pipa',
@@ -114,6 +131,7 @@ export const serviceGroups = [
     label: 'Uso Residencial',
     options: [
       'Limpeza de Entulhos — Residencial',
+      'Içamento e Movimentação — Residencial',
     ],
   },
   {
@@ -127,13 +145,14 @@ export const procedureGroups = [
   {
     label: 'Locação de Equipamentos',
     options: [
-      'Caçamba — MB Axor 3131',
-      'Caçamba — VW 3260',
-      'Pipa — MB Axor 3131',
-      'Munck — Ford Cargo 2629 6x4',
-      'Munck — MB Atego 3133/48 6x4',
-      'Escavadeira XCMG (22.500 kg)',
-      'Retroescavadeira JCB (8.185 kg)',
+      'Caminhões Basculantes — MB Axor 3131',
+      'Caminhões Basculantes — VW 3260',
+      'Caminhões Pipa — MB Axor 3131',
+      'Caminhões Munck — Ford Cargo 2629 6x4',
+      'Caminhões Munck — MB Atego 3133/48 6x4',
+      'Escavadeiras (22.500 kg)',
+      'Retroescavadeiras (8.185 kg)',
+      'Carregadeiras',
     ],
   },
   {

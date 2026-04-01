@@ -137,16 +137,17 @@ const ClinicSection: React.FC = () => {
                 Nossa frota é composta por equipamentos modernos e atualizados, com manutenção preventiva rigorosa para garantir disponibilidade máxima nas suas operações.
               </p>
               <p>
-                De caminhões caçamba a equipamentos de terraplanagem, temos a solução certa para cada desafio — com <strong style={{ color: '#ffffff' }}>operadores qualificados, documentação em dia e comprometimento total</strong> em cada projeto.
+                De caminhões basculantes a equipamentos de terraplanagem, temos a solução certa para cada desafio — com <strong style={{ color: '#ffffff' }}>operadores qualificados, documentação em dia e comprometimento total</strong> em cada projeto.
               </p>
             </div>
 
             <div ref={checklistRef} className="space-y-3">
               {[
-                'Caminhões caçamba MB Axor 3131 e VW 3260',
+                'Caminhões basculantes MB Axor 3131 e VW 3260',
                 'Caminhões Munck Ford Cargo e MB Atego — 10.000 kg',
-                'Escavadeira XCMG — 22.500 kg / 1,2 m³',
-                'Retroescavadeira JCB — 8.185 kg / 4,54 m',
+                'Escavadeiras — 22.500 kg / 1,2 m³',
+                'Retroescavadeiras — 8.185 kg / 4,54 m',
+                'Carregadeiras — Carregamento a granel e movimentação de terra',
               ].map((item) => (
                 <div key={item} className="flex items-center gap-3">
                   <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
