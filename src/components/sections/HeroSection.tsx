@@ -156,13 +156,13 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ scrollToSection }) => {
           </h1>
 
           {/* Subtitle */}
-          <p ref={subtitleRef} className="text-[#a5d1b4] text-lg md:text-xl leading-relaxed mb-10 max-w-xl"
+          <p ref={subtitleRef} className="text-[#a5d1b4] text-lg md:text-xl leading-relaxed mb-10 max-w-xl mx-auto"
             style={{ fontFamily: "'Barlow', sans-serif", fontWeight: 400 }}>
             A Lean Locação e Serviços, sediada em Morro do Ferro, distrito de Oliveira – MG, oferece locação de equipamentos e soluções logísticas para operações de mineração, terraplanagem e obras de grande porte. Atuamos com frota moderna, equipe especializada e foco em eficiência operacional.
           </p>
 
           {/* CTAs */}
-          <div ref={ctasRef} className="flex flex-col sm:flex-row gap-4 mb-16">
+          <div ref={ctasRef} className="flex flex-col sm:flex-row gap-4 mb-16 justify-center">
             <Button
               onClick={() => window.dispatchEvent(new CustomEvent('open-whatsapp-form'))}
               size="lg"
