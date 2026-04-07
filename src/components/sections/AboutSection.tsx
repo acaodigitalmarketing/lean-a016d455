@@ -114,7 +114,7 @@ const AboutSection: React.FC = () => {
                 style={{ background: '#3a6b4a' }}>
                 {/* Background photo */}
                 <img
-                  src="/lovable-uploads/2008.webp"
+                  src="/lovable-uploads/empresa-fachada.webp"
                   alt="LEAN desde 2008"
                   className="absolute inset-0 w-full h-full object-cover"
                   loading="lazy"
