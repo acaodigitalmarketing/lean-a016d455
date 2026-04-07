@@ -131,7 +131,7 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ scrollToSection }) => {
           </div>
         </div>
 
-        <div className="max-w-3xl lg:py-20 pb-10 lg:pb-0">
+        <div className="max-w-3xl lg:py-20 pb-10 lg:pb-0 mx-auto text-center">
 
           {/* Label */}
           <div ref={labelRef} className="mb-6">
