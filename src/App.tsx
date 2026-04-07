@@ -18,6 +18,7 @@ const App = () => (
       <CookieConsent />
     </Suspense>
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/servicos" element={<Servicos />} />
