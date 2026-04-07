@@ -62,7 +62,7 @@ const ClinicSection: React.FC = () => {
     <section ref={sectionRef} id="frota" className="section-spacing relative overflow-hidden">
       {/* Background photo — oculta no mobile */}
       <img
-        src="/lovable-uploads/stats-bg-1.webp"
+        src="/lovable-uploads/frota-caminhoes.webp"
         alt="Nossa frota LEAN"
         className="hidden lg:block absolute inset-0 w-full h-full object-cover"
         loading="lazy"
@@ -79,7 +79,7 @@ const ClinicSection: React.FC = () => {
         {/* Foto quadrada no mobile */}
         <div className="lg:hidden w-full aspect-square rounded-2xl overflow-hidden mb-8">
           <img
-            src="/lovable-uploads/stats-bg-1.webp"
+            src="/lovable-uploads/frota-caminhoes.webp"
             alt="Nossa frota LEAN"
             className="w-full h-full object-cover object-center"
             loading="lazy"
