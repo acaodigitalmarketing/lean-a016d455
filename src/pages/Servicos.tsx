@@ -1275,14 +1275,15 @@ const Servicos = () => {
             </AnimatedSection>
 
             <AnimatedSection delay={100}>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
-                {[
+              {(() => {
+                const items = [
                   { title: 'Caminhões Basculantes', desc: 'MB Axor 3131 e VW 3260 para mineração, terraplanagem e obras.' },
                   { title: 'Caminhões Munck', desc: 'Ford Cargo 2629 e MB Atego 3133 — içamento até 10.000 kg.' },
                   { title: 'Escavadeiras', desc: '22.500 kg / 1,2 m³ para terraplanagem e construção civil.' },
                   { title: 'Retroescavadeiras', desc: '8.185 kg / 4,54 m de profundidade para obras rurais e urbanas.' },
                   { title: 'Carregadeiras', desc: 'Carregamento a granel, movimentação de terra e suporte à mineração e terraplanagem.' },
-                ].map(({ title, desc }) => (
+                ];
+                const card = ({ title, desc }: { title: string; desc: string }) => (
                   <div key={title}
                     className="group flex flex-col gap-4 p-6 rounded-2xl transition-all duration-300 hover:-translate-y-1"
                     style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}
@@ -1296,8 +1297,18 @@ const Servicos = () => {
                       <p className="text-sm leading-relaxed" style={{ color: '#a5c9b2' }}>{desc}</p>
                     </div>
                   </div>
-                ))}
-              </div>
+                );
+                return (
+                  <div className="flex flex-col gap-5 mb-12">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                      {items.slice(0, 3).map(card)}
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-5 lg:w-2/3 lg:mx-auto">
+                      {items.slice(3).map(card)}
+                    </div>
+                  </div>
+                );
+              })()}
             </AnimatedSection>
 
             <AnimatedSection delay={200}>
