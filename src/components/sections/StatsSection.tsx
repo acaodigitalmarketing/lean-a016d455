@@ -43,7 +43,7 @@ const StatsSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="py-12 md:py-16 border-y" style={{ background: '#eaf5ed', borderColor: '#cce8d4' }}>
+    <section className="py-6 md:py-8 border-y" style={{ background: '#eaf5ed', borderColor: '#cce8d4' }}>
 
       {/* Mobile: carrossel horizontal automático */}
       <div className="sm:hidden overflow-hidden">
@@ -62,12 +62,12 @@ const StatsSection: React.FC = () => {
         >
           {stats.map(({ icon: Icon, value, label }) => (
             <div key={label} className="flex items-center gap-4 w-full">
-              <div className="w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0" style={{ background: '#cce8d4' }}>
-                <Icon className="w-7 h-7" style={{ color: '#3a6b4a' }} />
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: '#cce8d4' }}>
+                <Icon className="w-5 h-5" style={{ color: '#3a6b4a' }} />
               </div>
               <div>
-                <div className="font-bold text-2xl md:text-3xl leading-none" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#3a6b4a' }}>{value}</div>
-                <div className="text-sm mt-1" style={{ color: '#4a8460' }}>{label}</div>
+                <div className="font-bold text-lg leading-none" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#3a6b4a' }}>{value}</div>
+                <div className="text-xs mt-1" style={{ color: '#4a8460' }}>{label}</div>
               </div>
             </div>
           ))}

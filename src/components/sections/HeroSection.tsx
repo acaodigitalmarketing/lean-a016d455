@@ -86,14 +86,14 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ scrollToSection }) => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="pt-16 lg:pt-20 min-h-screen relative overflow-hidden flex items-center">
+    <section ref={sectionRef} className="pt-16 lg:pt-20 relative overflow-hidden flex items-center" style={{ minHeight: 'min(90vh, 620px)' }}>
       {/* Background photo — oculta no mobile, visível no desktop */}
       <img
         ref={heroImgRef}
         src="/lovable-uploads/hero-1.webp"
         alt="LEAN Locação e Serviços — frota de equipamentos para mineração e terraplanagem"
         className="hidden lg:block absolute w-full object-cover"
-        style={{ height: '140%', top: '-20%', willChange: 'transform', objectPosition: 'center' }}
+        style={{ height: '130%', top: '-15%', willChange: 'transform', objectPosition: 'center' }}
         fetchPriority="high"
         loading="eager"
         decoding="sync"
@@ -147,7 +147,7 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ scrollToSection }) => {
             className="text-white mb-6 leading-[0.95]"
             style={{
               fontFamily: "'Barlow Condensed', sans-serif",
-              fontSize: 'clamp(36px, 6vw, 80px)',
+              fontSize: 'clamp(28px, 4vw, 52px)',
               fontWeight: 800,
               letterSpacing: '-1px',
             }}

@@ -21,6 +21,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 const lenis = new Lenis({ duration: 1.2 })
+;(window as any).__lenis = lenis
 
 // Sincroniza Lenis com GSAP ScrollTrigger (parallax scrub funciona)
 lenis.on('scroll', ScrollTrigger.update)

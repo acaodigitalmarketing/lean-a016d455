@@ -74,7 +74,7 @@ const machines = [
     models: 'Capacidade de Caçamba: até 3,0 m³',
     description: 'Equipamentos versáteis para carregamento de materiais a granel, movimentação de terra e suporte a operações de mineração, construção civil e agronegócio.',
     tags: ['Carregamento', 'Mineração', 'Terraplanagem'],
-    photo: '/lovable-uploads/Carregamento a Granel.webp',
+    photo: '/lovable-uploads/carregadeira.webp',
     photoLabel: 'Carregadeiras',
     procedureValue: 'Carregadeiras',
   },

@@ -65,7 +65,7 @@ const mineracao: ServiceCard[] = [
     title: 'Carregamento a Granel',
     subtitle: 'Carregadeiras',
     description: 'Movimentação e carregamento de minério a granel dentro da mina com alto rendimento operacional. Equipamento de esteira frontal ideal para operar em turnos contínuos.',
-    tags: [], photo: '/lovable-uploads/Carregamento a Granel.webp',
+    tags: [], photo: '/lovable-uploads/carregadeira-2.webp',
     photoLabel: 'Carregadeiras em operação de mineração',
     procedureValue: 'Carregamento a Granel — Mineração',
   },
@@ -92,7 +92,7 @@ const agronegocio: ServiceCard[] = [
     title: 'Limpeza de Terrenos e Áreas',
     subtitle: 'Escavadeiras',
     description: 'Remoção de vegetação, troncos e pedras para preparação de novas áreas de plantio.',
-    tags: [], photo: '/lovable-uploads/escavadeira.webp',
+    tags: [], photo: '/lovable-uploads/escavadeira-2.webp',
     photoLabel: 'Limpeza de terreno rural',
     procedureValue: 'Limpeza de Terrenos — Agronegócio',
   },
@@ -116,7 +116,7 @@ const agronegocio: ServiceCard[] = [
     title: 'Limpeza de Estábulos e Currais',
     subtitle: 'Retroescavadeiras',
     description: 'Remoção de esterco e entulhos.',
-    tags: [], photo: '/lovable-uploads/Abertura de Valas.webp',
+    tags: [], photo: '/lovable-uploads/retroescavadeira-2.webp',
     photoLabel: 'Limpeza de estábulos e currais',
     procedureValue: 'Limpeza de Estábulos — Agronegócio',
   },
@@ -124,7 +124,7 @@ const agronegocio: ServiceCard[] = [
     title: 'Carregamento de Insumos Agrícolas',
     subtitle: 'Carregadeiras',
     description: 'Carregamento de insumos agrícolas, movimentação de material em fazendas e suporte a obras de infraestrutura rural com eficiência e versatilidade.',
-    tags: [], photo: '/lovable-uploads/Carregamento de Materiais.webp',
+    tags: [], photo: '/lovable-uploads/carregadeira-3.webp',
     photoLabel: 'Carregadeiras em obras rurais',
     procedureValue: 'Carregamento de Insumos — Agronegócio',
   },
@@ -159,7 +159,7 @@ const industrial: ServiceCard[] = [
     title: 'Movimentação de Carga',
     subtitle: 'Caminhões Munck Ford Cargo 2629 · M.Benz Atego 3133/48',
     description: 'Uso da concha frontal para transportar materiais pesados dentro do perímetro industrial.',
-    tags: [], photo: '/lovable-uploads/ford-cargo-2629-munck.webp',
+    tags: [], photo: '/lovable-uploads/ford-cargo-2629-munck-2.webp',
     photoLabel: 'Munck movimentando carga industrial',
     procedureValue: 'Movimentação de Carga — Industrial',
   },
@@ -167,7 +167,7 @@ const industrial: ServiceCard[] = [
     title: 'Manutenção de Infraestrutura',
     subtitle: 'Escavadeiras',
     description: 'Limpeza de áreas externas, manutenção de caixas de inspeção e reparações rápidas em vias internas.',
-    tags: [], photo: '/lovable-uploads/escavadeira.webp',
+    tags: [], photo: '/lovable-uploads/escavadeira-3.webp',
     photoLabel: 'Manutenção de infraestrutura industrial',
     procedureValue: 'Manutenção de Infraestrutura — Industrial',
   },
@@ -241,7 +241,7 @@ const equipJCB: ServiceCard[] = [
     title: 'Carregamento de Materiais',
     subtitle: 'Retroescavadeiras',
     description: 'Eficientes para carregar caminhões basculantes com terra, areia, brita e materiais de construção.',
-    tags: [], photo: '/lovable-uploads/Carregamento de Materiais.webp',
+    tags: [], photo: '/lovable-uploads/retroescavadeira-3.webp',
     photoLabel: 'Retroescavadeiras carregando materiais',
     procedureValue: 'Carregamento de Materiais — Retroescavadeiras',
   },
@@ -268,7 +268,7 @@ const equipCarregadeira: ServiceCard[] = [
     title: 'Carregamento a Granel',
     subtitle: 'Carregadeiras',
     description: 'Carregamento de caminhões com terra, areia, brita, minério e materiais a granel com alta produtividade. Ideal para operações contínuas em mineração e obras.',
-    tags: [], photo: '/lovable-uploads/Carregamento a Granel.webp',
+    tags: [], photo: '/lovable-uploads/carregadeira-4.webp',
     photoLabel: 'Carregadeiras carregando materiais a granel',
     procedureValue: 'Carregamento a Granel — Carregadeiras',
   },
@@ -276,7 +276,7 @@ const equipCarregadeira: ServiceCard[] = [
     title: 'Movimentação de Terra',
     subtitle: 'Carregadeiras',
     description: 'Movimentação e redistribuição de volumes de terra em terraplanagem, nivelamento de terrenos e preparação de áreas para construção civil e mineração.',
-    tags: [], photo: '/lovable-uploads/Terraplanagem e Nivelamento.webp',
+    tags: [], photo: '/lovable-uploads/carregadeira-2.webp',
     photoLabel: 'Carregadeiras em movimentação de terra',
     procedureValue: 'Movimentação de Terra — Carregadeiras',
   },
@@ -284,7 +284,7 @@ const equipCarregadeira: ServiceCard[] = [
     title: 'Suporte à Mineração',
     subtitle: 'Carregadeiras',
     description: 'Carregamento de caminhões basculantes com minério e movimentação de material dentro da mina. Alto rendimento operacional em turnos contínuos.',
-    tags: [], photo: '/lovable-uploads/mercedes-axor-3131.webp',
+    tags: [], photo: '/lovable-uploads/carregadeira.webp',
     photoLabel: 'Carregadeiras em operação de mineração',
     procedureValue: 'Suporte à Mineração — Carregadeiras',
   },
@@ -292,7 +292,7 @@ const equipCarregadeira: ServiceCard[] = [
     title: 'Obras Rurais e Agronegócio',
     subtitle: 'Carregadeiras',
     description: 'Carregamento de insumos agrícolas, movimentação de material em fazendas e suporte a obras de infraestrutura rural com eficiência e versatilidade.',
-    tags: [], photo: '/lovable-uploads/Carregamento de Materiais.webp',
+    tags: [], photo: '/lovable-uploads/carregadeira-3.webp',
     photoLabel: 'Carregadeiras em obras rurais',
     procedureValue: 'Obras Rurais — Carregadeiras',
   },
@@ -311,7 +311,7 @@ const equipMunck: ServiceCard[] = [
     title: 'Construção Civil',
     subtitle: 'Caminhões Munck Ford Cargo 2629 · M.Benz Atego 3133/48',
     description: 'Movimentação e posicionamento de estruturas metálicas, vigas, pré-moldados e materiais de construção em locais de difícil acesso.',
-    tags: [], photo: '/lovable-uploads/ford-cargo-2629-munck.webp',
+    tags: [], photo: '/lovable-uploads/ford-cargo-2629-munck-3.webp',
     photoLabel: 'Munck em construção civil',
     procedureValue: 'Construção Civil — Munck',
   },
@@ -319,7 +319,7 @@ const equipMunck: ServiceCard[] = [
     title: 'Transporte e Logística',
     subtitle: 'Caminhões Munck Ford Cargo 2629 · M.Benz Atego 3133/48',
     description: 'Transporte de equipamentos pesados e materiais diversos utilizando a carroceria do próprio caminhão.',
-    tags: [], photo: '/lovable-uploads/ford-cargo-2629-munck.webp',
+    tags: [], photo: '/lovable-uploads/ford-cargo-2629-munck-4.webp',
     photoLabel: 'Munck em transporte e logística',
     procedureValue: 'Transporte e Logística — Munck',
   },
@@ -327,7 +327,7 @@ const equipMunck: ServiceCard[] = [
     title: 'Operações com Cesto Aéreo',
     subtitle: 'Caminhões Munck Ford Cargo 2629 · M.Benz Atego 3133/48',
     description: 'Serviços que exigem altura, como manutenção e montagem industrial, utilizando cesto acoplado para duas pessoas.',
-    tags: [], photo: '/lovable-uploads/ford-cargo-2629-munck.webp',
+    tags: [], photo: '/lovable-uploads/ford-cargo-2629-munck-5.webp',
     photoLabel: 'Munck com cesto aéreo',
     procedureValue: 'Operações com Cesto Aéreo — Munck',
   },
@@ -338,7 +338,7 @@ const equipPipa: ServiceCard[] = [
     title: 'Umectação de Solo',
     subtitle: 'Caminhões Pipa MB Axor 3131 · 20.000 L',
     description: 'Veículos equipados com tanque de 20.000 litros, projetados para o transporte e acoplados de um sistema completo para atender várias demandas — incluindo umectação de solo.',
-    tags: [], photo: '/lovable-uploads/pipa.webp',
+    tags: [], photo: '/lovable-uploads/pipa-2.webp',
     photoLabel: 'Caminhões Pipa umectando solo',
     procedureValue: 'Umectação de Solo — Pipa',
   },
@@ -346,7 +346,7 @@ const equipPipa: ServiceCard[] = [
     title: 'Terraplanagem',
     subtitle: 'Caminhões Pipa MB Axor 3131 · 20.000 L',
     description: 'Veículos equipados com tanque de 20.000 litros, projetados para o transporte e acoplados de um sistema completo para atender várias demandas — incluindo terraplanagem.',
-    tags: [], photo: '/lovable-uploads/pipa.webp',
+    tags: [], photo: '/lovable-uploads/pipa-3.webp',
     photoLabel: 'Caminhões Pipa em suporte à terraplanagem',
     procedureValue: 'Terraplanagem — Pipa',
   },
@@ -354,7 +354,7 @@ const equipPipa: ServiceCard[] = [
     title: 'Limpeza',
     subtitle: 'Caminhões Pipa MB Axor 3131 · 20.000 L',
     description: 'Veículos equipados com tanque de 20.000 litros, projetados para o transporte e acoplados de um sistema completo para atender várias demandas — incluindo limpeza.',
-    tags: [], photo: '/lovable-uploads/pipa.webp',
+    tags: [], photo: '/lovable-uploads/pipa-4.webp',
     photoLabel: 'Caminhões Pipa em limpeza',
     procedureValue: 'Limpeza — Pipa',
   },
@@ -362,7 +362,7 @@ const equipPipa: ServiceCard[] = [
     title: 'Irrigação',
     subtitle: 'Caminhões Pipa MB Axor 3131 · 20.000 L',
     description: 'Veículos equipados com tanque de 20.000 litros, projetados para o transporte e acoplados de um sistema completo para atender várias demandas — incluindo irrigação.',
-    tags: [], photo: '/lovable-uploads/pipa.webp',
+    tags: [], photo: '/lovable-uploads/pipa-5.webp',
     photoLabel: 'Caminhões Pipa em irrigação',
     procedureValue: 'Irrigação — Pipa',
   },
@@ -373,7 +373,7 @@ const equipCacamba: ServiceCard[] = [
     title: 'Transporte em Obras Rurais',
     subtitle: 'Caminhões Basculantes MB Axor 3131',
     description: 'Veículos projetados para operações pesadas que exigem alta robustez e capacidade de tração. Principalmente utilizados para obras rurais e outros ambientes de trabalho.',
-    tags: [], photo: '/lovable-uploads/mercedes-axor-3131.webp',
+    tags: [], photo: '/lovable-uploads/mercedes-axor-3131-2.webp',
     photoLabel: 'Caminhões Basculantes MB Axor 3131 em obra rural',
     procedureValue: 'Transporte em Obras Rurais — Caminhões Basculantes',
   },
@@ -381,7 +381,7 @@ const equipCacamba: ServiceCard[] = [
     title: 'Transporte em Terraplanagem e Obras',
     subtitle: 'Caminhões Basculantes MB Axor 3131',
     description: 'Veículos projetados para operações pesadas que exigem alta robustez e capacidade de tração. Locações dos caminhões e serviços prestados em mineração e terraplanagem.',
-    tags: [], photo: '/lovable-uploads/mercedes-axor-3131.webp',
+    tags: [], photo: '/lovable-uploads/mercedes-axor-3131-3.webp',
     photoLabel: 'Caminhões Basculantes MB Axor 3131 em terraplanagem',
     procedureValue: 'Transporte em Terraplanagem — Caminhões Basculantes',
   },
@@ -390,7 +390,7 @@ const equipCacamba: ServiceCard[] = [
     subtitle: 'Caminhões Munck Ford Cargo 2629',
     description: 'Içamento e posicionamento de materiais de construção como vigas, caixas d\'água, estruturas metálicas e pré-moldados em obras residenciais com segurança e precisão.',
     tags: ['Munck', 'Içamento', 'Obras'],
-    photo: '/lovable-uploads/ford-cargo-2629-munck.webp',
+    photo: '/lovable-uploads/ford-cargo-2629-munck-2.webp',
     photoLabel: 'Munck içando materiais em obra residencial',
     procedureValue: 'Içamento e Movimentação — Residencial',
   },
@@ -1042,14 +1042,14 @@ const ServicosHero: React.FC<{ onCta: () => void }> = ({ onCta }) => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="pt-16 lg:pt-20 min-h-screen relative overflow-hidden flex items-center">
+    <section ref={sectionRef} className="pt-16 lg:pt-20 relative overflow-hidden flex items-center" style={{ minHeight: 'min(90vh, 620px)' }}>
       {/* BG desktop */}
       <img
         ref={heroImgRef}
         src="/lovable-uploads/hero-service.webp"
         alt="LEAN Locação e Serviços — serviços de terraplanagem e mineração"
         className="hidden lg:block absolute w-full object-cover"
-        style={{ height: '140%', top: '-20%', willChange: 'transform', objectPosition: 'center' }}
+        style={{ height: '130%', top: '-15%', willChange: 'transform', objectPosition: 'right center' }}
         fetchPriority="high" loading="eager" decoding="sync" width="1920" height="1080"
       />
       <div className="hidden lg:block absolute inset-0" style={{ background: 'linear-gradient(105deg, rgba(10,28,16,0.93) 0%, rgba(20,50,30,0.87) 50%, rgba(10,28,16,0.5) 100%)' }} />
@@ -1057,20 +1057,20 @@ const ServicosHero: React.FC<{ onCta: () => void }> = ({ onCta }) => {
 
       <div className="container relative z-10 w-full">
         {/* Mobile: foto em cima */}
-        <div className="lg:hidden pt-6 pb-4">
-          <div className="w-full aspect-video rounded-2xl overflow-hidden mb-8">
+        <div className="lg:hidden pt-4 pb-0">
+          <div className="w-full aspect-video rounded-2xl overflow-hidden mb-3">
             <img src="/lovable-uploads/hero-service.webp" alt="LEAN Locação e Serviços" className="w-full h-full object-cover object-center" loading="eager" decoding="async" width="640" height="360" />
           </div>
         </div>
 
-        <div className="max-w-3xl lg:py-20 pb-16 lg:pb-20">
+        <div className="max-w-3xl pt-3 pb-8 lg:py-12">
           <div className="mb-6">
             <span className="inline-block text-[#7dba93] text-xs font-bold tracking-[0.3em] uppercase" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
               Serviços Especializados · Minas Gerais e Região · Desde 2008
             </span>
           </div>
 
-          <h1 className="text-white mb-6 leading-[0.95]" style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 'clamp(32px, 5.5vw, 72px)', fontWeight: 800, letterSpacing: '-1px' }}>
+          <h1 className="text-white mb-6 leading-[0.95]" style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 'clamp(28px, 4vw, 52px)', fontWeight: 800, letterSpacing: '-1px' }}>
             Prestação de serviços com caminhões basculantes, munck, pipa <span style={{ color: '#7dba93' }}>e máquinas em Minas Gerais.</span>
           </h1>
 

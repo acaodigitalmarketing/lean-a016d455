@@ -128,7 +128,7 @@ const TestimonialsSection: React.FC = () => {
               </div>
             ))}
           </div>
-          <div className="flex flex-col items-center gap-2 mt-8">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
             <p className="text-sm" style={{ color: '#a5c9b2' }}>Ficou com alguma dúvida? Fale com a gente.</p>
             <button
               onClick={() => window.dispatchEvent(new CustomEvent('open-whatsapp-form'))}
