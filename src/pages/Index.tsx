@@ -193,6 +193,9 @@ const Index = () => {
     
     const [phoneUtils, whatsappUtils, webhookUtils] = await getFormUtils();
     
+    const procedureFinalMain = formData.procedure === 'Outro' && formData.customProcedure
+      ? formData.customProcedure
+      : formData.procedure;
     const formDataToSend = {
       name: formData.name.trim(),
       email: formData.email.trim(),
@@ -200,9 +203,12 @@ const Index = () => {
       country: formData.country || '',
       countryCode: formData.countryCode || '',
       city: formData.city || '',
-      location: formData.location || '',
-      procedure: formData.procedure || '',
+      location: formData.city || formData.location || '',
+      procedure: procedureFinalMain || '',
+      procedureOriginal: formData.procedure || '',
       customProcedure: formData.procedure === 'Outro' ? (formData.customProcedure || '') : '',
+      tipoFormulario: 'Formulário Principal',
+      formularioTipo: 'Formulário Principal',
       message: formData.message || '',
       origem: trackingData.origem || 'direto',
       midia: trackingData.midia || 'direto',
