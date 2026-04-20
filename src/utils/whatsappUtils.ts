@@ -25,7 +25,6 @@ export const createWhatsAppUrl = (data: any, trackingData: any) => {
   
   const message = `Olá! Venho do ${origemMensagem} da Lean Locação e Serviços e gostaria de solicitar um orçamento.
 Nome: ${data.name}
-Email: ${data.email}
 Telefone: ${data.phone}
 Localidade: ${data.city || data.location || 'Não informada'}
 Serviço: ${finalServico}`;
