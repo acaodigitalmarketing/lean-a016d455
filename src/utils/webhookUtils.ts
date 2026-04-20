@@ -4,7 +4,7 @@ export const sendToWebhook = async (formDataToSend: any, timeoutMs = 5000) => {
   const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
 
   try {
-    const response = await fetch('https://web.srv572641.hstgr.cloud/webhook/landing-page-leads-fabiana-lage', {
+    const response = await fetch('https://web.srv572641.hstgr.cloud/webhook/leads-lean-transportes', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
