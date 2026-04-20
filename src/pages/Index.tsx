@@ -213,10 +213,11 @@ const Index = () => {
     const webhookResult = await webhookUtils.sendToWebhook(formDataToSend);
 
     if (!webhookResult.success) {
-      dataLayer.trackFormError('principal', 'Falha ao enviar para o webhook');
+      const detail = webhookResult.diagnostic || 'Falha desconhecida';
+      dataLayer.trackFormError('principal', `Webhook: ${detail}`);
       toast({
         title: 'Erro ao enviar',
-        description: 'Não conseguimos registrar sua solicitação. Verifique sua conexão e tente novamente.',
+        description: `Não conseguimos registrar sua solicitação. Detalhe técnico: ${detail}`,
         variant: 'destructive',
       });
       return;
@@ -299,10 +300,11 @@ const Index = () => {
     const webhookResult = await webhookUtils.sendToWebhook(formDataToSend);
 
     if (!webhookResult.success) {
-      dataLayer.trackFormError('whatsapp', 'Falha ao enviar para o webhook');
+      const detail = webhookResult.diagnostic || 'Falha desconhecida';
+      dataLayer.trackFormError('whatsapp', `Webhook: ${detail}`);
       toast({
         title: 'Erro ao enviar',
-        description: 'Não conseguimos registrar sua solicitação. Verifique sua conexão e tente novamente.',
+        description: `Não conseguimos registrar sua solicitação. Detalhe técnico: ${detail}`,
         variant: 'destructive',
       });
       return;
