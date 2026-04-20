@@ -272,16 +272,23 @@ const Index = () => {
     
     const [phoneUtils, whatsappUtils, webhookUtils] = await getFormUtils();
     
+    const procedureFinal = whatsAppFormData.procedure?.startsWith('Outro') && whatsAppFormData.customProcedure
+      ? whatsAppFormData.customProcedure
+      : whatsAppFormData.procedure;
+
     const formDataToSend = {
       name: whatsAppFormData.name.trim(),
-      email: whatsAppFormData.email.trim(),
+      email: whatsAppFormData.email?.trim() || '',
       phone: phoneUtils.extractPhoneNumbers(whatsAppFormData.phone),
       country: whatsAppFormData.country || '',
       countryCode: whatsAppFormData.countryCode || '',
       city: whatsAppFormData.city || '',
-      location: whatsAppFormData.location || '',
-      procedure: whatsAppFormData.procedure || '',
-      customProcedure: whatsAppFormData.procedure === 'Outro' ? (whatsAppFormData.customProcedure || '') : '',
+      location: whatsAppFormData.city || whatsAppFormData.location || '',
+      procedure: procedureFinal || '',
+      procedureOriginal: whatsAppFormData.procedure || '',
+      customProcedure: whatsAppFormData.procedure?.startsWith('Outro') ? (whatsAppFormData.customProcedure || '') : '',
+      tipoFormulario: (whatsAppFormData as any).formularioTipo || 'Locação de Equipamento',
+      formularioTipo: (whatsAppFormData as any).formularioTipo || 'Locação de Equipamento',
       message: whatsAppFormData.message || '',
       origem: trackingData.origem || 'direto',
       midia: trackingData.midia || 'direto',

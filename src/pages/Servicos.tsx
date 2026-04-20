@@ -1145,14 +1145,23 @@ const Servicos = () => {
 
     dataLayer.trackFormSubmit('whatsapp', whatsAppFormData);
     const [phoneUtils, whatsappUtils, webhookUtils] = await getFormUtils();
+    const procedureFinal = whatsAppFormData.procedure?.startsWith('Outro') && whatsAppFormData.customProcedure
+      ? whatsAppFormData.customProcedure
+      : whatsAppFormData.procedure;
     const formDataToSend = {
-      name: whatsAppFormData.name.trim(), email: whatsAppFormData.email.trim(),
+      name: whatsAppFormData.name.trim(),
+      email: whatsAppFormData.email?.trim() || '',
       phone: phoneUtils.extractPhoneNumbers(whatsAppFormData.phone),
       country: whatsAppFormData.country || '', countryCode: whatsAppFormData.countryCode || '',
-      city: whatsAppFormData.city || '', location: whatsAppFormData.location || '',
-      procedure: whatsAppFormData.procedure || '',
-      customProcedure: whatsAppFormData.procedure === 'Outro' ? (whatsAppFormData.customProcedure || '') : '',
-      message: whatsAppFormData.message || '', origem: trackingData.origem || 'direto',
+      city: whatsAppFormData.city || '',
+      location: whatsAppFormData.city || whatsAppFormData.location || '',
+      procedure: procedureFinal || '',
+      procedureOriginal: whatsAppFormData.procedure || '',
+      customProcedure: whatsAppFormData.procedure?.startsWith('Outro') ? (whatsAppFormData.customProcedure || '') : '',
+      tipoFormulario: (whatsAppFormData as any).formularioTipo || 'Prestação de Serviço',
+      formularioTipo: (whatsAppFormData as any).formularioTipo || 'Prestação de Serviço',
+      message: whatsAppFormData.message || '',
+      origem: trackingData.origem || 'direto',
       midia: trackingData.midia || 'direto', url: trackingData.url || window.location.href, formulario: 'whatsapp',
     };
     const webhookResult = await webhookUtils.sendToWebhook(formDataToSend);
