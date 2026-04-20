@@ -27,7 +27,7 @@ export const createWhatsAppUrl = (data: any, trackingData: any) => {
 Nome: ${data.name}
 Email: ${data.email}
 Telefone: ${data.phone}
-Localidade: ${data.location || 'Não informada'}
+Localidade: ${data.city || data.location || 'Não informada'}
 Serviço: ${finalServico}`;
 
   const encodedMessage = encodeURIComponent(message);
