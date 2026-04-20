@@ -1159,7 +1159,6 @@ const Servicos = () => {
       procedureOriginal: whatsAppFormData.procedure || '',
       customProcedure: whatsAppFormData.procedure?.startsWith('Outro') ? (whatsAppFormData.customProcedure || '') : '',
       tipoFormulario: (whatsAppFormData as any).formularioTipo || 'Prestação de Serviço',
-      formularioTipo: (whatsAppFormData as any).formularioTipo || 'Prestação de Serviço',
       message: whatsAppFormData.message || '',
       origem: trackingData.origem || 'direto',
       midia: trackingData.midia || 'direto', url: trackingData.url || window.location.href, formulario: 'whatsapp',
