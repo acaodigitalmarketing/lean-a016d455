@@ -1160,7 +1160,15 @@ const Servicos = () => {
       formulario: 'whatsapp',
     };
     const webhookResult = await webhookUtils.sendToWebhook(formDataToSend);
-    if (webhookResult.success) dataLayer.trackLeadGenerated(formDataToSend);
+    if (!webhookResult.success) {
+      toast({
+        title: 'Erro ao enviar',
+        description: 'Não conseguimos registrar sua solicitação. Verifique sua conexão e tente novamente.',
+        variant: 'destructive',
+      });
+      return;
+    }
+    dataLayer.trackLeadGenerated(formDataToSend);
     const url = whatsappUtils.createWhatsAppUrl(whatsAppFormData, trackingData);
     setWhatsappUrl(url); setCountdown(3); setIsSuccessPopupOpen(true); setIsWhatsAppOpen(false);
     setWhatsAppFormData({ ...initialFormState }); setHasStartedWhatsAppForm(false);

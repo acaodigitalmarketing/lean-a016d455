@@ -211,11 +211,19 @@ const Index = () => {
     };
 
     const webhookResult = await webhookUtils.sendToWebhook(formDataToSend);
-    
-    if (webhookResult.success) {
-      dataLayer.trackLeadGenerated(formDataToSend);
+
+    if (!webhookResult.success) {
+      dataLayer.trackFormError('principal', 'Falha ao enviar para o webhook');
+      toast({
+        title: 'Erro ao enviar',
+        description: 'Não conseguimos registrar sua solicitação. Verifique sua conexão e tente novamente.',
+        variant: 'destructive',
+      });
+      return;
     }
-    
+
+    dataLayer.trackLeadGenerated(formDataToSend);
+
     const url = whatsappUtils.createWhatsAppUrl(formData, trackingData);
     dataLayer.trackWhatsAppRedirect(formData.procedure === 'Outro' ? formData.customProcedure : formData.procedure);
     
@@ -289,11 +297,19 @@ const Index = () => {
     };
 
     const webhookResult = await webhookUtils.sendToWebhook(formDataToSend);
-    
-    if (webhookResult.success) {
-      dataLayer.trackLeadGenerated(formDataToSend);
+
+    if (!webhookResult.success) {
+      dataLayer.trackFormError('whatsapp', 'Falha ao enviar para o webhook');
+      toast({
+        title: 'Erro ao enviar',
+        description: 'Não conseguimos registrar sua solicitação. Verifique sua conexão e tente novamente.',
+        variant: 'destructive',
+      });
+      return;
     }
-    
+
+    dataLayer.trackLeadGenerated(formDataToSend);
+
     const url = whatsappUtils.createWhatsAppUrl(whatsAppFormData, trackingData);
     dataLayer.trackWhatsAppRedirect(whatsAppFormData.procedure === 'Outro' ? whatsAppFormData.customProcedure : whatsAppFormData.procedure);
     
