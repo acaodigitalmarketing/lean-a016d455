@@ -1161,9 +1161,10 @@ const Servicos = () => {
     };
     const webhookResult = await webhookUtils.sendToWebhook(formDataToSend);
     if (!webhookResult.success) {
+      const detail = webhookResult.diagnostic || 'Falha desconhecida';
       toast({
         title: 'Erro ao enviar',
-        description: 'Não conseguimos registrar sua solicitação. Verifique sua conexão e tente novamente.',
+        description: `Não conseguimos registrar sua solicitação. Detalhe técnico: ${detail}`,
         variant: 'destructive',
       });
       return;
