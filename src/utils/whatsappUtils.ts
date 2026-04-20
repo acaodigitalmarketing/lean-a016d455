@@ -3,23 +3,8 @@ export const createWhatsAppUrl = (data: any, trackingData: any) => {
   const baseUrl = "https://api.whatsapp.com/send";
   const phone = "5537999931841";
   
-  // Determinar a origem para a mensagem
-  let origemMensagem = 'site';
-  if (trackingData.origem && trackingData.origem !== 'direto') {
-    if (trackingData.origem === 'google') {
-      origemMensagem = 'Google';
-    } else if (trackingData.origem === 'instagram') {
-      origemMensagem = 'Instagram';
-    } else if (trackingData.origem === 'facebook') {
-      origemMensagem = 'Facebook';
-    } else if (trackingData.origem === 'youtube') {
-      origemMensagem = 'YouTube';
-    } else if (trackingData.origem.includes('.')) {
-      origemMensagem = trackingData.origem;
-    } else {
-      origemMensagem = trackingData.origem;
-    }
-  }
+  // Sempre referir como "site" na mensagem do WhatsApp (origem real é registrada no webhook)
+  const origemMensagem = 'site';
   
   const finalServico = data.procedure === 'Outro' && data.customProcedure ? data.customProcedure : data.procedure;
   
