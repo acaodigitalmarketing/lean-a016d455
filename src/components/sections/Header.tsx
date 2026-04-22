@@ -1,8 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Menu, X, Building2, Wrench, Truck, Route } from 'lucide-react';
+import { Menu, X, Building2, Wrench, Truck, Route, Briefcase } from 'lucide-react';
 
-type NavLink = { label: string; id: string; Icon: React.ElementType };
+type NavLink = { label: string; id: string; Icon: React.ElementType; to?: string };
 
 interface HeaderProps {
   isMenuOpen: boolean;
@@ -16,6 +17,7 @@ const defaultNavLinks: NavLink[] = [
   { label: 'Diferenciais', id: 'servicos', Icon: Wrench },
   { label: 'Equipamentos', id: 'equipamentos', Icon: Truck },
   { label: 'Como Funciona', id: 'como-funciona', Icon: Route },
+  { label: 'Prestação de Serviços', id: 'ir-servicos', Icon: Briefcase, to: '/servicos' },
 ];
 
 const openForm = () => window.dispatchEvent(new CustomEvent('open-whatsapp-form'));
