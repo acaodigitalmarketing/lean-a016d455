@@ -23,6 +23,15 @@ const defaultNavLinks: NavLink[] = [
 const openForm = () => window.dispatchEvent(new CustomEvent('open-whatsapp-form'));
 
 const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen, scrollToSection, navLinks = defaultNavLinks }) => {
+  const navigate = useNavigate();
+  const handleNavClick = (link: NavLink) => {
+    if (link.to) {
+      navigate(link.to);
+      setIsMenuOpen(false);
+      return;
+    }
+    scrollToSection(link.id);
+  };
   return (
     <header className="fixed top-0 left-0 right-0 z-50 header-lean">
       <div className="container">
