@@ -1,8 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Menu, X, Building2, Wrench, Truck, Route } from 'lucide-react';
+import { Menu, X, Building2, Wrench, Truck, Route, Briefcase } from 'lucide-react';
 
-type NavLink = { label: string; id: string; Icon: React.ElementType };
+type NavLink = { label: string; id: string; Icon: React.ElementType; to?: string };
 
 interface HeaderProps {
   isMenuOpen: boolean;
@@ -16,11 +17,21 @@ const defaultNavLinks: NavLink[] = [
   { label: 'Diferenciais', id: 'servicos', Icon: Wrench },
   { label: 'Equipamentos', id: 'equipamentos', Icon: Truck },
   { label: 'Como Funciona', id: 'como-funciona', Icon: Route },
+  { label: 'Prestação de Serviços', id: 'ir-servicos', Icon: Briefcase, to: '/servicos' },
 ];
 
 const openForm = () => window.dispatchEvent(new CustomEvent('open-whatsapp-form'));
 
 const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen, scrollToSection, navLinks = defaultNavLinks }) => {
+  const navigate = useNavigate();
+  const handleNavClick = (link: NavLink) => {
+    if (link.to) {
+      navigate(link.to);
+      setIsMenuOpen(false);
+      return;
+    }
+    scrollToSection(link.id);
+  };
   return (
     <header className="fixed top-0 left-0 right-0 z-50 header-lean">
       <div className="container">
@@ -46,17 +57,20 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen, scrollToSect
 
           {/* Desktop Menu */}
           <nav className="hidden lg:flex items-center space-x-8">
-            {navLinks.map(({ label, id, Icon }) => (
-              <button
-                key={id}
-                onClick={() => scrollToSection(id)}
-                className="nav-icon-reveal text-[#2d2d2d] hover:text-[#3a6b4a] transition-colors text-sm link-hover"
-                style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' }}
-              >
-                <Icon className="nav-icon" style={{ width: '16px', height: '16px', color: '#3a6b4a' }} strokeWidth={2} />
-                {label}
-              </button>
-            ))}
+            {navLinks.map((link) => {
+              const { label, id, Icon } = link;
+              return (
+                <button
+                  key={id}
+                  onClick={() => handleNavClick(link)}
+                  className="nav-icon-reveal text-[#2d2d2d] hover:text-[#3a6b4a] transition-colors text-sm link-hover"
+                  style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' }}
+                >
+                  <Icon className="nav-icon" style={{ width: '16px', height: '16px', color: '#3a6b4a' }} strokeWidth={2} />
+                  {label}
+                </button>
+              );
+            })}
             <Button
               onClick={openForm}
               className="btn-pill btn-primary text-sm px-5 py-2.5"
@@ -79,14 +93,14 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen, scrollToSect
         {isMenuOpen && (
           <div className="lg:hidden absolute top-full left-0 right-0 bg-[#f7f6f3] border-b border-[#cce8d4] shadow-md">
             <nav className="flex flex-col p-6 space-y-1">
-              {navLinks.map(({ label, id }) => (
+              {navLinks.map((link) => (
                 <button
-                  key={id}
-                  onClick={() => scrollToSection(id)}
+                  key={link.id}
+                  onClick={() => handleNavClick(link)}
                   className="text-left text-[#2d2d2d] hover:text-[#3a6b4a] transition-colors text-sm min-h-[48px] flex items-center"
                   style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' }}
                 >
-                  {label}
+                  {link.label}
                 </button>
               ))}
               <div className="pt-2">

@@ -1100,6 +1100,7 @@ const servicosNavLinks = [
   { label: 'Equipamentos', id: 'equipamentos', Icon: Truck },
   { label: 'Como Funciona', id: 'processo', Icon: Route },
   { label: 'Sobre', id: 'sobre', Icon: Building2 },
+  { label: 'Locação de Equipamento', id: 'ir-locacao', Icon: HardHat, to: '/locacao-de-equipamento' },
 ];
 
 // ─── Main Page ──────────────────────────────────────────────────────────────────
