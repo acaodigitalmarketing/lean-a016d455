@@ -1,0 +1,39 @@
+# LEAN Locação e Serviços
+
+> Locação de equipamentos pesados e prestação de serviços de terraplanagem, escavação, carregamento e movimentação de cargas em Minas Gerais desde 2008.
+
+LEAN Locação e Serviços atua nos segmentos de mineração, agronegócio, industrial e residencial com uma frota moderna que inclui escavadeiras, retroescavadeiras, carregadeiras, caminhões munck, caminhões pipa e basculantes. A empresa oferece soluções completas de locação de equipamentos e mão de obra especializada para obras de terraplanagem, escavação, carregamento de materiais a granel, transporte de minério, limpeza de terrenos, recuperação de estradas, abertura de valas, içamento de cargas pesadas e umectação de solo. Atendimento via WhatsApp e formulário de orçamento com resposta rápida.
+
+## Pages
+
+- [LEAN Locação e Serviços](/): Página principal com apresentação da empresa, frota, diferenciais e formulário de orçamento.
+- [Prestação de Serviços](/servicos): Serviços especializados por segmento — mineração, agronegócio, industrial e residencial.
+- [Locação de Equipamento](/locacao-de-equipamento): Redirecionamento direto para a seção de equipamentos da página principal.
+- [Solicitar Orçamento](/#contato): Formulário de contato e orçamento via WhatsApp.
+
+## Sections
+
+- [Sobre a LEAN](/#sobre): História, missão e valores da empresa com mais de 15 anos de experiência.
+- [Equipamentos](/#equipamentos): Frota completa — escavadeiras XCMG, retroescavadeiras JCB, carregadeiras, caminhões munck Ford Cargo 2629 / Mercedes-Benz Atego, caminhões pipa 20.000 L e basculantes.
+- [Diferenciais](/#servicos): Manutenção preventiva, suporte 24h, operadores certificados e frota moderna.
+- [Como Funciona](/#como-funciona): Etapas do processo de locação — solicitação, análise, execução e acompanhamento.
+
+## Segments
+
+- [Mineração](/servicos#mineria): Transporte de minério bruto, carregamento a granel e suporte à mineração.
+- [Agronegócio](/servicos#agronegocio): Abertura de valas, recuperação de estradas vicinais, limpeza de terrenos, carregamento de materiais, tanques e represas.
+- [Industrial](/servicos#industrial): Terraplanagem, escavação para fundações, carregamento de materiais a granel, movimentação de carga e manutenção de infraestrutura.
+- [Residencial](/servicos#residencial): Limpeza de entulhos e preparação de terrenos.
+
+## Equipment
+
+- [Escavadeiras XCMG](/servicos#equip-xcmg): Escavação em mineração, obras rurais, demolição, infraestrutura e construção civil.
+- [Retroescavadeiras JCB](/servicos#equip-jcb): Escavação profunda, terraplanagem, carregamento de materiais, limpeza de terrenos e serviços agrícolas.
+- [Carregadeiras](/servicos#equip-carregadeira): Carregamento a granel, movimentação de terra, suporte à mineração e obras rurais.
+- [Caminhões Munck](/servicos#equip-munck): Içamento de cargas pesadas, construção civil, transporte e operações com cesto aéreo.
+- [Caminhões Pipa](/servicos#equip-pipa): Umectação de solo, terraplanagem, limpeza e irrigação.
+- [Caminhões Basculantes](/servicos#equip-basculante): Transporte de minério, entulhos e materiais a granel.
+
+## Optional
+
+- [Política de Privacidade](/politica-de-privacidade): Uso de dados para orçamentos e atendimento.
