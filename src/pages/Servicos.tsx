@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect, useRef, lazy, Suspense, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { useToast } from '@/hooks/use-toast';
 import { useUserTracking } from '@/hooks/useUserTracking';
 import { useDataLayer } from '@/hooks/useDataLayer';
@@ -1203,6 +1204,14 @@ const Servicos = () => {
 
   return (
     <div className="min-h-screen" style={{ background: '#f7f6f3' }}>
+      <Helmet>
+        <title>Prestação de Serviços — LEAN Locação e Serviços</title>
+        <meta name="description" content="Serviços especializados de terraplanagem, escavação, carregamento e içamento para mineração, agronegócio, indústria e residencial em MG." />
+        <link rel="canonical" href="https://leantransportes.com.br/servicos" />
+        <meta property="og:title" content="Prestação de Serviços — LEAN Locação e Serviços" />
+        <meta property="og:description" content="Serviços especializados de terraplanagem, escavação, carregamento e içamento para mineração, agronegócio, indústria e residencial em MG." />
+        <meta property="og:url" content="https://leantransportes.com.br/servicos" />
+      </Helmet>
       <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} scrollToSection={scrollToSection} navLinks={servicosNavLinks} />
 
       <ServicosHero onCta={handleWhatsAppOpen} />
