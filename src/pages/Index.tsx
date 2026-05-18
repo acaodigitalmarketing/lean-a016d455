@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect, lazy, Suspense, useCallback } from 'react';
 import { useLocation } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { useToast } from '@/hooks/use-toast';
 import { useUserTracking } from '@/hooks/useUserTracking';
 import { useDataLayer } from '@/hooks/useDataLayer';
@@ -387,6 +388,14 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-dark-base">
+      <Helmet>
+        <title>LEAN Locação e Serviços — Equipamentos em MG</title>
+        <meta name="description" content="Locação de caminhões caçamba, munck, escavadeiras e retroescavadeiras para mineração e terraplanagem em Minas Gerais desde 2008." />
+        <link rel="canonical" href="https://leantransportes.com.br/" />
+        <meta property="og:title" content="LEAN Locação e Serviços — Equipamentos em MG" />
+        <meta property="og:description" content="Locação de caminhões caçamba, munck, escavadeiras e retroescavadeiras para mineração e terraplanagem em Minas Gerais desde 2008." />
+        <meta property="og:url" content="https://leantransportes.com.br/" />
+      </Helmet>
       <Header 
         isMenuOpen={isMenuOpen}
         setIsMenuOpen={setIsMenuOpen}
